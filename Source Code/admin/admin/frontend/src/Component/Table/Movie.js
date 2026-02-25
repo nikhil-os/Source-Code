@@ -45,14 +45,14 @@ import { useDebounce } from "../../hooks/useDebounce";
 import LazyImage from "../common/ImageFallback";
 
 //useStyle
-const useStyles1 = makeStyles((theme) => ({
-  root: {
-    flexShrink: 0,
-    marginLeft: theme?.spacing && theme?.spacing(2.5),
-    background: "#221f3a",
-    color: "#fff",
-  },
-}));
+// const useStyles1 = makeStyles((theme) => ({
+//   root: {
+//     flexShrink: 0,
+//     marginLeft: theme?.spacing && theme?.spacing(2.5),
+//     background: "#221f3a",
+//     color: "#fff",
+//   },
+// }));
 
 const Movie = (props) => {
   const { loader } = useSelector((state) => state.loader);
@@ -74,12 +74,13 @@ const Movie = (props) => {
   const [showRentalDialog, setShowRentalDialog] = useState(false);
   const [selectedMovieForRental, setSelectedMovieForRental] = useState(null);
 
-  const { movie, isTost, toastData, actionFor, totalMovie } = useSelector(
+  const { movie, totalMovie } = useSelector(
     (state) => state.movie,
   );
 
   useEffect(() => {
     dispatch(getMovie(activePage, rowsPerPage, search));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, activePage, rowsPerPage, debounceValue]);
 
   useEffect(() => {

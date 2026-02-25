@@ -65,7 +65,7 @@ const Region = (props) => {
     dispatch({ type: OPEN_REGION_DIALOG, payload: data });
   };
   // delete sweetAlert
-  const openDeleteDialog = (regionId) => {
+  const openDeleteDialog = (regionId) => { // eslint-disable-line no-unused-vars
     const data = warning();
     data
       .then((result) => {
