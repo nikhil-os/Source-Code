@@ -3,7 +3,7 @@ import uploadFileTypes, { MANUAL_CREATE_SERIES } from './tvSeries.type';
 import {
   GET_TV_SERIES,
   INSERT_TV_SERIES,
-  CLOSE_DIALOG,
+  // CLOSE_DIALOG,
   UPDATE_TV_SERIES,
   DELETE_TV_SERIES,
   OPEN_TV_SERIES_TOAST,
@@ -16,9 +16,9 @@ import {
 
 //axios
 import axios from 'axios';
-import { Alert } from 'antd';
+// import { Alert } from 'antd';
 import { Toast } from '../../util/Toast_';
-import { baseURL, secretKey } from '../../util/config';
+import { baseURL } from '../../util/config';
 import { CLOSE_LOADER } from '../Loader/loader.type';
 import { api } from '../..';
 
@@ -263,7 +263,7 @@ export const failureUploadFile = (id) => ({
 
 export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
   if (files.length) {
-    files.map((file) => {
+    files.forEach((file) => {
       const formPayload = new FormData();
       for (var i = 0; i < data.genres?.length; i++) {
         formPayload.append('genre', data.genres[i]);
@@ -302,7 +302,7 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
                 },
               });
             } else {
-              return res.data.message, 'error';
+              return 'error';
             }
           })
 
@@ -330,7 +330,7 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
             payload: { data: 'Insert TV Series Successful ✔', for: 'insert' },
           });
         } else {
-          return res.data.message, 'error';
+          return 'error';
         }
       })
       .catch((error) => {

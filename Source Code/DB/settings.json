@@ -1,62 +1,64 @@
-[{
-  "_id": {
-    "$oid": "68d128b9517e670141128a12"
-  },
-  "googlePlayEmail": "GOOGLE PLAY EMAIL",
-  "stripePublishableKey": "YOUR_STRIPE_PUBLISHABLE_KEY",
-  "stripeSecretKey": "YOUR_STRIPE_SECRET_KEY",
-  "razorPayId": "RAZOR PAY",
-  "razorSecretKey": "rzp_test_SjZz9HC7RGCfCb",
-  "privacyPolicyLink": "https://www.privacypolicygenerator.info/live.php?token=fUK3EMiKu779Qit2y9aaeTVAjx7u5Fop",
-  "privacyPolicyText": "PRIVACY POLICY TEXT",
-  "googlePlaySwitch": true,
-  "stripeSwitch": false,
-  "razorPaySwitch": true,
-  "isAppActive": true,
-  "paymentGateway": [],
-  "currency": "$",
-  "createdAt": {
-    "$date": "2022-12-02T10:36:30.324Z"
-  },
-  "updatedAt": {
-    "$date": "2025-08-23T09:48:55.855Z"
-  },
-  "__v": 0,
-  "googlePlayKey": "GOOGLE PLAY KEY",
-  "isIptvAPI": true,
-  "privateKey": {
-    "type": "service_account",
-    "project_id": "YOUR_PROJECT_ID",
-    "private_key_id": "YOUR_PRIVATE_KEY_ID",
-    "private_key": "YOUR_PRIVATE_KEY",
-    "client_email": "YOUR_CLIENT_EMAIL",
-    "client_id": "YOUR_CLIENT_ID",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "YOUR_CLIENT_X509_CERT_URL",
-    "universe_domain": "googleapis.com"
-  },
-  "flutterWaveId": "FLWPUBK_TEST-cdc51a4df113a91fe33a914eaf8d1c75-X",
-  "flutterWaveSwitch": true,
-  "durationOfShorts": 2000,
-  "resendApiKey": "resendApiKey",
-  "storage": {
-    "local": true,
-    "awsS3": false,
-    "digitalOcean": false
-  },
-  "awsAccessKey": "AWS ACCESS",
-  "awsBucketName": "AWS BUCKET",
-  "awsEndpoint": "AWS ENDPOIT",
-  "awsHostname": "AWS HOST",
-  "awsRegion": "AWS REGION",
-  "awsSecretKey": "AWS SECRET KEY",
-  "doAccessKey": "doAccessKey",
-  "doBucketName": "codderlab",
-  "doEndpoint": "doEndpoint",
-  "doHostname": "doHostname",
-  "doRegion": "doRegion",
-  "doSecretKey": "doSecretKey",
-  "termConditionLink": "https://www.privacypolicygenerator.info/live.php?token=fUK3EMiKu779Qit2y9aaeTVAjx7u5Fop"
-}]
+[
+  {
+    "_id": {
+      "$oid": "68d128b9517e670141128a12"
+    },
+    "googlePlayEmail": "GOOGLE PLAY EMAIL",
+    "stripePublishableKey": "YOUR_STRIPE_PUBLISHABLE_KEY",
+    "stripeSecretKey": "YOUR_STRIPE_SECRET_KEY",
+    "razorPayId": "RAZOR PAY",
+    "razorSecretKey": "rzp_test_SjZz9HC7RGCfCb",
+    "privacyPolicyLink": "https://www.privacypolicygenerator.info/live.php?token=fUK3EMiKu779Qit2y9aaeTVAjx7u5Fop",
+    "privacyPolicyText": "PRIVACY POLICY TEXT",
+    "googlePlaySwitch": true,
+    "stripeSwitch": false,
+    "razorPaySwitch": true,
+    "isAppActive": true,
+    "paymentGateway": [],
+    "currency": "$",
+    "createdAt": {
+      "$date": "2022-12-02T10:36:30.324Z"
+    },
+    "updatedAt": {
+      "$date": "2025-08-23T09:48:55.855Z"
+    },
+    "__v": 0,
+    "googlePlayKey": "GOOGLE PLAY KEY",
+    "isIptvAPI": true,
+    "privateKey": {
+      "type": "service_account",
+      "project_id": "YOUR_PROJECT_ID",
+      "private_key_id": "YOUR_PRIVATE_KEY_ID",
+      "private_key": "YOUR_PRIVATE_KEY",
+      "client_email": "YOUR_CLIENT_EMAIL",
+      "client_id": "YOUR_CLIENT_ID",
+      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+      "token_uri": "https://oauth2.googleapis.com/token",
+      "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+      "client_x509_cert_url": "YOUR_CLIENT_X509_CERT_URL",
+      "universe_domain": "googleapis.com"
+    },
+    "flutterWaveId": "FLWPUBK_TEST-cdc51a4df113a91fe33a914eaf8d1c75-X",
+    "flutterWaveSwitch": true,
+    "durationOfShorts": 2000,
+    "resendApiKey": "resendApiKey",
+    "storage": {
+      "local": true,
+      "awsS3": false,
+      "digitalOcean": false
+    },
+    "awsAccessKey": "AWS ACCESS",
+    "awsBucketName": "AWS BUCKET",
+    "awsEndpoint": "AWS ENDPOIT",
+    "awsHostname": "AWS HOST",
+    "awsRegion": "AWS REGION",
+    "awsSecretKey": "AWS SECRET KEY",
+    "doAccessKey": "doAccessKey",
+    "doBucketName": "codderlab",
+    "doEndpoint": "doEndpoint",
+    "doHostname": "doHostname",
+    "doRegion": "doRegion",
+    "doSecretKey": "doSecretKey",
+    "termConditionLink": "https://www.privacypolicygenerator.info/live.php?token=fUK3EMiKu779Qit2y9aaeTVAjx7u5Fop"
+  }
+]

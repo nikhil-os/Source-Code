@@ -1,7 +1,7 @@
-import AWS from "aws-sdk";
-import {
-  folderStructurePath,
-} from "./config";
+// import AWS from "aws-sdk";
+// import {
+//   folderStructurePath,
+// } from "./config";
 import axios from "axios";
 
 export const uploadFile = async (FileName, folderStructure) => {
