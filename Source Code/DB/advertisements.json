@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "63c8f1bd454e8b3c67f1aeaa"
+  },
+  "native": "ca-app-pub-3940256099942544/2247696110",
+  "interstitial": "ca-app-pub-3940256099942544/1033173719",
+  "reward": null,
+  "banner": "ca-app-pub-3940256099942544/6300978111",
+  "nativeIos": "ca-app-pub-3940256099942544/2247696110",
+  "rewardIos": null,
+  "bannerIos": "ca-app-pub-3940256099942544/6300978111",
+  "interstitialIos": "ca-app-pub-3940256099942544/4411468910",
+  "isGoogleAdd": true,
+  "createdAt": {
+    "$date": "2023-01-19T07:31:09.532Z"
+  },
+  "updatedAt": {
+    "$date": "2023-08-10T09:56:06.879Z"
+  }
+}]

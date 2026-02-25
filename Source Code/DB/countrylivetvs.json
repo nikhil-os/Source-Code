@@ -1,0 +1,3500 @@
+[{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac488d"
+  },
+  "countryName": "aruba",
+  "countryCode": "AW",
+  "flag": "🇦🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4882"
+  },
+  "countryName": "afghanistan",
+  "countryCode": "AF",
+  "flag": "🇦🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac488f"
+  },
+  "countryName": "austria",
+  "countryCode": "AT",
+  "flag": "🇦🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4891"
+  },
+  "countryName": "bahamas",
+  "countryCode": "BS",
+  "flag": "🇧🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4894"
+  },
+  "countryName": "barbados",
+  "countryCode": "BB",
+  "flag": "🇧🇧",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4896"
+  },
+  "countryName": "belgium",
+  "countryCode": "BE",
+  "flag": "🇧🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4897"
+  },
+  "countryName": "belize",
+  "countryCode": "BZ",
+  "flag": "🇧🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a1"
+  },
+  "countryName": "british indian ocean territory",
+  "countryCode": "IO",
+  "flag": "🇮🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4889"
+  },
+  "countryName": "antarctica",
+  "countryCode": "AQ",
+  "flag": "🇦🇶",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a6"
+  },
+  "countryName": "burundi",
+  "countryCode": "BI",
+  "flag": "🇧🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ab"
+  },
+  "countryName": "cayman islands",
+  "countryCode": "KY",
+  "flag": "🇰🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b1"
+  },
+  "countryName": "cocos (keeling) islands",
+  "countryCode": "CC",
+  "flag": "🇨🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b5"
+  },
+  "countryName": "costa rica",
+  "countryCode": "CR",
+  "flag": "🇨🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b8"
+  },
+  "countryName": "curacao",
+  "countryCode": "CW",
+  "flag": "🇨🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48bc"
+  },
+  "countryName": "denmark",
+  "countryCode": "DK",
+  "flag": "🇩🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48bd"
+  },
+  "countryName": "djibouti",
+  "countryCode": "DJ",
+  "flag": "🇩🇯",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48be"
+  },
+  "countryName": "dominica",
+  "countryCode": "DM",
+  "flag": "🇩🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c7"
+  },
+  "countryName": "ethiopia",
+  "countryCode": "ET",
+  "flag": "🇪🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ce"
+  },
+  "countryName": "french polynesia",
+  "countryCode": "PF",
+  "flag": "🇵🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d1"
+  },
+  "countryName": "gambia",
+  "countryCode": "GM",
+  "flag": "🇬🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d8"
+  },
+  "countryName": "grenada",
+  "countryCode": "GD",
+  "flag": "🇬🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e0"
+  },
+  "countryName": "haiti",
+  "countryCode": "HT",
+  "flag": "🇭🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e6"
+  },
+  "countryName": "india",
+  "countryCode": "IN",
+  "flag": "🇮🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48eb"
+  },
+  "countryName": "isle of man",
+  "countryCode": "IM",
+  "flag": "🇮🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ed"
+  },
+  "countryName": "italy",
+  "countryCode": "IT",
+  "flag": "🇮🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ef"
+  },
+  "countryName": "jamaica",
+  "countryCode": "JM",
+  "flag": "🇯🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f2"
+  },
+  "countryName": "jordan",
+  "countryCode": "JO",
+  "flag": "🇯🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f7"
+  },
+  "countryName": "kuwait",
+  "countryCode": "KW",
+  "flag": "🇰🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48fa"
+  },
+  "countryName": "latvia",
+  "countryCode": "LV",
+  "flag": "🇱🇻",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48fd"
+  },
+  "countryName": "liberia",
+  "countryCode": "LR",
+  "flag": "🇱🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48fe"
+  },
+  "countryName": "libya",
+  "countryCode": "LY",
+  "flag": "🇱🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4908"
+  },
+  "countryName": "malta",
+  "countryCode": "MT",
+  "flag": "🇲🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4909"
+  },
+  "countryName": "marshall islands",
+  "countryCode": "MH",
+  "flag": "🇲🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4914"
+  },
+  "countryName": "montserrat",
+  "countryCode": "MS",
+  "flag": "🇲🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac491a"
+  },
+  "countryName": "nepal",
+  "countryCode": "NP",
+  "flag": "🇳🇵",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac491d"
+  },
+  "countryName": "new zealand",
+  "countryCode": "NZ",
+  "flag": "🇳🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4922"
+  },
+  "countryName": "norfolk island",
+  "countryCode": "NF",
+  "flag": "🇳🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4926"
+  },
+  "countryName": "norway",
+  "countryCode": "NO",
+  "flag": "🇳🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4927"
+  },
+  "countryName": "oman",
+  "countryCode": "OM",
+  "flag": "🇴🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4931"
+  },
+  "countryName": "poland",
+  "countryCode": "PL",
+  "flag": "🇵🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac488b"
+  },
+  "countryName": "argentina",
+  "countryCode": "AR",
+  "flag": "🇦🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4936"
+  },
+  "countryName": "romania",
+  "countryCode": "RO",
+  "flag": "🇷🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac493a"
+  },
+  "countryName": "saint barthélemy",
+  "countryCode": "BL",
+  "flag": "🇧🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac488e"
+  },
+  "countryName": "australia",
+  "countryCode": "AU",
+  "flag": "🇦🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac493d"
+  },
+  "countryName": "saint lucia",
+  "countryCode": "LC",
+  "flag": "🇱🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4890"
+  },
+  "countryName": "azerbaijan",
+  "countryCode": "AZ",
+  "flag": "🇦🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4893"
+  },
+  "countryName": "bangladesh",
+  "countryCode": "BD",
+  "flag": "🇧🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4905"
+  },
+  "countryName": "malaysia",
+  "countryCode": "MY",
+  "flag": "🇲🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4895"
+  },
+  "countryName": "belarus",
+  "countryCode": "BY",
+  "flag": "🇧🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4948"
+  },
+  "countryName": "singapore",
+  "countryCode": "SG",
+  "flag": "🇸🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4898"
+  },
+  "countryName": "benin",
+  "countryCode": "BJ",
+  "flag": "🇧🇯",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4899"
+  },
+  "countryName": "bermuda",
+  "countryCode": "BM",
+  "flag": "🇧🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac494d"
+  },
+  "countryName": "somalia",
+  "countryCode": "SO",
+  "flag": "🇸🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac489e"
+  },
+  "countryName": "botswana",
+  "countryCode": "BW",
+  "flag": "🇧🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4953"
+  },
+  "countryName": "sri lanka",
+  "countryCode": "LK",
+  "flag": "🇱🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a3"
+  },
+  "countryName": "brunei",
+  "countryCode": "BN",
+  "flag": "🇧🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a9"
+  },
+  "countryName": "canada",
+  "countryCode": "CA",
+  "flag": "🇨🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4959"
+  },
+  "countryName": "switzerland",
+  "countryCode": "CH",
+  "flag": "🇨🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac495e"
+  },
+  "countryName": "tanzania",
+  "countryCode": "TZ",
+  "flag": "🇹🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b3"
+  },
+  "countryName": "comoros",
+  "countryCode": "KM",
+  "flag": "🇰🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b4"
+  },
+  "countryName": "cook islands",
+  "countryCode": "CK",
+  "flag": "🇨🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4960"
+  },
+  "countryName": "togo",
+  "countryCode": "TG",
+  "flag": "🇹🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48bb"
+  },
+  "countryName": "democratic republic of the congo",
+  "countryCode": "CD",
+  "flag": "🇨🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4966"
+  },
+  "countryName": "turkmenistan",
+  "countryCode": "TM",
+  "flag": "🇹🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48bf"
+  },
+  "countryName": "dominican republic",
+  "countryCode": "DO",
+  "flag": "🇩🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c2"
+  },
+  "countryName": "egypt",
+  "countryCode": "EG",
+  "flag": "🇪🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4968"
+  },
+  "countryName": "tuvalu",
+  "countryCode": "TV",
+  "flag": "🇹🇻",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c4"
+  },
+  "countryName": "equatorial guinea",
+  "countryCode": "GQ",
+  "flag": "🇬🇶",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac496a"
+  },
+  "countryName": "u.s. virgin islands",
+  "countryCode": "VI",
+  "flag": "🇻🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a2"
+  },
+  "countryName": "british virgin islands",
+  "countryCode": "VG",
+  "flag": "🇻🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac496c"
+  },
+  "countryName": "ukraine",
+  "countryCode": "UA",
+  "flag": "🇺🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d2"
+  },
+  "countryName": "georgia",
+  "countryCode": "GE",
+  "flag": "🇬🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4975"
+  },
+  "countryName": "vietnam",
+  "countryCode": "VN",
+  "flag": "🇻🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48da"
+  },
+  "countryName": "guam",
+  "countryCode": "GU",
+  "flag": "🇬🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4940"
+  },
+  "countryName": "saint vincent and the grenadines",
+  "countryCode": "VC",
+  "flag": "🇻🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48dc"
+  },
+  "countryName": "guernsey",
+  "countryCode": "GG",
+  "flag": "🇬🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4945"
+  },
+  "countryName": "serbia",
+  "countryCode": "RS",
+  "flag": "🇷🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48df"
+  },
+  "countryName": "guyana",
+  "countryCode": "GY",
+  "flag": "🇬🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e1"
+  },
+  "countryName": "heard island and mcdonald islands",
+  "countryCode": "HM",
+  "flag": "🇭🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e2"
+  },
+  "countryName": "honduras",
+  "countryCode": "HN",
+  "flag": "🇭🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e5"
+  },
+  "countryName": "iceland",
+  "countryCode": "IS",
+  "flag": "🇮🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ea"
+  },
+  "countryName": "ireland",
+  "countryCode": "IE",
+  "flag": "🇮🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f0"
+  },
+  "countryName": "japan",
+  "countryCode": "JP",
+  "flag": "🇯🇵",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f4"
+  },
+  "countryName": "kenya",
+  "countryCode": "KE",
+  "flag": "🇰🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f5"
+  },
+  "countryName": "kiribati",
+  "countryCode": "KI",
+  "flag": "🇰🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f6"
+  },
+  "countryName": "kosovo",
+  "countryCode": "XK",
+  "flag": "🇽🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4900"
+  },
+  "countryName": "lithuania",
+  "countryCode": "LT",
+  "flag": "🇱🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4902"
+  },
+  "countryName": "macao",
+  "countryCode": "MO",
+  "flag": "🇲🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4904"
+  },
+  "countryName": "malawi",
+  "countryCode": "MW",
+  "flag": "🇲🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4906"
+  },
+  "countryName": "maldives",
+  "countryCode": "MV",
+  "flag": "🇲🇻",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac490b"
+  },
+  "countryName": "mauritania",
+  "countryCode": "MR",
+  "flag": "🇲🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac490a"
+  },
+  "countryName": "martinique",
+  "countryCode": "MQ",
+  "flag": "🇲🇶",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac490e"
+  },
+  "countryName": "mexico",
+  "countryCode": "MX",
+  "flag": "🇲🇽",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4911"
+  },
+  "countryName": "monaco",
+  "countryCode": "MC",
+  "flag": "🇲🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4916"
+  },
+  "countryName": "mozambique",
+  "countryCode": "MZ",
+  "flag": "🇲🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4918"
+  },
+  "countryName": "namibia",
+  "countryCode": "NA",
+  "flag": "🇳🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac491b"
+  },
+  "countryName": "netherlands",
+  "countryCode": "NL",
+  "flag": "🇳🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4921"
+  },
+  "countryName": "niue",
+  "countryCode": "NU",
+  "flag": "🇳🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac492a"
+  },
+  "countryName": "palestine",
+  "countryCode": "PS",
+  "flag": "🇵🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac492c"
+  },
+  "countryName": "papua new guinea",
+  "countryCode": "PG",
+  "flag": "🇵🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac492d"
+  },
+  "countryName": "paraguay",
+  "countryCode": "PY",
+  "flag": "🇵🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac492e"
+  },
+  "countryName": "peru",
+  "countryCode": "PE",
+  "flag": "🇵🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4932"
+  },
+  "countryName": "portugal",
+  "countryCode": "PT",
+  "flag": "🇵🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4935"
+  },
+  "countryName": "republic of the congo",
+  "countryCode": "CG",
+  "flag": "🇨🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4939"
+  },
+  "countryName": "réunion",
+  "countryCode": "RE",
+  "flag": "🇷🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac493e"
+  },
+  "countryName": "saint martin",
+  "countryCode": "MF",
+  "flag": "🇲🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac494e"
+  },
+  "countryName": "south africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac494f"
+  },
+  "countryName": "south georgia and the south sandwich islands",
+  "countryCode": "GS",
+  "flag": "🇬🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4955"
+  },
+  "countryName": "suriname",
+  "countryCode": "SR",
+  "flag": "🇸🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4957"
+  },
+  "countryName": "swaziland",
+  "countryCode": "SZ",
+  "flag": "🇸🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac495a"
+  },
+  "countryName": "syria",
+  "countryCode": "SY",
+  "flag": "🇸🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac495c"
+  },
+  "countryName": "taiwan",
+  "countryCode": "TW",
+  "flag": "🇹🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4965"
+  },
+  "countryName": "turkey",
+  "countryCode": "TR",
+  "flag": "🇹🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4969"
+  },
+  "countryName": "u.s. minor outlying islands",
+  "countryCode": "UM",
+  "flag": "🇺🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac496b"
+  },
+  "countryName": "uganda",
+  "countryCode": "UG",
+  "flag": "🇺🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4976"
+  },
+  "countryName": "wallis and futuna",
+  "countryCode": "WF",
+  "flag": "🇼🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4884"
+  },
+  "countryName": "algeria",
+  "countryCode": "DZ",
+  "flag": "🇩🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac488c"
+  },
+  "countryName": "armenia",
+  "countryCode": "AM",
+  "flag": "🇦🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4892"
+  },
+  "countryName": "bahrain",
+  "countryCode": "BH",
+  "flag": "🇧🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.393Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac489a"
+  },
+  "countryName": "bhutan",
+  "countryCode": "BT",
+  "flag": "🇧🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac489b"
+  },
+  "countryName": "bolivia",
+  "countryCode": "BO",
+  "flag": "🇧🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac489c"
+  },
+  "countryName": "bonaire",
+  "countryCode": "BQ",
+  "flag": "🇧🇶",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac489f"
+  },
+  "countryName": "bouvet island",
+  "countryCode": "BV",
+  "flag": "🇧🇻",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a4"
+  },
+  "countryName": "bulgaria",
+  "countryCode": "BG",
+  "flag": "🇧🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4888"
+  },
+  "countryName": "anguilla",
+  "countryCode": "AI",
+  "flag": "🇦🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a8"
+  },
+  "countryName": "cameroon",
+  "countryCode": "CM",
+  "flag": "🇨🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ae"
+  },
+  "countryName": "chile",
+  "countryCode": "CL",
+  "flag": "🇨🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48af"
+  },
+  "countryName": "china",
+  "countryCode": "CN",
+  "flag": "🇨🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b2"
+  },
+  "countryName": "colombia",
+  "countryCode": "CO",
+  "flag": "🇨🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b7"
+  },
+  "countryName": "cuba",
+  "countryCode": "CU",
+  "flag": "🇨🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b9"
+  },
+  "countryName": "cyprus",
+  "countryCode": "CY",
+  "flag": "🇨🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ba"
+  },
+  "countryName": "czech republic",
+  "countryCode": "CZ",
+  "flag": "🇨🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c0"
+  },
+  "countryName": "east timor",
+  "countryCode": "TL",
+  "flag": "🇹🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c1"
+  },
+  "countryName": "ecuador",
+  "countryCode": "EC",
+  "flag": "🇪🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c3"
+  },
+  "countryName": "el salvador",
+  "countryCode": "SV",
+  "flag": "🇸🇻",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c5"
+  },
+  "countryName": "eritrea",
+  "countryCode": "ER",
+  "flag": "🇪🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c6"
+  },
+  "countryName": "estonia",
+  "countryCode": "EE",
+  "flag": "🇪🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c8"
+  },
+  "countryName": "falkland islands",
+  "countryCode": "FK",
+  "flag": "🇫🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ca"
+  },
+  "countryName": "fiji",
+  "countryCode": "FJ",
+  "flag": "🇫🇯",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48cc"
+  },
+  "countryName": "france",
+  "countryCode": "FR",
+  "flag": "🇫🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48cd"
+  },
+  "countryName": "french guiana",
+  "countryCode": "GF",
+  "flag": "🇬🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a5"
+  },
+  "countryName": "burkina faso",
+  "countryCode": "BF",
+  "flag": "🇧🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d0"
+  },
+  "countryName": "gabon",
+  "countryCode": "GA",
+  "flag": "🇬🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d3"
+  },
+  "countryName": "germany",
+  "countryCode": "DE",
+  "flag": "🇩🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d5"
+  },
+  "countryName": "gibraltar",
+  "countryCode": "GI",
+  "flag": "🇬🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d9"
+  },
+  "countryName": "guadeloupe",
+  "countryCode": "GP",
+  "flag": "🇬🇵",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48db"
+  },
+  "countryName": "guatemala",
+  "countryCode": "GT",
+  "flag": "🇬🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e3"
+  },
+  "countryName": "hong kong",
+  "countryCode": "HK",
+  "flag": "🇭🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e4"
+  },
+  "countryName": "hungary",
+  "countryCode": "HU",
+  "flag": "🇭🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e7"
+  },
+  "countryName": "indonesia",
+  "countryCode": "ID",
+  "flag": "🇮🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f1"
+  },
+  "countryName": "jersey",
+  "countryCode": "JE",
+  "flag": "🇯🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f3"
+  },
+  "countryName": "kazakhstan",
+  "countryCode": "KZ",
+  "flag": "🇰🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f8"
+  },
+  "countryName": "kyrgyzstan",
+  "countryCode": "KG",
+  "flag": "🇰🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48f9"
+  },
+  "countryName": "laos",
+  "countryCode": "LA",
+  "flag": "🇱🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48fb"
+  },
+  "countryName": "lebanon",
+  "countryCode": "LB",
+  "flag": "🇱🇧",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48cb"
+  },
+  "countryName": "finland",
+  "countryCode": "FI",
+  "flag": "🇫🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4901"
+  },
+  "countryName": "luxembourg",
+  "countryCode": "LU",
+  "flag": "🇱🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4903"
+  },
+  "countryName": "madagascar",
+  "countryCode": "MG",
+  "flag": "🇲🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48cf"
+  },
+  "countryName": "french southern territories",
+  "countryCode": "TF",
+  "flag": "🇹🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac490d"
+  },
+  "countryName": "mayotte",
+  "countryCode": "YT",
+  "flag": "🇾🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac490f"
+  },
+  "countryName": "micronesia",
+  "countryCode": "FM",
+  "flag": "🇫🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4919"
+  },
+  "countryName": "nauru",
+  "countryCode": "NR",
+  "flag": "🇳🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac491e"
+  },
+  "countryName": "nicaragua",
+  "countryCode": "NI",
+  "flag": "🇳🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac491f"
+  },
+  "countryName": "niger",
+  "countryCode": "NE",
+  "flag": "🇳🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4920"
+  },
+  "countryName": "nigeria",
+  "countryCode": "NG",
+  "flag": "🇳🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4924"
+  },
+  "countryName": "north macedonia",
+  "countryCode": "MK",
+  "flag": "🇲🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4925"
+  },
+  "countryName": "northern mariana islands",
+  "countryCode": "MP",
+  "flag": "🇲🇵",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4928"
+  },
+  "countryName": "pakistan",
+  "countryCode": "PK",
+  "flag": "🇵🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac492b"
+  },
+  "countryName": "panama",
+  "countryCode": "PA",
+  "flag": "🇵🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4930"
+  },
+  "countryName": "pitcairn islands",
+  "countryCode": "PN",
+  "flag": "🇵🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4934"
+  },
+  "countryName": "qatar",
+  "countryCode": "QA",
+  "flag": "🇶🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4938"
+  },
+  "countryName": "rwanda",
+  "countryCode": "RW",
+  "flag": "🇷🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4942"
+  },
+  "countryName": "san marino",
+  "countryCode": "SM",
+  "flag": "🇸🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4941"
+  },
+  "countryName": "samoa",
+  "countryCode": "WS",
+  "flag": "🇼🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4943"
+  },
+  "countryName": "saudi arabia",
+  "countryCode": "SA",
+  "flag": "🇸🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4947"
+  },
+  "countryName": "sierra leone",
+  "countryCode": "SL",
+  "flag": "🇸🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac494a"
+  },
+  "countryName": "slovakia",
+  "countryCode": "SK",
+  "flag": "🇸🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4951"
+  },
+  "countryName": "south sudan",
+  "countryCode": "SS",
+  "flag": "🇸🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4952"
+  },
+  "countryName": "spain",
+  "countryCode": "ES",
+  "flag": "🇪🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac495d"
+  },
+  "countryName": "tajikistan",
+  "countryCode": "TJ",
+  "flag": "🇹🇯",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4964"
+  },
+  "countryName": "tunisia",
+  "countryCode": "TN",
+  "flag": "🇹🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4885"
+  },
+  "countryName": "american samoa",
+  "countryCode": "AS",
+  "flag": "🇦🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4887"
+  },
+  "countryName": "angola",
+  "countryCode": "AO",
+  "flag": "🇦🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4886"
+  },
+  "countryName": "andorra",
+  "countryCode": "AD",
+  "flag": "🇦🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4883"
+  },
+  "countryName": "albania",
+  "countryCode": "AL",
+  "flag": "🇦🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac488a"
+  },
+  "countryName": "antigua and barbuda",
+  "countryCode": "AG",
+  "flag": "🇦🇬",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.392Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac489d"
+  },
+  "countryName": "bosnia and herzegovina",
+  "countryCode": "BA",
+  "flag": "🇧🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a0"
+  },
+  "countryName": "brazil",
+  "countryCode": "BR",
+  "flag": "🇧🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48a7"
+  },
+  "countryName": "cambodia",
+  "countryCode": "KH",
+  "flag": "🇰🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48aa"
+  },
+  "countryName": "cape verde",
+  "countryCode": "CV",
+  "flag": "🇨🇻",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ac"
+  },
+  "countryName": "central african republic",
+  "countryCode": "CF",
+  "flag": "🇨🇫",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ad"
+  },
+  "countryName": "chad",
+  "countryCode": "TD",
+  "flag": "🇹🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b0"
+  },
+  "countryName": "christmas island",
+  "countryCode": "CX",
+  "flag": "🇨🇽",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48b6"
+  },
+  "countryName": "croatia",
+  "countryCode": "HR",
+  "flag": "🇭🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48c9"
+  },
+  "countryName": "faroe islands",
+  "countryCode": "FO",
+  "flag": "🇫🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.395Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d4"
+  },
+  "countryName": "ghana",
+  "countryCode": "GH",
+  "flag": "🇬🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d6"
+  },
+  "countryName": "greece",
+  "countryCode": "GR",
+  "flag": "🇬🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48d7"
+  },
+  "countryName": "greenland",
+  "countryCode": "GL",
+  "flag": "🇬🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48dd"
+  },
+  "countryName": "guinea",
+  "countryCode": "GN",
+  "flag": "🇬🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48de"
+  },
+  "countryName": "guinea-bissau",
+  "countryCode": "GW",
+  "flag": "🇬🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.396Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e8"
+  },
+  "countryName": "iran",
+  "countryCode": "IR",
+  "flag": "🇮🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48e9"
+  },
+  "countryName": "iraq",
+  "countryCode": "IQ",
+  "flag": "🇮🇶",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ec"
+  },
+  "countryName": "israel",
+  "countryCode": "IL",
+  "flag": "🇮🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ee"
+  },
+  "countryName": "ivory coast",
+  "countryCode": "CI",
+  "flag": "🇨🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.397Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48fc"
+  },
+  "countryName": "lesotho",
+  "countryCode": "LS",
+  "flag": "🇱🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4907"
+  },
+  "countryName": "mali",
+  "countryCode": "ML",
+  "flag": "🇲🇱",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac490c"
+  },
+  "countryName": "mauritius",
+  "countryCode": "MU",
+  "flag": "🇲🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4910"
+  },
+  "countryName": "moldova",
+  "countryCode": "MD",
+  "flag": "🇲🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4912"
+  },
+  "countryName": "mongolia",
+  "countryCode": "MN",
+  "flag": "🇲🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4913"
+  },
+  "countryName": "montenegro",
+  "countryCode": "ME",
+  "flag": "🇲🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4915"
+  },
+  "countryName": "morocco",
+  "countryCode": "MA",
+  "flag": "🇲🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4917"
+  },
+  "countryName": "myanmar (burma)",
+  "countryCode": "MM",
+  "flag": "🇲🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.399Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac491c"
+  },
+  "countryName": "new caledonia",
+  "countryCode": "NC",
+  "flag": "🇳🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4923"
+  },
+  "countryName": "north korea",
+  "countryCode": "KP",
+  "flag": "🇰🇵",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4929"
+  },
+  "countryName": "palau",
+  "countryCode": "PW",
+  "flag": "🇵🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.400Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac492f"
+  },
+  "countryName": "philippines",
+  "countryCode": "PH",
+  "flag": "🇵🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4933"
+  },
+  "countryName": "puerto rico",
+  "countryCode": "PR",
+  "flag": "🇵🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4937"
+  },
+  "countryName": "russia",
+  "countryCode": "RU",
+  "flag": "🇷🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac493b"
+  },
+  "countryName": "saint helena",
+  "countryCode": "SH",
+  "flag": "🇸🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac493c"
+  },
+  "countryName": "saint kitts and nevis",
+  "countryCode": "KN",
+  "flag": "🇰🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.401Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac493f"
+  },
+  "countryName": "saint pierre and miquelon",
+  "countryCode": "PM",
+  "flag": "🇵🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac48ff"
+  },
+  "countryName": "liechtenstein",
+  "countryCode": "LI",
+  "flag": "🇱🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.398Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4944"
+  },
+  "countryName": "senegal",
+  "countryCode": "SN",
+  "flag": "🇸🇳",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4946"
+  },
+  "countryName": "seychelles",
+  "countryCode": "SC",
+  "flag": "🇸🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4949"
+  },
+  "countryName": "sint maarten",
+  "countryCode": "SX",
+  "flag": "🇸🇽",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac494b"
+  },
+  "countryName": "slovenia",
+  "countryCode": "SI",
+  "flag": "🇸🇮",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac494c"
+  },
+  "countryName": "solomon islands",
+  "countryCode": "SB",
+  "flag": "🇸🇧",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4950"
+  },
+  "countryName": "south korea",
+  "countryCode": "KR",
+  "flag": "🇰🇷",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4954"
+  },
+  "countryName": "sudan",
+  "countryCode": "SD",
+  "flag": "🇸🇩",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4956"
+  },
+  "countryName": "svalbard and jan mayen",
+  "countryCode": "SJ",
+  "flag": "🇸🇯",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4958"
+  },
+  "countryName": "sweden",
+  "countryCode": "SE",
+  "flag": "🇸🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac495b"
+  },
+  "countryName": "são tomé and príncipe",
+  "countryCode": "ST",
+  "flag": "🇸🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac495f"
+  },
+  "countryName": "thailand",
+  "countryCode": "TH",
+  "flag": "🇹🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4961"
+  },
+  "countryName": "tokelau",
+  "countryCode": "TK",
+  "flag": "🇹🇰",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4962"
+  },
+  "countryName": "tonga",
+  "countryCode": "TO",
+  "flag": "🇹🇴",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4963"
+  },
+  "countryName": "trinidad and tobago",
+  "countryCode": "TT",
+  "flag": "🇹🇹",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4967"
+  },
+  "countryName": "turks and caicos islands",
+  "countryCode": "TC",
+  "flag": "🇹🇨",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac496f"
+  },
+  "countryName": "united states",
+  "countryCode": "US",
+  "flag": "🇺🇸",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4970"
+  },
+  "countryName": "uruguay",
+  "countryCode": "UY",
+  "flag": "🇺🇾",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4974"
+  },
+  "countryName": "venezuela",
+  "countryCode": "VE",
+  "flag": "🇻🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac497b"
+  },
+  "countryName": "åland",
+  "countryCode": "AX",
+  "flag": "🇦🇽",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac496d"
+  },
+  "countryName": "united arab emirates",
+  "countryCode": "AE",
+  "flag": "🇦🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac496e"
+  },
+  "countryName": "united kingdom",
+  "countryCode": "UK",
+  "flag": "🇬🇧",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4971"
+  },
+  "countryName": "uzbekistan",
+  "countryCode": "UZ",
+  "flag": "🇺🇿",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4972"
+  },
+  "countryName": "vanuatu",
+  "countryCode": "VU",
+  "flag": "🇻🇺",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4973"
+  },
+  "countryName": "vatican city",
+  "countryCode": "VA",
+  "flag": "🇻🇦",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4977"
+  },
+  "countryName": "western sahara",
+  "countryCode": "EH",
+  "flag": "🇪🇭",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4978"
+  },
+  "countryName": "yemen",
+  "countryCode": "YE",
+  "flag": "🇾🇪",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac4979"
+  },
+  "countryName": "zambia",
+  "countryCode": "ZM",
+  "flag": "🇿🇲",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "63d39a5b2568179426ac497a"
+  },
+  "countryName": "zimbabwe",
+  "countryCode": "ZW",
+  "flag": "🇿🇼",
+  "createdAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  },
+  "updatedAt": {
+    "$date": "2023-01-27T09:33:15.404Z"
+  }
+}]

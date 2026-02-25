@@ -1,0 +1,31 @@
+# Environment files
+.env
+.env.*
+
+# Large files
+*.zip
+
+# Node modules
+node_modules/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+dist/
+
+# Uploads
+admin/admin/backend/uploads/*
+!admin/admin/backend/uploads/.gitkeep

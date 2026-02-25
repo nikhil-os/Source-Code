@@ -1,0 +1,24 @@
+//get Episode
+export const GET_EPISODE = "GET_EPISODE";
+export const GET_SHORTS = "GET_SHORTS";
+
+
+//Insert Episode
+export const INSERT_SHORT__VIDEO = "INSERT_SHORT__VIDEO";
+
+export const DELETE_EXISTING_EPISODE = "DELETE_EXISTING_EPISODE";
+
+
+//Update Episode
+export const UPDATE_EXISTING_EPISODE = "UPDATE_EXISTING_EPISODE";
+
+
+//Open and Close Dialog
+export const OPEN_SHORT_DIALOG = "OPEN_SHORT_DIALOG";
+export const CLOSE_SHORT_DIALOG = "CLOSE_SHORT_DIALOG";
+
+//toast
+export const OPEN_EPISODE_TOAST = "OPEN_EPISODE_TOAST";
+export const CLOSE_EPISODE_TOAST = "CLOSE_EPISODE_TOAST";
+
+export const UPLOAD_MULTIPLE_IMAGE = "UPLOAD_MULTIPLE_IMAGE";

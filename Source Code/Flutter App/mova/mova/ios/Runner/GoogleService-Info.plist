@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>735644918035-g8mccq1nqhpkn9g71de5uhh7m7f81lha.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.735644918035-g8mccq1nqhpkn9g71de5uhh7m7f81lha</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>735644918035-44adhf2tv2ggn1g2ugqju1ml3ai369kq.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBbFoL1l-nHjseNqVDXmigMSIIa1l7rEWg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>735644918035</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mova.live</string>
+	<key>PROJECT_ID</key>
+	<string>mova-6c2db</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mova-6c2db.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:735644918035:ios:fbab179b52c742e419bae6</string>
+</dict>
+</plist>

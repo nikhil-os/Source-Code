@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "589896898909",
+    "project_id": "ocean-movies",
+    "storage_bucket": "ocean-movies.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589896898909:android:9db852d5479330c7ec70b4",
+        "android_client_info": {
+          "package_name": "com.webtimemovieocean.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589896898909-jmr33ngmdorl6ue7fhjs4nrpgopcvg4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmH2CMKSMWlX-c7TN63MIUoZy6Rn5AyFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589896898909-jmr33ngmdorl6ue7fhjs4nrpgopcvg4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

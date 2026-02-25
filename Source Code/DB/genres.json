@@ -1,0 +1,325 @@
+[{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566771"
+  },
+  "name": "FAMILY",
+  "uniqueId": "10751",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566773"
+  },
+  "name": "HISTORY",
+  "uniqueId": "36",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566776"
+  },
+  "name": "MYSTERY",
+  "uniqueId": "9648",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56677b"
+  },
+  "name": "WAR",
+  "uniqueId": "10752",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb5667a4"
+  },
+  "name": "DRAMA",
+  "uniqueId": "18",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.338Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.338Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb5667a8"
+  },
+  "name": "ACTION & ADVENTURE",
+  "uniqueId": "10759",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.341Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.341Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56676b"
+  },
+  "name": "ADVENTURE",
+  "uniqueId": "12",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56676f"
+  },
+  "name": "DOCUMENTARY",
+  "uniqueId": "99",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.127Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.127Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566772"
+  },
+  "name": "FANTASY",
+  "uniqueId": "14",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566774"
+  },
+  "name": "HORROR",
+  "uniqueId": "27",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566777"
+  },
+  "name": "ROMANCE",
+  "uniqueId": "10749",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566778"
+  },
+  "name": "SCIENCE FICTION",
+  "uniqueId": "878",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56677a"
+  },
+  "name": "THRILLER",
+  "uniqueId": "53",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb5667a0"
+  },
+  "name": "FAMILY",
+  "uniqueId": "10751",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.334Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.334Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb5667a2"
+  },
+  "name": "DOCUMENTARY",
+  "uniqueId": "99",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.335Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.335Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb5667aa"
+  },
+  "name": "CRIME",
+  "uniqueId": "80",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.342Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.342Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56676a"
+  },
+  "name": "ACTION",
+  "uniqueId": "28",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56676d"
+  },
+  "name": "COMEDY",
+  "uniqueId": "35",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56676c"
+  },
+  "name": "ANIMATION",
+  "uniqueId": "16",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566775"
+  },
+  "name": "MUSIC",
+  "uniqueId": "10402",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.128Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb566779"
+  },
+  "name": "TV MOVIE",
+  "uniqueId": "10770",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56676e"
+  },
+  "name": "CRIME",
+  "uniqueId": "80",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.126Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb56677c"
+  },
+  "name": "WESTERN",
+  "uniqueId": "37",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.129Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "641c4c6e9620e83adb5667a6"
+  },
+  "name": "ANIMATION",
+  "uniqueId": "16",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.338Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.338Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "662deed224af92acf1be39f2"
+  },
+  "name": "KIDS",
+  "uniqueId": "10456",
+  "createdAt": {
+    "$date": "2023-03-23T12:56:14.338Z"
+  },
+  "updatedAt": {
+    "$date": "2023-03-23T12:56:14.338Z"
+  }
+}]
