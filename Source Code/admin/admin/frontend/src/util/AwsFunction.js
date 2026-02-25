@@ -15,7 +15,7 @@ export const uploadFile = async (FileName, folderStructure) => {
     const resDataUrl = response.data.url;
     const imageURL = response.data.signedUrl;
 
-    console.log('response: ', response);
+    console.log("response: ", response);
     return { resDataUrl, imageURL };
   } catch (error) {
     console.error(error);
@@ -26,19 +26,16 @@ export const uploadFile = async (FileName, folderStructure) => {
 export const covertURl = async (FileName) => {
   try {
     // const spaceEndpoint = new AWS.Endpoint(hostname);
-
     // const s3 = new AWS.S3({
     //   endpoint: spaceEndpoint,
     //   accessKeyId: aws_access_key_id,
     //   secretAccessKey: aws_secret_access_key,
     // });
-
     // const params = {
     //   Bucket: bucketName,
     //   Key: folderStructurePath + FileName,
     //   Expires: 60,
     // };
-
     // const imageURL = await new Promise((resolve, reject) => {
     //   s3.getSignedUrl("getObject", params, (err, url) => {
     //     if (err) {
@@ -46,11 +43,9 @@ export const covertURl = async (FileName) => {
     //       reject(err);
     //       return;
     //     }
-
     //     resolve(url);
     //   });
     // });
-
     // return { FileName, imageURL };
   } catch (error) {
     console.error("Error converting URL: ", error);

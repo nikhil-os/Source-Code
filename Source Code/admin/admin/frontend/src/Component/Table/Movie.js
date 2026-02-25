@@ -74,9 +74,7 @@ const Movie = (props) => {
   const [showRentalDialog, setShowRentalDialog] = useState(false);
   const [selectedMovieForRental, setSelectedMovieForRental] = useState(null);
 
-  const { movie, totalMovie } = useSelector(
-    (state) => state.movie,
-  );
+  const { movie, totalMovie } = useSelector((state) => state.movie);
 
   useEffect(() => {
     dispatch(getMovie(activePage, rowsPerPage, search));

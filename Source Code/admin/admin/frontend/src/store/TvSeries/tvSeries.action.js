@@ -1,4 +1,4 @@
-import uploadFileTypes, { MANUAL_CREATE_SERIES } from './tvSeries.type';
+import uploadFileTypes, { MANUAL_CREATE_SERIES } from "./tvSeries.type";
 //Type
 import {
   GET_TV_SERIES,
@@ -12,21 +12,21 @@ import {
   GET_COMMENT,
   DELETE_COMMENT,
   TV_SERIES_DETAILS_TMDB,
-} from './tvSeries.type';
+} from "./tvSeries.type";
 
 //axios
-import axios from 'axios';
+import axios from "axios";
 // import { Alert } from 'antd';
-import { Toast } from '../../util/Toast_';
-import { baseURL } from '../../util/config';
-import { CLOSE_LOADER } from '../Loader/loader.type';
-import { api } from '../..';
+import { Toast } from "../../util/Toast_";
+import { baseURL } from "../../util/config";
+import { CLOSE_LOADER } from "../Loader/loader.type";
+import { api } from "../..";
 
 //get movie
 export const getSeries = (start, limit, search) => (dispatch) => {
   api
     .get(
-      `${baseURL}movie/all?type=WEBSERIES&&start=${start}&&limit=${limit}&search=${search}`
+      `${baseURL}movie/all?type=WEBSERIES&&start=${start}&&limit=${limit}&search=${search}`,
     )
     .then((res) => {
       if (res.status) {
@@ -131,7 +131,7 @@ export const newRelease = (seriesId) => (dispatch) => {
         type: IS_NEW_RELEASE_SWITCH,
         payload: { data: res.data.movie, id: seriesId },
       });
-      Toast('success', 'New release update successfully..');
+      Toast("success", "New release update successfully..");
     })
     .catch((error) => {
       console.log(error);
@@ -161,7 +161,7 @@ export const getComment = (seriesId, type) => (dispatch) => {
         dispatch({ type: GET_COMMENT, payload: res.data.comment });
       }
     })
-    .catch((error) => console.log('error', error.message));
+    .catch((error) => console.log("error", error.message));
 };
 
 //delete comment
@@ -172,10 +172,10 @@ export const deleteComment = (commentId) => (dispatch) => {
       if (res.status) {
         dispatch({ type: DELETE_COMMENT, payload: commentId });
       } else {
-        console.log('error', res.message);
+        console.log("error", res.message);
       }
     })
-    .catch((error) => console.log('error', error.message));
+    .catch((error) => console.log("error", error.message));
 };
 
 export const setUploadTvFile = (data) => ({
@@ -266,16 +266,16 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
     files.forEach((file) => {
       const formPayload = new FormData();
       for (var i = 0; i < data.genres?.length; i++) {
-        formPayload.append('genre', data.genres[i]);
+        formPayload.append("genre", data.genres[i]);
       }
-      formPayload.append('title', data.title);
-      formPayload.append('description', data.description);
-      formPayload.append('year', data.year);
-      formPayload.append('image', data.image);
-      formPayload.append('type', data.type);
-      formPayload.append('thumbnail', data.thumbnail);
-      formPayload.append('runtime', data.runtime);
-      formPayload.append('region', data.country);
+      formPayload.append("title", data.title);
+      formPayload.append("description", data.description);
+      formPayload.append("year", data.year);
+      formPayload.append("image", data.image);
+      formPayload.append("type", data.type);
+      formPayload.append("thumbnail", data.thumbnail);
+      formPayload.append("runtime", data.runtime);
+      formPayload.append("region", data.country);
 
       if (!seriesId) {
         axios
@@ -288,7 +288,7 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
                 const percentageProgress = Math.floor((loaded / total) * 100);
                 dispatch(setUploadProgress(file.id, percentageProgress));
               },
-            }
+            },
           )
           .then((res) => {
             if (res.data.status) {
@@ -297,12 +297,12 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
               dispatch({
                 type: OPEN_TV_SERIES_TOAST,
                 payload: {
-                  data: 'Insert TV Series Successful ✔',
-                  for: 'insert',
+                  data: "Insert TV Series Successful ✔",
+                  for: "insert",
                 },
               });
             } else {
-              return 'error';
+              return "error";
             }
           })
 
@@ -319,7 +319,7 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
     axios
       .post(
         `movie/getStore?TmdbMovieId=${data.tmdbMovieId}&type=WEBSERIES`,
-        formData
+        formData,
       )
       .then((res) => {
         if (res.data.status) {
@@ -327,10 +327,10 @@ export const uploadTvFile = (files, data, seriesId, update) => (dispatch) => {
 
           dispatch({
             type: OPEN_TV_SERIES_TOAST,
-            payload: { data: 'Insert TV Series Successful ✔', for: 'insert' },
+            payload: { data: "Insert TV Series Successful ✔", for: "insert" },
           });
         } else {
-          return 'error';
+          return "error";
         }
       })
       .catch((error) => {
@@ -347,13 +347,13 @@ export const loadSeriesData = (tmdbId, tmdbTitle) => (dispatch) => {
   api
     .get(url)
     .then((res) => {
-      console.log('res', res);
+      console.log("res", res);
 
       if (res.data.status === true) {
         dispatch({ type: TV_SERIES_DETAILS_TMDB, payload: res.data.series });
-        Toast('success', 'Data Imported Successfully ✔');
+        Toast("success", "Data Imported Successfully ✔");
       } else {
-        Toast('error', 'No data found in database.');
+        Toast("error", "No data found in database.");
       }
     })
     .catch((error) => {
@@ -367,9 +367,9 @@ export const createManualSeries = (fromData) => (dispatch) => {
     .then((res) => {
       if (res.data.status) {
         dispatch({ type: MANUAL_CREATE_SERIES, payload: res.data.movie });
-        Toast('success', 'Insert TV Series Successful ✔');
+        Toast("success", "Insert TV Series Successful ✔");
       } else {
-        Toast('error', res.data.message);
+        Toast("error", res.data.message);
       }
     })
     .catch((error) => console.log(error));
@@ -384,10 +384,10 @@ export const updateTvSeries = (seriesId, data) => (dispatch) => {
         payload: { data: res.data.movie, id: seriesId },
       });
       setTimeout(() => {
-        Toast('success', 'Web Series Updated Succesfully');
+        Toast("success", "Web Series Updated Succesfully");
       }, 1000);
     })
-    .catch((error) => console.log('error', error));
+    .catch((error) => console.log("error", error));
 };
 
 export const ImdbSeriesCreate = (data) => (dispatch) => {
@@ -396,10 +396,10 @@ export const ImdbSeriesCreate = (data) => (dispatch) => {
     .then((res) => {
       if (res.data.status) {
         dispatch({ type: INSERT_TV_SERIES, payload: res.data.movie });
-        Toast('success', 'Web-Series Create  SuccessFully');
+        Toast("success", "Web-Series Create  SuccessFully");
       } else {
-        Toast('error', res.data.message);
+        Toast("error", res.data.message);
       }
     })
-    .catch((error) => console.log('error', error));
+    .catch((error) => console.log("error", error));
 };

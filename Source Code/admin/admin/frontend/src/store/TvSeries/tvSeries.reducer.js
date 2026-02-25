@@ -2,7 +2,7 @@ import uploadFileTypes, {
   DELETE_TV_SERIES,
   // GET_WEB_SERIES_DETAILS,
   MANUAL_CREATE_SERIES,
-} from './tvSeries.type';
+} from "./tvSeries.type";
 
 //Type
 import {
@@ -23,9 +23,9 @@ import {
   DELETE_COMMENT,
   TV_SERIES_DETAILS_TMDB,
   EMPTY_TMDB_SERIES_DIALOGUE,
-} from './tvSeries.type';
+} from "./tvSeries.type";
 
-import { modifyFiles } from '../../util/ModifyFiles';
+import { modifyFiles } from "../../util/ModifyFiles";
 
 //Define initialState
 const initialState = {
@@ -83,7 +83,7 @@ const tvSeriesReducer = (state = initialState, action) => {
         movie: state.movie
           .filter(Boolean) // Remove any undefined/null entries before mapping
           .map((movie) =>
-            movie._id === action.payload.id ? action.payload.data : movie
+            movie._id === action.payload.id ? action.payload.data : movie,
           ),
       };
 
@@ -99,7 +99,7 @@ const tvSeriesReducer = (state = initialState, action) => {
       return {
         ...state,
         movie: state?.movie?.map((movie) =>
-          movie._id === action.payload.id ? action.payload.data : movie
+          movie._id === action.payload.id ? action.payload.data : movie,
         ),
       };
 
@@ -146,7 +146,7 @@ const tvSeriesReducer = (state = initialState, action) => {
       return {
         ...state,
         comment: state.comment.filter(
-          (comment) => comment._id !== action.payload
+          (comment) => comment._id !== action.payload,
         ),
       };
     //Insert TV Series

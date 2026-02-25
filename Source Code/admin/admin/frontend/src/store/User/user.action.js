@@ -1,5 +1,5 @@
 //Axios
-import axios from 'axios';
+import axios from "axios";
 // import { baseURL, secretKey } from '../../util/config';
 
 //Types
@@ -8,11 +8,11 @@ import {
   USER_DETAILS,
   GET_HISTORY,
   BLOCK_UNBLOCK_SWITCH,
-} from './user.type';
+} from "./user.type";
 
 //Toast
-import { Toast } from '../../util/Toast_';
-import { api } from '../..';
+import { Toast } from "../../util/Toast_";
+import { api } from "../..";
 
 //Get User
 export const getUser = () => (dispatch) => {
@@ -52,7 +52,7 @@ export const userHistory = (data) => (dispatch) => {
       } else {
       }
     })
-    .catch((error) => console.log('error', error.message));
+    .catch((error) => console.log("error", error.message));
 };
 
 //Block switch
@@ -65,10 +65,10 @@ export const handleBlockUnblockSwitch = (userId) => (dispatch) => {
         payload: { data: res.data.user, id: userId },
       });
       Toast(
-        'success',
+        "success",
         `${res.data.user?.fullName} is ${
-          res.data.user?.isBlock === true ? 'Block' : 'Unblock'
-        }`
+          res.data.user?.isBlock === true ? "Block" : "Unblock"
+        }`,
       );
     })
     .catch((error) => {

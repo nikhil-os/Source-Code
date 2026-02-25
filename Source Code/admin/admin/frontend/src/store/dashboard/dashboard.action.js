@@ -21,14 +21,12 @@ export const getDashboard = () => (dispatch) => {
 
 //get user Revenue analytic
 export const getAnalytic = (type, start, end) => (dispatch) => {
-  
   api
     .get(
-      `dashboard/userAnalytic?type=${type}&startDate=${start}&endDate=${end}`
+      `dashboard/userAnalytic?type=${type}&startDate=${start}&endDate=${end}`,
     )
     .then((res) => {
       if (res.status) {
-       
         dispatch({ type: GET_ANALYTIC, payload: res.data.analytic });
       } else {
         dispatch({
@@ -45,11 +43,10 @@ export const getAnalytic = (type, start, end) => (dispatch) => {
 export const getMovieSeriesAnalytic = (chartType, start, end) => (dispatch) => {
   api
     .get(
-      `dashboard/movieAnalytic?type=${chartType}&startDate=${start}&endDate=${end}`
+      `dashboard/movieAnalytic?type=${chartType}&startDate=${start}&endDate=${end}`,
     )
     .then((res) => {
       if (res.status) {
-       
         dispatch({
           type: MOVIE_SERIES_ANACLITIC_DATA,
           payload: res.data.analytic,

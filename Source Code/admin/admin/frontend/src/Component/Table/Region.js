@@ -37,8 +37,6 @@ const Region = (props) => {
   const [data, setData] = useState([]);
   const [nameSort, setNameSort] = useState(true);
 
-
-
   const dispatch = useDispatch();
 
   //useEffect for Get Data
@@ -47,7 +45,7 @@ const Region = (props) => {
   }, [dispatch]);
 
   const { region, toast, toastData, actionFor } = useSelector(
-    (state) => state.region
+    (state) => state.region,
   );
 
   //Set Data after Getting
@@ -65,12 +63,12 @@ const Region = (props) => {
     dispatch({ type: OPEN_REGION_DIALOG, payload: data });
   };
   // delete sweetAlert
-  const openDeleteDialog = (regionId) => { // eslint-disable-line no-unused-vars
+  const openDeleteDialog = (regionId) => {
+    // eslint-disable-line no-unused-vars
     const data = warning();
     data
       .then((result) => {
         if (result.isConfirmed) {
-
           props.deleteRegion(regionId);
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
         }
@@ -151,7 +149,6 @@ const Region = (props) => {
                       <i class="ri-add-line align-bottom me-1 fs-6"></i> Add
                     </button>
                   </div>
-
                 </div>
                 <div className="iq-card-body">
                   <div className="table-responsive custom-table">
@@ -179,39 +176,42 @@ const Region = (props) => {
                       <tbody>
                         {data?.length > 0
                           ? data
-                            .slice(
-                              (page - 1) * rowsPerPage,
-                              (page - 1) * rowsPerPage + rowsPerPage
-                            )
-                            .map((data, index) => {
-                              return (
-                                <>
-                                  <tr>
-                                    <td className="pr-3 tableAlign">
-                                      {(page - 1) * rowsPerPage + index + 1}
-                                    </td>
+                              .slice(
+                                (page - 1) * rowsPerPage,
+                                (page - 1) * rowsPerPage + rowsPerPage,
+                              )
+                              .map((data, index) => {
+                                return (
+                                  <>
+                                    <tr>
+                                      <td className="pr-3 tableAlign">
+                                        {(page - 1) * rowsPerPage + index + 1}
+                                      </td>
 
-                                    <td className="text-center">
-                                      {data?.name || "-"}
-                                    </td>
-                                    {/* <td className="text-center">
+                                      <td className="text-center">
+                                        {data?.name || "-"}
+                                      </td>
+                                      {/* <td className="text-center">
                                         {data?.uniqueID ||  "-"}
                                       </td> */}
-                                    <td className="text-center">
-                                      {data?.createdAt ? dayjs(data.createdAt).format("DD/MM/YYYY") : "-"}
+                                      <td className="text-center">
+                                        {data?.createdAt
+                                          ? dayjs(data.createdAt).format(
+                                              "DD/MM/YYYY",
+                                            )
+                                          : "-"}
+                                      </td>
 
-                                    </td>
-
-                                    <td className="pr-3 tableAlign">
-                                      <button
-                                        type="button"
-                                        className="btn custom-action-button btn-sm"
-                                        onClick={() => updateDialogOpen(data)}
-                                      >
-                                        <IconEdit className="text-secondary" />
-                                      </button>
-                                    </td>
-                                    {/* <td className="pr-3 tableAlign">
+                                      <td className="pr-3 tableAlign">
+                                        <button
+                                          type="button"
+                                          className="btn custom-action-button btn-sm"
+                                          onClick={() => updateDialogOpen(data)}
+                                        >
+                                          <IconEdit className="text-secondary" />
+                                        </button>
+                                      </td>
+                                      {/* <td className="pr-3 tableAlign">
                                         <button
                                           type="button"
                                           className="btn iq-bg-primary btn-sm"
@@ -225,14 +225,11 @@ const Region = (props) => {
                                           ></i>
                                         </button>
                                       </td> */}
-                                  </tr>
-                                </>
-                              );
-                            })
-                          : loader === false &&
-                          data?.length < 0 && (
-                            ""
-                          )}
+                                    </tr>
+                                  </>
+                                );
+                              })
+                          : loader === false && data?.length < 0 && ""}
                       </tbody>
                     </table>
                   </div>

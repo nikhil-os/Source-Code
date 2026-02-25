@@ -60,7 +60,7 @@ const teamMemberReducer = (state = initialState, action) => {
         teamMember: state.teamMember.map((teamMember) =>
           teamMember._id === action.payload.id
             ? action.payload.data
-            : teamMember
+            : teamMember,
         ),
       };
 
@@ -69,7 +69,7 @@ const teamMemberReducer = (state = initialState, action) => {
       return {
         ...state,
         teamMember: state.teamMember.filter(
-          (teamMember) => teamMember._id !== action.payload
+          (teamMember) => teamMember._id !== action.payload,
         ),
       };
 

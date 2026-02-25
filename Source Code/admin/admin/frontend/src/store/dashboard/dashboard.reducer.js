@@ -65,7 +65,7 @@ const dashboardReducer = (state = initialState, action) => {
         toastData: null,
         actionFor: null,
       };
-    
+
     default:
       return state;
   }
