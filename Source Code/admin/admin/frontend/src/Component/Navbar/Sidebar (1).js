@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { useEffect, useRef } from "react";
 import logo from '../assets/images/logo.png';
 //MUI
 import { makeStyles } from '@mui/styles';
@@ -30,7 +31,7 @@ const useStyles = makeStyles(() => ({
       fontWeight: 500,
     },
     '&.active i a span': {
-     background: "linear-gradient(90deg,rgba(73, 137, 247, 1) 0%, rgba(133, 177, 255, 1) 100%)",
+      background: "linear-gradient(90deg,rgba(73, 137, 247, 1) 0%, rgba(133, 177, 255, 1) 100%)",
       color: '#fff !important',
       fontWeight: 500,
     },
@@ -50,10 +51,42 @@ const handleCollapse = () => {
   $('.wrapper-menu').toggleClass('open');
 };
 
+const closeSidebar = () => {
+  $('body').removeClass('sidebar-main');
+  $('.wrapper-menu').removeClass('open');
+};
+
+
 const Sidebar = () => {
+
+  const sidebarRef = useRef(null);
+
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
+
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
+        // Agar sidebar open hai tabhi close kare
+        if ($("body").hasClass("sidebar-main")) {
+          $("body").removeClass("sidebar-main");
+          $(".wrapper-menu").removeClass("open");
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   const logout = () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -74,7 +107,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="iq-sidebar">
+      <div className="iq-sidebar" ref={sidebarRef}>
         <div className="iq-sidebar-logo d-flex justify-content-between">
           <NavLink to="/admin/dashboard">
             <div clssName="iq-light-logo">
@@ -105,7 +138,7 @@ const Sidebar = () => {
         <div id="sidebar-scrollbar">
           <div
             className="scroll-content mt-2"
-            // style={{ transform: "translate3d(0px, -550px, 0px)" }}
+          // style={{ transform: "translate3d(0px, -550px, 0px)" }}
           >
             <nav className="iq-sidebar-menu">
               <ul id="iq-sidebar-toggle" className="iq-menu">
@@ -114,16 +147,18 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/dashboard"
                     className={`${classes.navLink} `}
+                    onClick={closeSidebar}
                   >
-                   
-                    <IconHome2/>
+
+                    <IconHome2 />
                     <span className="pl-2">Dashboard</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/admin/user" className={`${classes.navLink}`}>
+                  <NavLink to="/admin/user" className={`${classes.navLink}`} onClick={closeSidebar}
+                  >
                     {/* className="iq-waves-effect"  */}
-                    <IconUser/>
+                    <IconUser />
                     <span className="pl-2">User</span>
                   </NavLink>
                 </li>
@@ -133,6 +168,8 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/movie"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                     isActive={(_, location) =>
                       location.pathname.startsWith('/admin/movie') ||
                       location.pathname === '/admin/trailer/trailer_form' ||
@@ -140,7 +177,7 @@ const Sidebar = () => {
                     }
                   >
                     {/* className="iq-waves-effect" */}
-                    <IconMovie/>
+                    <IconMovie />
                     <span className="pl-2">Movie</span>
                   </NavLink>
                 </li>
@@ -148,23 +185,25 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/web_series"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
                     isActive={(_, location) =>
                       location.pathname.startsWith('/admin/web_series') ||
                       location.pathname === '/admin/episode' ||
                       location.pathname ===
-                        '/admin/series_trailer/trailer_form' ||
+                      '/admin/series_trailer/trailer_form' ||
                       location.pathname === '/admin/episode/episode_form' ||
                       location.pathname === '/admin/series_cast/cast_form'
                     }
                   >
-                   <IconBrandNetflix/>
+                    <IconBrandNetflix />
                     <span className="pl-2">Web Series</span>
                   </NavLink>
                 </li>
 
                 <li>
-                  <NavLink to="/admin/live_tv" className={`${classes.navLink}`}>
-                   <IconDeviceTvOld/>
+                  <NavLink to="/admin/live_tv" className={`${classes.navLink}`} onClick={closeSidebar}
+                  >
+                    <IconDeviceTvOld />
                     <span className="pl-2">Live TV</span>
                   </NavLink>
                 </li>
@@ -173,27 +212,32 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/shortVideo"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                   >
-                    <IconPhotoVideo/>
+                    <IconPhotoVideo />
                     <span className="pl-2">Shorts</span>
                   </NavLink>
                 </li>
                 <div className="custom-sidebar-label">Content & Metadata</div>
                 <li>
-                  <NavLink to="/admin/content" className={`${classes.navLink}`}>
-                    <IconConfetti/>
+                  <NavLink to="/admin/content" className={`${classes.navLink}`} onClick={closeSidebar}
+                  >
+                    <IconConfetti />
                     <span className="pl-2">Content</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/admin/region" className={`${classes.navLink}`}>
-                   <IconTimezone/>
+                  <NavLink to="/admin/region" className={`${classes.navLink}`} onClick={closeSidebar}
+                  >
+                    <IconTimezone />
                     <span className="pl-2">Region</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/admin/genre" className={`${classes.navLink}`}>
-                   <IconClipboardData/>
+                  <NavLink to="/admin/genre" className={`${classes.navLink}`} onClick={closeSidebar}
+                  >
+                    <IconClipboardData />
                     <span className="pl-2">Genre</span>
                   </NavLink>
                 </li>
@@ -203,8 +247,10 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/premium_plan"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                   >
-                    <IconBasketDollar/>
+                    <IconBasketDollar />
                     <span className="pl-2">Purchase Plan</span>
                   </NavLink>
                 </li>
@@ -212,8 +258,10 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/premium_plan_history"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                   >
-                    <IconHistory/>
+                    <IconHistory />
                     <span className="pl-2">Purchase Plan History</span>
                   </NavLink>
                 </li>
@@ -221,6 +269,8 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/advertisement"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                   >
                     <IconBadgeAd />
                     <span className="pl-2">Advertisement</span>
@@ -232,8 +282,10 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/raisedTicket"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                   >
-                    <IconTicket/>
+                    <IconTicket />
                     <span className="pl-2">Raised Tickets</span>
                   </NavLink>
                 </li>
@@ -241,6 +293,8 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/help_center/faq"
                     className={`${classes.navLink}`}
+                    onClick={closeSidebar}
+
                   >
                     <IconHelp />
                     <span className="pl-2">Help Center</span>
@@ -251,15 +305,18 @@ const Sidebar = () => {
                   <NavLink
                     to="/admin/profile/admin_info"
                     className={`${classes.navLink}`}
-                    onClick={handleRemove}
+                    onClick={closeSidebar}
+
+                  // onClick={handleRemove}
                   >
-                    <IconUserCircle/>
+                    <IconUserCircle />
                     <span className="pl-2">Profile</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/admin/setting" className={`${classes.navLink}`}>
-                    <IconSettings/>
+                  <NavLink to="/admin/setting" className={`${classes.navLink}`} onClick={closeSidebar}
+                  >
+                    <IconSettings />
                     <span className="pl-2">Setting</span>
                   </NavLink>
                 </li>
@@ -270,7 +327,7 @@ const Sidebar = () => {
                     className={`${classes.navLink}`}
                     onClick={logout}
                   >
-                    <IconLogout/>
+                    <IconLogout />
                     <span className="pl-2">Logout</span>
                   </NavLink>
                 </li>

@@ -1036,11 +1036,14 @@ body.sidebar-main
 
   border-radius: 8px;
   margin: 20px 0 0;
-  -webkit-box-shadow: 0px 2px 8px var(--iq-card-shadow-1),
+  -webkit-box-shadow:
+    0px 2px 8px var(--iq-card-shadow-1),
     0px 4px 16px var(--iq-card-shadow-2);
-  -moz-box-shadow: 0px 2px 8px var(--iq-card-shadow-1),
+  -moz-box-shadow:
+    0px 2px 8px var(--iq-card-shadow-1),
     0px 4px 16px var(--iq-card-shadow-2);
-  box-shadow: 0px 2px 8px var(--iq-card-shadow-1),
+  box-shadow:
+    0px 2px 8px var(--iq-card-shadow-1),
     0px 4px 16px var(--iq-card-shadow-2);
 }
 
@@ -1440,11 +1443,14 @@ body.sidebar-main .iq-menu-bt-sidebar .iq-menu-bt {
   transition: all 0.3s;
   padding: 0;
   border-radius: 8px;
-  -webkit-box-shadow: 0px 2px 8px rgba(40, 41, 61, 0.04),
+  -webkit-box-shadow:
+    0px 2px 8px rgba(40, 41, 61, 0.04),
     0px 16px 24px rgba(96, 97, 112, 0.16);
-  -moz-box-shadow: 0px 2px 8px rgba(40, 41, 61, 0.04),
+  -moz-box-shadow:
+    0px 2px 8px rgba(40, 41, 61, 0.04),
     0px 16px 24px rgba(96, 97, 112, 0.16);
-  box-shadow: 0px 2px 8px rgba(40, 41, 61, 0.04),
+  box-shadow:
+    0px 2px 8px rgba(40, 41, 61, 0.04),
     0px 16px 24px rgba(96, 97, 112, 0.16);
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -1785,11 +1791,21 @@ body.sidebar-main .iq-sidebar:hover .iq-menu-bt {
   left: -8%;
   width: auto;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s ease 0s, left 0.3s ease 0s;
-  -moz-transition: opacity 0.3s ease 0s, left 0.3s ease 0s;
-  -ms-transition: opacity 0.3s ease 0s, left 0.3s ease 0s;
-  -o-transition: opacity 0.3s ease 0s, left 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s, left 0.3s ease 0s;
+  -webkit-transition:
+    opacity 0.3s ease 0s,
+    left 0.3s ease 0s;
+  -moz-transition:
+    opacity 0.3s ease 0s,
+    left 0.3s ease 0s;
+  -ms-transition:
+    opacity 0.3s ease 0s,
+    left 0.3s ease 0s;
+  -o-transition:
+    opacity 0.3s ease 0s,
+    left 0.3s ease 0s;
+  transition:
+    opacity 0.3s ease 0s,
+    left 0.3s ease 0s;
 }
 
 .owl-carousel .owl-nav .owl-next {
@@ -1800,11 +1816,21 @@ body.sidebar-main .iq-sidebar:hover .iq-menu-bt {
   right: -8%;
   width: auto;
   cursor: pointer;
-  -webkit-transition: opacity 0.3s ease 0s, right 0.3s ease 0s;
-  -moz-transition: opacity 0.3s ease 0s, right 0.3s ease 0s;
-  -ms-transition: opacity 0.3s ease 0s, right 0.3s ease 0s;
-  -o-transition: opacity 0.3s ease 0s, right 0.3s ease 0s;
-  transition: opacity 0.3s ease 0s, right 0.3s ease 0s;
+  -webkit-transition:
+    opacity 0.3s ease 0s,
+    right 0.3s ease 0s;
+  -moz-transition:
+    opacity 0.3s ease 0s,
+    right 0.3s ease 0s;
+  -ms-transition:
+    opacity 0.3s ease 0s,
+    right 0.3s ease 0s;
+  -o-transition:
+    opacity 0.3s ease 0s,
+    right 0.3s ease 0s;
+  transition:
+    opacity 0.3s ease 0s,
+    right 0.3s ease 0s;
 }
 
 .owl-carousel .owl-nav i {
@@ -5603,7 +5629,8 @@ p {
 
 .dashboard_active_card {
   border-radius: 10px;
-  box-shadow: rgb(71 62 114 / 16%) 0px 1px 2px 0px,
+  box-shadow:
+    rgb(71 62 114 / 16%) 0px 1px 2px 0px,
     rgb(101 70 210 / 41%) 0px 2px 6px 2px;
 }
 
@@ -6027,8 +6054,9 @@ form label {
 }
 
 .custom-btn-title {
+  background-color: rgba(50, 105, 199, 0.144) !important;
   /* background: linear-gradient(90deg, rgba(73, 137, 247, 1) 0%, rgba(133, 177, 255, 1) 100%); */
-  /* color: white !important; */
+  color: rgba(73, 137, 247, 1) !important;
   padding: 5px;
   border-radius: 5px;
   font-size: medium;
@@ -6094,17 +6122,85 @@ form label {
   font-weight: 500;
 }
 
-.table-responsive{
+.table-responsive {
   max-height: 72vh;
 }
 
 .table-responsive thead {
   position: sticky;
-  top :0px;
+  top: 0px;
   background-color: white;
   z-index: 2;
 }
 
-.select__input{
+.select__input {
   color: #000 !important;
 }
+
+@media (max-width: 1024px) {
+  .iq-menu-bt {
+    display: block !important;
+  }
+}
+
+/* ===============================
+   Mobile Sidebar Responsive
+   320px — 425px
+================================= */
+
+@media (min-width: 320px) and (max-width: 425px) {
+  /* Sidebar hidden by default */
+  .iq-sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    z-index: 9999;
+    transition: all 0.3s ease;
+  }
+
+  /* When toggle clicked */
+  body.sidebar-main .iq-sidebar {
+    left: 0;
+  }
+
+  /* Overlay background */
+  /* body.sidebar-main::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+  } */
+
+  /* show toggle button only mobile */
+  .iq-menu-bt {
+    display: block !important;
+  }
+
+  /* reduce navbar padding */
+  .iq-top-navbar {
+    padding: 5px 10px;
+  }
+
+  /* logo size small */
+  .iq-sidebar-logo img {
+    max-width: 120px;
+  }
+
+  /* sidebar links spacing */
+  .iq-sidebar-menu .iq-menu li a {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  /* hide sidebar text when collapsed */
+  body.sidebar-main .iq-sidebar-menu span {
+    display: inline-block;
+  }
+}
+
+
+
+
