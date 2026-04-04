@@ -15,7 +15,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/addViewToMovie/add_view_to_movie_api_controller.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/createComments_api/createComments_api_controller.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/createFavoriteMovie_api/create_favourite_movie_api_controller.dart';

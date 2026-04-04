@@ -13,8 +13,9 @@ const checkAccessWithSecretKey = require("../../util/checkAccess");
 
 //controller
 const FileController = require("./file.controller");
+const PresignController = require("./presign.controller");
 
-//upload content to digital ocean storage
+//upload content to storage (local / DigitalOcean / AWS S3)
 route.post(
   "/upload-file",
   function (request, response, next) {
@@ -31,7 +32,7 @@ route.post(
   FileController.uploadContent
 );
 
-//upload multiple content to digital ocean storage
+//upload multiple content
 route.post(
   "/bulkUploadContent",
   function (request, response, next) {
@@ -47,6 +48,13 @@ route.post(
   },
   checkAccessWithSecretKey(),
   FileController.bulkUploadContent
+);
+
+//generate pre-signed URL for direct browser-to-S3 upload
+route.post(
+  "/presign-upload",
+  checkAccessWithSecretKey(),
+  PresignController.presignUpload
 );
 
 module.exports = route;

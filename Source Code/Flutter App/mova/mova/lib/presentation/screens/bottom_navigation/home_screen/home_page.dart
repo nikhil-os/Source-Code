@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/createFavoriteMovie_api/create_favourite_movie_api_controller.dart';
 import 'package:webtime_movie_ocean/buinesslogic/bloc_module/all_movie_module/Allmovi_resources/Allmovies_repository.dart';
 import 'package:webtime_movie_ocean/buinesslogic/bloc_module/all_movie_module/bloc/allmovies_bloc.dart';
@@ -66,7 +66,8 @@ class _HomePageState extends State<HomePage> {
 
   movieDetailsController movieAllDetails = Get.put(movieDetailsController());
   topRatedMovieController topRatedMovie = Get.put(topRatedMovieController());
-  topRatedWebSeriesController topRatedWebSeries = Get.put(topRatedWebSeriesController());
+  topRatedWebSeriesController topRatedWebSeries =
+      Get.put(topRatedWebSeriesController());
   InterstitialAd? _interstitialAd;
 
   // TODO: Implement _loadInterstitialAd()
@@ -132,7 +133,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     CustomStatusBarColor.init();
     SizeConfig().init(context);
-    final createFavoriteMovie = Provider.of<CreateFavoriteMovieProvider>(context, listen: false);
+    final createFavoriteMovie =
+        Provider.of<CreateFavoriteMovieProvider>(context, listen: false);
     log("createFavoriteMovie :::::>>>>>>> $createFavoriteMovie");
 
     return NotificationListener<OverscrollIndicatorNotification>(
@@ -152,7 +154,9 @@ class _HomePageState extends State<HomePage> {
           }
         },
         child: Scaffold(
-          backgroundColor: (getStorage.read('isDarkMode') == true) ? ColorValues.scaffoldBg : ColorValues.whiteColor,
+          backgroundColor: (getStorage.read('isDarkMode') == true)
+              ? ColorValues.scaffoldBg
+              : ColorValues.whiteColor,
           body: CustomScrollView(
             controller: _scrollController,
             slivers: [
@@ -169,8 +173,12 @@ class _HomePageState extends State<HomePage> {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [
-                              (getStorage.read('isDarkMode') == true) ? Colors.black : Colors.white,
-                              (getStorage.read('isDarkMode') == true) ? Colors.black : Colors.white,
+                              (getStorage.read('isDarkMode') == true)
+                                  ? Colors.black
+                                  : Colors.white,
+                              (getStorage.read('isDarkMode') == true)
+                                  ? Colors.black
+                                  : Colors.white,
                             ],
                           )
                         : LinearGradient(
@@ -206,7 +214,9 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: (getStorage.read('isDarkMode') == true) ? ColorValues.whiteColor : Colors.black,
+                              color: (getStorage.read('isDarkMode') == true)
+                                  ? ColorValues.whiteColor
+                                  : Colors.black,
                               width: 0.5,
                             ),
                           ),
@@ -244,7 +254,10 @@ class _HomePageState extends State<HomePage> {
                                 "Your personalised streaming hub.",
                                 style: GoogleFonts.urbanist(
                                     fontSize: 13,
-                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.grayColorText : ColorValues.darkModeThird,
+                                    color:
+                                        (getStorage.read('isDarkMode') == true)
+                                            ? ColorValues.grayColorText
+                                            : ColorValues.darkModeThird,
                                     fontWeight: FontWeight.w400),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
@@ -258,14 +271,18 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: (getStorage.read('isDarkMode') == true) ? ColorValues.smallContainerBg : Colors.grey.withValues(alpha: .1),
+                              color: (getStorage.read('isDarkMode') == true)
+                                  ? ColorValues.smallContainerBg
+                                  : Colors.grey.withValues(alpha: .1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             padding: const EdgeInsets.all(11),
                             child: ImageIcon(
                               const AssetImage(IconAssetValues.search),
                               size: 22,
-                              color: (getStorage.read('isDarkMode') == true) ? ColorValues.whiteColor : ColorValues.blackColor,
+                              color: (getStorage.read('isDarkMode') == true)
+                                  ? ColorValues.whiteColor
+                                  : ColorValues.blackColor,
                             ),
                           ),
                         ),
@@ -278,14 +295,19 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: (getStorage.read('isDarkMode') == true) ? ColorValues.smallContainerBg : Colors.grey.withValues(alpha: .1),
+                              color: (getStorage.read('isDarkMode') == true)
+                                  ? ColorValues.smallContainerBg
+                                  : Colors.grey.withValues(alpha: .1),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             padding: const EdgeInsets.all(10),
                             child: SvgPicture.asset(
                               MovixIcon.notification,
                               colorFilter: ColorFilter.mode(
-                                  (getStorage.read('isDarkMode') == true) ? ColorValues.whiteColor : ColorValues.blackColor, BlendMode.srcIn),
+                                  (getStorage.read('isDarkMode') == true)
+                                      ? ColorValues.whiteColor
+                                      : ColorValues.blackColor,
+                                  BlendMode.srcIn),
                             ),
                           ),
                         ),
@@ -330,13 +352,15 @@ class _HomePageState extends State<HomePage> {
                                 height: SizeConfig.screenHeight / 4.7,
                                 child: ListView.builder(
                                   shrinkWrap: true,
-                                  padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 1),
+                                  padding: EdgeInsets.only(
+                                      left: SizeConfig.blockSizeHorizontal * 1),
                                   scrollDirection: Axis.horizontal,
                                   itemCount: logic.mainReels.length,
                                   itemBuilder: (BuildContext context, int i) {
                                     return InkWell(
                                       onTap: () {
-                                        logic.currentReels = logic.mainReels[i].id ?? '';
+                                        logic.currentReels =
+                                            logic.mainReels[i].id ?? '';
                                         widget.onIndex?.call(2);
                                         log("IDD :: ${logic.currentReels}");
                                       },
@@ -344,55 +368,92 @@ class _HomePageState extends State<HomePage> {
                                         height: SizeConfig.screenHeight,
                                         clipBehavior: Clip.antiAlias,
                                         width: SizeConfig.screenWidth / 2.8,
-                                        margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 3),
+                                        margin: EdgeInsets.only(
+                                            left:
+                                                SizeConfig.blockSizeHorizontal *
+                                                    3),
                                         decoration: BoxDecoration(
-                                          color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
-                                          borderRadius: BorderRadius.circular(26),
+                                          color:
+                                              (getStorage.read('isDarkMode') ==
+                                                      true)
+                                                  ? ColorValues.darkModeSecond
+                                                  : Colors.grey.shade200,
+                                          borderRadius:
+                                              BorderRadius.circular(26),
                                         ),
                                         child: Stack(
                                           alignment: Alignment.center,
                                           children: [
                                             CachedNetworkImage(
-                                              imageUrl: logic.mainReels[i].videoImage ?? '',
+                                              imageUrl: logic.mainReels[i]
+                                                      .videoImage ??
+                                                  '',
                                               fit: BoxFit.cover,
                                               height: 200,
                                               width: double.infinity,
-                                              placeholder: (context, url) => Image(
-                                                image: const AssetImage(AssetValues.appLogo),
+                                              placeholder: (context, url) =>
+                                                  Image(
+                                                image: const AssetImage(
+                                                    AssetValues.appLogo),
                                                 width: 50,
                                                 height: 50,
-                                                color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                color: (getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true)
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                               ),
-                                              errorWidget: (context, url, error) => Container(
-                                                color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Container(
+                                                color: getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                                 child: const Center(
-                                                  child: Image(image: AssetImage(AssetValues.appLogo)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          AssetValues.appLogo)),
                                                 ),
                                               ),
                                             ),
                                             SvgPicture.asset(
                                               MovixIcon.boldPlay,
-                                              height: SizeConfig.blockSizeVertical * 3.5,
-                                              colorFilter: const ColorFilter.mode(ColorValues.whiteColor, BlendMode.srcIn),
+                                              height:
+                                                  SizeConfig.blockSizeVertical *
+                                                      3.5,
+                                              colorFilter:
+                                                  const ColorFilter.mode(
+                                                      ColorValues.whiteColor,
+                                                      BlendMode.srcIn),
                                             ),
                                             Positioned(
                                               bottom: 0,
                                               child: Container(
                                                 height: 70,
-                                                width: SizeConfig.screenWidth / 2.8,
+                                                width: SizeConfig.screenWidth /
+                                                    2.8,
                                                 decoration: BoxDecoration(
                                                   gradient: LinearGradient(
-                                                    begin: Alignment.bottomCenter,
+                                                    begin:
+                                                        Alignment.bottomCenter,
                                                     end: Alignment.topCenter,
                                                     colors: [
-                                                      Colors.black.withValues(alpha: 0.8),
-                                                      Colors.black.withValues(alpha: 0.7),
-                                                      Colors.black.withValues(alpha: 0.6),
-                                                      Colors.black.withValues(alpha: 0.3),
+                                                      Colors.black.withValues(
+                                                          alpha: 0.8),
+                                                      Colors.black.withValues(
+                                                          alpha: 0.7),
+                                                      Colors.black.withValues(
+                                                          alpha: 0.6),
+                                                      Colors.black.withValues(
+                                                          alpha: 0.3),
                                                       Colors.transparent,
                                                     ],
                                                   ),
-                                                  borderRadius: const BorderRadius.vertical(
+                                                  borderRadius:
+                                                      const BorderRadius
+                                                          .vertical(
                                                     bottom: Radius.circular(26),
                                                   ),
                                                 ),
@@ -445,25 +506,35 @@ class _HomePageState extends State<HomePage> {
   }
 
   /// All Movie Banner Api Data ///
-  BlocProvider<AllMoviesBloc> allMovieBanner(BuildContext context, CreateFavoriteMovieProvider createFavoriteMovie) {
+  BlocProvider<AllMoviesBloc> allMovieBanner(
+      BuildContext context, CreateFavoriteMovieProvider createFavoriteMovie) {
     return BlocProvider(
-      create: (_) => AllMoviesBloc(RepositoryProvider.of<AllMoviesRepository>(context))..add(GetAllMovie()),
+      create: (_) =>
+          AllMoviesBloc(RepositoryProvider.of<AllMoviesRepository>(context))
+            ..add(GetAllMovie()),
       child: BlocListener<AllMoviesBloc, AllMoviesState>(
         listener: (BuildContext context, state) {},
         child: BlocBuilder<AllMoviesBloc, AllMoviesState>(
           builder: (context, state) {
             if (state is AllMoviesLoading) {
               return Shimmer.fromColors(
-                highlightColor: (getStorage.read('isDarkMode') == true) ? Colors.white12 : Colors.grey.shade100,
-                baseColor: (getStorage.read('isDarkMode') == true) ? Colors.white24 : Colors.grey.shade300,
+                highlightColor: (getStorage.read('isDarkMode') == true)
+                    ? Colors.white12
+                    : Colors.grey.shade100,
+                baseColor: (getStorage.read('isDarkMode') == true)
+                    ? Colors.white24
+                    : Colors.grey.shade300,
                 child: Container(
                   height: Get.height * 0.54,
                   width: Get.width,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: ColorValues.grayColor),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: ColorValues.grayColor),
                 ).paddingSymmetric(horizontal: 26, vertical: 10),
               );
             } else if (state is AllMoviesLoaded) {
-              return (state.movieModal.movie != null && state.movieModal.movie!.isNotEmpty)
+              return (state.movieModal.movie != null &&
+                      state.movieModal.movie!.isNotEmpty)
                   ? Column(
                       children: [
                         Stack(
@@ -475,19 +546,28 @@ class _HomePageState extends State<HomePage> {
                                 height: Get.height * 0.56,
                                 width: Get.width,
                                 child: CachedNetworkImage(
-                                  imageUrl: state.movieModal.movie![_current].image ?? "",
+                                  imageUrl:
+                                      state.movieModal.movie![_current].image ??
+                                          "",
                                   placeholder: (context, url) => Image(
                                     height: SizeConfig.screenHeight / 2.2,
                                     width: SizeConfig.screenWidth,
-                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                    color:
+                                        (getStorage.read('isDarkMode') == true)
+                                            ? ColorValues.darkModeThird
+                                            : Colors.grey.shade400,
                                     image: const AssetImage(
                                       AssetValues.appLogo,
                                     ),
                                   ),
-                                  errorWidget: (Context, string, dynamic) => Image(
+                                  errorWidget: (Context, string, dynamic) =>
+                                      Image(
                                     height: SizeConfig.screenHeight / 2.2,
                                     width: SizeConfig.screenWidth,
-                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                    color:
+                                        (getStorage.read('isDarkMode') == true)
+                                            ? ColorValues.darkModeThird
+                                            : Colors.grey.shade400,
                                     image: const AssetImage(
                                       AssetValues.appLogo,
                                     ),
@@ -510,12 +590,15 @@ class _HomePageState extends State<HomePage> {
                                   autoPlay: false,
                                   height: Get.height * 0.54,
                                 ),
-                                items: List.generate(state.movieModal.movie!.length, (index) {
+                                items: List.generate(
+                                    state.movieModal.movie!.length, (index) {
                                   return GestureDetector(
                                     onTap: () {
                                       Get.to(
                                         DetailsScreen(
-                                          movieId: state.movieModal.movie![index].id.toString(),
+                                          movieId: state
+                                              .movieModal.movie![index].id
+                                              .toString(),
                                         ),
                                       );
                                     },
@@ -524,31 +607,53 @@ class _HomePageState extends State<HomePage> {
                                         children: [
                                           Container(
                                             decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(20.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(20.0),
                                               border: Border.all(
-                                                color: ColorValues.whiteColor.withValues(alpha: 0.4),
+                                                color: ColorValues.whiteColor
+                                                    .withValues(alpha: 0.4),
                                                 width: 1.0,
                                               ),
                                             ),
                                             height: Get.height * 0.56,
                                             clipBehavior: Clip.hardEdge,
                                             child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(20.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(20.0),
                                               child: CachedNetworkImage(
                                                 fit: BoxFit.cover,
-                                                imageUrl: state.movieModal.movie![index].image.toString(),
-                                                placeholder: (context, url) => Image(
-                                                  height: SizeConfig.screenHeight / 2.2,
+                                                imageUrl: state.movieModal
+                                                    .movie![index].image
+                                                    .toString(),
+                                                placeholder: (context, url) =>
+                                                    Image(
+                                                  height:
+                                                      SizeConfig.screenHeight /
+                                                          2.2,
                                                   width: SizeConfig.screenWidth,
-                                                  color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                  color: (getStorage.read(
+                                                              'isDarkMode') ==
+                                                          true)
+                                                      ? ColorValues
+                                                          .darkModeThird
+                                                      : Colors.grey.shade400,
                                                   image: const AssetImage(
                                                     AssetValues.appLogo,
                                                   ),
                                                 ),
-                                                errorWidget: (Context, string, dynamic) => Image(
-                                                  height: SizeConfig.screenHeight / 2.2,
+                                                errorWidget: (Context, string,
+                                                        dynamic) =>
+                                                    Image(
+                                                  height:
+                                                      SizeConfig.screenHeight /
+                                                          2.2,
                                                   width: SizeConfig.screenWidth,
-                                                  color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                  color: (getStorage.read(
+                                                              'isDarkMode') ==
+                                                          true)
+                                                      ? ColorValues
+                                                          .darkModeThird
+                                                      : Colors.grey.shade400,
                                                   image: const AssetImage(
                                                     AssetValues.appLogo,
                                                   ),
@@ -557,75 +662,129 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ).paddingSymmetric(horizontal: 26),
                                           Padding(
-                                            padding: const EdgeInsets.symmetric(horizontal: 26.0),
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 26.0),
                                             child: Container(
                                               decoration: BoxDecoration(
-                                                borderRadius: const BorderRadius.only(
-                                                  bottomLeft: Radius.circular(20),
-                                                  bottomRight: Radius.circular(20),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  bottomLeft:
+                                                      Radius.circular(20),
+                                                  bottomRight:
+                                                      Radius.circular(20),
                                                 ),
                                                 gradient: LinearGradient(
                                                   begin: Alignment.bottomCenter,
                                                   end: Alignment.topCenter,
                                                   colors: [
-                                                    Colors.black.withValues(alpha: 0.85),
-                                                    Colors.black.withValues(alpha: 0.3),
+                                                    Colors.black.withValues(
+                                                        alpha: 0.85),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.3),
                                                     Colors.transparent,
                                                   ],
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 12.0),
                                                 child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
                                                   children: [
                                                     Text(
                                                       '${state.movieModal.movie![_current].title}',
                                                       style: allTitleWhiteStyle,
                                                       maxLines: 1,
-                                                      overflow: TextOverflow.ellipsis,
-                                                      textAlign: TextAlign.center,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                      textAlign:
+                                                          TextAlign.center,
                                                     ),
                                                     Text(
                                                       '${state.movieModal.movie![_current].description}',
                                                       style: GoogleFonts.outfit(
-                                                          fontSize: 13, color: ColorValues.grayColorText, fontWeight: FontWeight.w400),
+                                                          fontSize: 13,
+                                                          color: ColorValues
+                                                              .grayColorText,
+                                                          fontWeight:
+                                                              FontWeight.w400),
                                                       maxLines: 2,
-                                                      textAlign: TextAlign.center,
-                                                      overflow: TextOverflow.ellipsis,
-                                                    ).paddingSymmetric(horizontal: 40, vertical: 6),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
+                                                    ).paddingSymmetric(
+                                                        horizontal: 40,
+                                                        vertical: 6),
                                                     Row(
-                                                      mainAxisSize: MainAxisSize.min,
-                                                      mainAxisAlignment: MainAxisAlignment.start,
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         InkWell(
                                                           child: Container(
                                                             padding: EdgeInsets.only(
-                                                                left: SizeConfig.blockSizeHorizontal * 1.8,
-                                                                right: SizeConfig.blockSizeHorizontal * 3,
-                                                                top: SizeConfig.blockSizeVertical * 0.7,
-                                                                bottom: SizeConfig.blockSizeVertical * 0.7),
-                                                            decoration: BoxDecoration(
-                                                              borderRadius: BorderRadius.circular(20),
-                                                              color: ColorValues.redColor,
+                                                                left: SizeConfig
+                                                                        .blockSizeHorizontal *
+                                                                    1.8,
+                                                                right: SizeConfig
+                                                                        .blockSizeHorizontal *
+                                                                    3,
+                                                                top: SizeConfig
+                                                                        .blockSizeVertical *
+                                                                    0.7,
+                                                                bottom: SizeConfig
+                                                                        .blockSizeVertical *
+                                                                    0.7),
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20),
+                                                              color: ColorValues
+                                                                  .redColor,
                                                             ),
-                                                            alignment: Alignment.center,
+                                                            alignment: Alignment
+                                                                .center,
                                                             child: Row(
                                                               children: [
-                                                                SvgPicture.asset(
-                                                                  MovixIcon.boldPlay,
-                                                                  height: SizeConfig.blockSizeVertical * 2.5,
-                                                                  colorFilter: const ColorFilter.mode(ColorValues.whiteColor, BlendMode.srcIn),
+                                                                SvgPicture
+                                                                    .asset(
+                                                                  MovixIcon
+                                                                      .boldPlay,
+                                                                  height: SizeConfig
+                                                                          .blockSizeVertical *
+                                                                      2.5,
+                                                                  colorFilter: const ColorFilter
+                                                                      .mode(
+                                                                      ColorValues
+                                                                          .whiteColor,
+                                                                      BlendMode
+                                                                          .srcIn),
                                                                 ),
                                                                 SizedBox(
-                                                                  width: SizeConfig.blockSizeHorizontal * 2,
+                                                                  width: SizeConfig
+                                                                          .blockSizeHorizontal *
+                                                                      2,
                                                                 ),
                                                                 Text(
-                                                                  StringValue.play.tr,
-                                                                  style: playStyle,
-                                                                  textAlign: TextAlign.center,
+                                                                  StringValue
+                                                                      .play.tr,
+                                                                  style:
+                                                                      playStyle,
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
                                                                 ),
                                                               ],
                                                             ),
@@ -633,65 +792,128 @@ class _HomePageState extends State<HomePage> {
                                                           onTap: () {
                                                             Get.to(
                                                               DetailsScreen(
-                                                                movieId: state.movieModal.movie![_current].id.toString(),
+                                                                movieId: state
+                                                                    .movieModal
+                                                                    .movie![
+                                                                        _current]
+                                                                    .id
+                                                                    .toString(),
                                                               ),
                                                             );
                                                           },
                                                         ),
                                                         SizedBox(
-                                                          width: SizeConfig.blockSizeHorizontal * 2.5,
+                                                          width: SizeConfig
+                                                                  .blockSizeHorizontal *
+                                                              2.5,
                                                         ),
-                                                        Consumer<CreateFavoriteMovieProvider>(
-                                                          builder: (context, createFavoriteMovie, child) {
-                                                            final isFavorite = AllMovieData["movie"][_current]["isFavorite"] == true;
+                                                        Consumer<
+                                                            CreateFavoriteMovieProvider>(
+                                                          builder: (context,
+                                                              createFavoriteMovie,
+                                                              child) {
+                                                            final isFavorite =
+                                                                AllMovieData["movie"]
+                                                                            [
+                                                                            _current]
+                                                                        [
+                                                                        "isFavorite"] ==
+                                                                    true;
 
                                                             return InkWell(
                                                               onTap: () async {
-                                                                if (createFavoriteMovie.isLoading) {
+                                                                if (createFavoriteMovie
+                                                                    .isLoading) {
                                                                   log("work==============");
                                                                 } else {
-                                                                  await createFavoriteMovie.createFavoriteMovie(
-                                                                    state.movieModal.movie![_current].id,
+                                                                  await createFavoriteMovie
+                                                                      .createFavoriteMovie(
+                                                                    state
+                                                                        .movieModal
+                                                                        .movie![
+                                                                            _current]
+                                                                        .id,
                                                                   );
                                                                   setState(() {
-                                                                    AllMovieData["movie"][_current]["isFavorite"] = !isFavorite;
+                                                                    AllMovieData["movie"][_current]
+                                                                            [
+                                                                            "isFavorite"] =
+                                                                        !isFavorite;
                                                                   });
                                                                 }
                                                               },
                                                               child: Container(
-                                                                alignment: Alignment.center,
-                                                                padding: EdgeInsets.symmetric(
-                                                                  horizontal: SizeConfig.blockSizeHorizontal * 3,
-                                                                  vertical: SizeConfig.blockSizeVertical * 0.4,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                padding: EdgeInsets
+                                                                    .symmetric(
+                                                                  horizontal:
+                                                                      SizeConfig
+                                                                              .blockSizeHorizontal *
+                                                                          3,
+                                                                  vertical:
+                                                                      SizeConfig
+                                                                              .blockSizeVertical *
+                                                                          0.4,
                                                                 ),
-                                                                decoration: BoxDecoration(
-                                                                  color: createFavoriteMovie.isLoading
-                                                                      ? ColorValues.grayShimmer.withValues(alpha: 0.3)
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: createFavoriteMovie
+                                                                          .isLoading
+                                                                      ? ColorValues
+                                                                          .grayShimmer
+                                                                          .withValues(
+                                                                              alpha:
+                                                                                  0.3)
                                                                       : isFavorite
-                                                                          ? ColorValues.redColor
-                                                                          : Colors.transparent,
-                                                                  borderRadius: BorderRadius.circular(20),
-                                                                  border: Border.all(
-                                                                    color: createFavoriteMovie.isLoading
-                                                                        ? ColorValues.grayShimmer
+                                                                          ? ColorValues
+                                                                              .redColor
+                                                                          : Colors
+                                                                              .transparent,
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              20),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: createFavoriteMovie
+                                                                            .isLoading
+                                                                        ? ColorValues
+                                                                            .grayShimmer
                                                                         : isFavorite
                                                                             ? ColorValues.redColor
                                                                             : ColorValues.whiteColor,
                                                                     width: 2,
                                                                   ),
                                                                 ),
-                                                                child: createFavoriteMovie.isLoading
-                                                                    ? const SizedBox(width: 68, height: 22, child: CupertinoActivityIndicator())
+                                                                child: createFavoriteMovie
+                                                                        .isLoading
+                                                                    ? const SizedBox(
+                                                                        width:
+                                                                            68,
+                                                                        height:
+                                                                            22,
+                                                                        child:
+                                                                            CupertinoActivityIndicator())
                                                                     : Row(
-                                                                        mainAxisSize: MainAxisSize.min,
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.min,
                                                                         children: [
                                                                           Icon(
-                                                                            isFavorite ? Icons.done : Icons.add,
-                                                                            color: ColorValues.whiteColor,
-                                                                            size: SizeConfig.blockSizeVertical * 2.5,
+                                                                            isFavorite
+                                                                                ? Icons.done
+                                                                                : Icons.add,
+                                                                            color:
+                                                                                ColorValues.whiteColor,
+                                                                            size:
+                                                                                SizeConfig.blockSizeVertical * 2.5,
                                                                           ),
-                                                                          SizedBox(width: SizeConfig.blockSizeHorizontal * 1.5),
-                                                                          Text(StringValue.list.tr, style: playStyle),
+                                                                          SizedBox(
+                                                                              width: SizeConfig.blockSizeHorizontal * 1.5),
+                                                                          Text(
+                                                                              StringValue.list.tr,
+                                                                              style: playStyle),
                                                                         ],
                                                                       ),
                                                               ),
@@ -699,7 +921,8 @@ class _HomePageState extends State<HomePage> {
                                                           },
                                                         ),
                                                       ],
-                                                    ).paddingSymmetric(vertical: 6),
+                                                    ).paddingSymmetric(
+                                                        vertical: 6),
                                                     const SizedBox(height: 10)
                                                   ],
                                                 ),
@@ -726,7 +949,9 @@ class _HomePageState extends State<HomePage> {
                             dotHeight: SizeConfig.blockSizeVertical * 1,
                             dotWidth: SizeConfig.blockSizeHorizontal * 2,
                             activeDotColor: ColorValues.redColor,
-                            dotColor: (getStorage.read('isDarkMode') == true) ? ColorValues.whiteColor : ColorValues.blackColor,
+                            dotColor: (getStorage.read('isDarkMode') == true)
+                                ? ColorValues.whiteColor
+                                : ColorValues.blackColor,
                           ),
                         ),
                       ],
@@ -755,7 +980,9 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             StringValue.movieNotAvailable.tr,
                             style: GoogleFonts.urbanist(
-                              color: (getStorage.read('isDarkMode') == true) ? ColorValues.redColor : ColorValues.blackColor,
+                              color: (getStorage.read('isDarkMode') == true)
+                                  ? ColorValues.redColor
+                                  : ColorValues.blackColor,
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
                             ),
@@ -802,11 +1029,16 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           _interstitialAd?.show();
                           if (_interstitialAd != null &&
-                              topRatedMovie.topRatedMovieList[i].iMDBid == null &&
-                              topRatedMovie.topRatedMovieList[i].tmdbMovieId == null) {
+                              topRatedMovie.topRatedMovieList[i].iMDBid ==
+                                  null &&
+                              topRatedMovie.topRatedMovieList[i].tmdbMovieId ==
+                                  null) {
                             _interstitialAd?.show();
                             PreviewNetworkImage(
-                                id: topRatedMovie.topRatedMovieList[i].id ?? "", image: topRatedMovie.topRatedMovieList[i].thumbnail ?? "");
+                                id: topRatedMovie.topRatedMovieList[i].id ?? "",
+                                image: topRatedMovie
+                                        .topRatedMovieList[i].thumbnail ??
+                                    "");
 
                             Get.to(
                               HomeScreenData(
@@ -831,7 +1063,8 @@ class _HomePageState extends State<HomePage> {
                   height: SizeConfig.screenHeight / 4.5,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 1),
+                    padding: EdgeInsets.only(
+                        left: SizeConfig.blockSizeHorizontal * 1),
                     scrollDirection: Axis.horizontal,
                     itemCount: topRatedMovie.topRatedMovieList.length,
                     itemBuilder: (BuildContext context, int i) {
@@ -840,32 +1073,55 @@ class _HomePageState extends State<HomePage> {
                           height: SizeConfig.screenHeight,
                           clipBehavior: Clip.antiAlias,
                           width: SizeConfig.screenWidth / 2.8,
-                          margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 3),
+                          margin: EdgeInsets.only(
+                              left: SizeConfig.blockSizeHorizontal * 3),
                           decoration: BoxDecoration(
-                            color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                            color: (getStorage.read('isDarkMode') == true)
+                                ? ColorValues.darkModeSecond
+                                : Colors.grey.shade200,
                             borderRadius: BorderRadius.circular(26),
                           ),
-                          child: topRatedMovie.topRatedMovieList[i].tmdbMovieId == null && topRatedMovie.topRatedMovieList[i].iMDBid == null
+                          child: topRatedMovie
+                                          .topRatedMovieList[i].tmdbMovieId ==
+                                      null &&
+                                  topRatedMovie.topRatedMovieList[i].iMDBid ==
+                                      null
                               ? PreviewNetworkImage(
-                                  id: topRatedMovie.topRatedMovieList[i].id ?? "", image: topRatedMovie.topRatedMovieList[i].thumbnail ?? "")
+                                  id: topRatedMovie.topRatedMovieList[i].id ??
+                                      "",
+                                  image: topRatedMovie
+                                          .topRatedMovieList[i].thumbnail ??
+                                      "")
                               : Stack(
                                   alignment: Alignment.bottomCenter,
                                   children: [
                                     CachedNetworkImage(
-                                      imageUrl: topRatedMovie.topRatedMovieList[i].thumbnail.toString(),
+                                      imageUrl: topRatedMovie
+                                          .topRatedMovieList[i].thumbnail
+                                          .toString(),
                                       fit: BoxFit.cover,
                                       height: 200,
                                       width: double.infinity,
                                       placeholder: (context, url) => Image(
-                                        image: const AssetImage(AssetValues.appLogo),
+                                        image: const AssetImage(
+                                            AssetValues.appLogo),
                                         width: 50,
                                         height: 50,
-                                        color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                        color: (getStorage.read('isDarkMode') ==
+                                                true)
+                                            ? ColorValues.darkModeThird
+                                            : Colors.grey.shade400,
                                       ),
-                                      errorWidget: (context, url, error) => Container(
-                                        color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        color: getStorage.read('isDarkMode') ==
+                                                true
+                                            ? ColorValues.darkModeThird
+                                            : Colors.grey.shade400,
                                         child: const Center(
-                                          child: Image(image: AssetImage(AssetValues.appLogo)),
+                                          child: Image(
+                                              image: AssetImage(
+                                                  AssetValues.appLogo)),
                                         ),
                                       ),
                                     ),
@@ -883,26 +1139,34 @@ class _HomePageState extends State<HomePage> {
                                             Colors.transparent,
                                           ],
                                         ),
-                                        borderRadius: const BorderRadius.vertical(
+                                        borderRadius:
+                                            const BorderRadius.vertical(
                                           bottom: Radius.circular(12),
                                         ),
                                       ),
                                       child: Center(
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                topRatedMovie.topRatedMovieList[i].title ?? '',
-                                                style: titalstyle5.copyWith(color: Colors.white),
+                                                topRatedMovie
+                                                        .topRatedMovieList[i]
+                                                        .title ??
+                                                    '',
+                                                style: titalstyle5.copyWith(
+                                                    color: Colors.white),
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.center,
                                               ),
                                               const SizedBox(height: 6),
                                               RatingBadge(
-                                                rating: topRatedMovie.topRatedMovieList[i].rating.toString(),
+                                                rating: topRatedMovie
+                                                    .topRatedMovieList[i].rating
+                                                    .toString(),
                                               ),
                                             ],
                                           ),
@@ -966,13 +1230,20 @@ class _HomePageState extends State<HomePage> {
                       SeeAllContainer(onTap: () {
                         _interstitialAd?.show();
                         if (_interstitialAd != null &&
-                            topRatedWebSeries.topRatedWebSeriesList[i].iMDBid == null &&
-                            topRatedWebSeries.topRatedWebSeriesList[i].tmdbMovieId == null) {
+                            topRatedWebSeries.topRatedWebSeriesList[i].iMDBid ==
+                                null &&
+                            topRatedWebSeries
+                                    .topRatedWebSeriesList[i].tmdbMovieId ==
+                                null) {
                           _interstitialAd?.show();
 
                           PreviewNetworkImage(
-                              id: topRatedWebSeries.topRatedWebSeriesList[i].thumbnail ?? "",
-                              image: topRatedWebSeries.topRatedWebSeriesList[i].thumbnail ?? "");
+                              id: topRatedWebSeries
+                                      .topRatedWebSeriesList[i].thumbnail ??
+                                  "",
+                              image: topRatedWebSeries
+                                      .topRatedWebSeriesList[i].thumbnail ??
+                                  "");
                           Get.to(
                             HomeScreenData(
                               title: StringValue.topRatedWebSeries.tr,
@@ -1010,32 +1281,54 @@ class _HomePageState extends State<HomePage> {
                             left: SizeConfig.blockSizeHorizontal * 3,
                           ),
                           decoration: BoxDecoration(
-                            color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                            color: (getStorage.read('isDarkMode') == true)
+                                ? ColorValues.darkModeSecond
+                                : Colors.grey.shade200,
                             borderRadius: BorderRadius.circular(26),
                           ),
-                          child: topRatedWebSeries.topRatedWebSeriesList[i].iMDBid == null &&
-                                  topRatedWebSeries.topRatedWebSeriesList[i].tmdbMovieId == null
+                          child: topRatedWebSeries
+                                          .topRatedWebSeriesList[i].iMDBid ==
+                                      null &&
+                                  topRatedWebSeries.topRatedWebSeriesList[i]
+                                          .tmdbMovieId ==
+                                      null
                               ? PreviewNetworkImage(
-                                  id: topRatedWebSeries.topRatedWebSeriesList[i].id ?? "",
-                                  image: topRatedWebSeries.topRatedWebSeriesList[i].thumbnail ?? "")
+                                  id: topRatedWebSeries
+                                          .topRatedWebSeriesList[i].id ??
+                                      "",
+                                  image: topRatedWebSeries
+                                          .topRatedWebSeriesList[i].thumbnail ??
+                                      "")
                               : Stack(
                                   alignment: Alignment.bottomCenter,
                                   children: [
                                     CachedNetworkImage(
-                                      imageUrl: topRatedWebSeries.topRatedWebSeriesList[i].thumbnail.toString(),
+                                      imageUrl: topRatedWebSeries
+                                          .topRatedWebSeriesList[i].thumbnail
+                                          .toString(),
                                       fit: BoxFit.cover,
                                       height: 200,
                                       width: double.infinity,
                                       placeholder: (context, url) => Image(
-                                        image: const AssetImage(AssetValues.appLogo),
+                                        image: const AssetImage(
+                                            AssetValues.appLogo),
                                         width: 50,
                                         height: 50,
-                                        color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                        color: (getStorage.read('isDarkMode') ==
+                                                true)
+                                            ? ColorValues.darkModeThird
+                                            : Colors.grey.shade400,
                                       ),
-                                      errorWidget: (context, url, error) => Container(
-                                        color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                      errorWidget: (context, url, error) =>
+                                          Container(
+                                        color: getStorage.read('isDarkMode') ==
+                                                true
+                                            ? ColorValues.darkModeThird
+                                            : Colors.grey.shade400,
                                         child: const Center(
-                                          child: Image(image: AssetImage(AssetValues.appLogo)),
+                                          child: Image(
+                                              image: AssetImage(
+                                                  AssetValues.appLogo)),
                                         ),
                                       ),
                                     ),
@@ -1053,26 +1346,36 @@ class _HomePageState extends State<HomePage> {
                                             Colors.transparent,
                                           ],
                                         ),
-                                        borderRadius: const BorderRadius.vertical(
+                                        borderRadius:
+                                            const BorderRadius.vertical(
                                           bottom: Radius.circular(26),
                                         ),
                                       ),
                                       child: Center(
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                topRatedWebSeries.topRatedWebSeriesList[i].title ?? '',
-                                                style: titalstyle5.copyWith(color: Colors.white),
+                                                topRatedWebSeries
+                                                        .topRatedWebSeriesList[
+                                                            i]
+                                                        .title ??
+                                                    '',
+                                                style: titalstyle5.copyWith(
+                                                    color: Colors.white),
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.center,
                                               ),
                                               const SizedBox(height: 6),
                                               RatingBadge(
-                                                rating: topRatedWebSeries.topRatedWebSeriesList[i].rating.toString(),
+                                                rating: topRatedWebSeries
+                                                    .topRatedWebSeriesList[i]
+                                                    .rating
+                                                    .toString(),
                                               ),
                                             ],
                                           ),
@@ -1088,13 +1391,15 @@ class _HomePageState extends State<HomePage> {
                             _interstitialAd?.show();
                             Get.to(
                               () => DetailsScreen(
-                                movieId: topRatedWebSeries.topRatedWebSeriesList[i].id!,
+                                movieId: topRatedWebSeries
+                                    .topRatedWebSeriesList[i].id!,
                               ),
                             );
                           } else {
                             Get.to(
                               () => DetailsScreen(
-                                movieId: topRatedWebSeries.topRatedWebSeriesList[i].id!,
+                                movieId: topRatedWebSeries
+                                    .topRatedWebSeriesList[i].id!,
                               ),
                             );
                           }
@@ -1114,7 +1419,9 @@ class _HomePageState extends State<HomePage> {
   /// NewReleases Movie Api Data ///
   BlocProvider<NewReleaseMovieBloc> newReleases(BuildContext context, int i) {
     return BlocProvider(
-      create: (_) => NewReleaseMovieBloc(RepositoryProvider.of<NewReleasemovieRepository>(context))..add(GetNewReleasemovie()),
+      create: (_) => NewReleaseMovieBloc(
+          RepositoryProvider.of<NewReleasemovieRepository>(context))
+        ..add(GetNewReleasemovie()),
       child: BlocListener<NewReleaseMovieBloc, NewReleaseMovieState>(
         listener: (BuildContext context, state) {},
         child: BlocBuilder<NewReleaseMovieBloc, NewReleaseMovieState>(
@@ -1144,9 +1451,14 @@ class _HomePageState extends State<HomePage> {
                                 _interstitialAd?.show();
                                 if (_interstitialAd != null &&
                                     state.movieModal.movie![i].iMDBid == null &&
-                                    state.movieModal.movie![i].tmdbMovieId == null) {
+                                    state.movieModal.movie![i].tmdbMovieId ==
+                                        null) {
                                   _interstitialAd?.show();
-                                  PreviewNetworkImage(id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "");
+                                  PreviewNetworkImage(
+                                      id: state.movieModal.movie![i].id ?? "",
+                                      image: state
+                                              .movieModal.movie![i].thumbnail ??
+                                          "");
                                   Get.to(
                                     HomeScreenData(
                                       title: StringValue.newReleases.tr,
@@ -1169,14 +1481,22 @@ class _HomePageState extends State<HomePage> {
                           height: SizeConfig.screenHeight / 4.7,
                           child: ListView.builder(
                             shrinkWrap: true,
-                            padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 1),
+                            padding: EdgeInsets.only(
+                                left: SizeConfig.blockSizeHorizontal * 1),
                             scrollDirection: Axis.horizontal,
                             itemCount: state.movieModal.movie!.length,
                             itemBuilder: (BuildContext context, int i) {
                               return InkWell(
                                 onTap: () {
-                                  if (state.movieModal.movie![i].tmdbMovieId == null && state.movieModal.movie![i].iMDBid == null) {
-                                    PreviewNetworkImage(id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].image ?? "");
+                                  if (state.movieModal.movie![i].tmdbMovieId ==
+                                          null &&
+                                      state.movieModal.movie![i].iMDBid ==
+                                          null) {
+                                    PreviewNetworkImage(
+                                        id: state.movieModal.movie![i].id ?? "",
+                                        image:
+                                            state.movieModal.movie![i].image ??
+                                                "");
                                     Get.to(
                                       () => DetailsScreen(
                                         movieId: state.movieModal.movie![i].id!,
@@ -1194,32 +1514,60 @@ class _HomePageState extends State<HomePage> {
                                   height: SizeConfig.screenHeight,
                                   clipBehavior: Clip.antiAlias,
                                   width: SizeConfig.screenWidth / 2.8,
-                                  margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 3),
+                                  margin: EdgeInsets.only(
+                                      left: SizeConfig.blockSizeHorizontal * 3),
                                   decoration: BoxDecoration(
-                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                                    color:
+                                        (getStorage.read('isDarkMode') == true)
+                                            ? ColorValues.darkModeSecond
+                                            : Colors.grey.shade200,
                                     borderRadius: BorderRadius.circular(26),
                                   ),
-                                  child: state.movieModal.movie![i].tmdbMovieId == null && state.movieModal.movie![i].iMDBid == null
+                                  child: state.movieModal.movie![i]
+                                                  .tmdbMovieId ==
+                                              null &&
+                                          state.movieModal.movie![i].iMDBid ==
+                                              null
                                       ? PreviewNetworkImage(
-                                          id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "")
+                                          id: state.movieModal.movie![i].id ??
+                                              "",
+                                          image: state.movieModal.movie![i]
+                                                  .thumbnail ??
+                                              "")
                                       : Stack(
                                           alignment: Alignment.bottomCenter,
                                           children: [
                                             CachedNetworkImage(
-                                              imageUrl: state.movieModal.movie![i].thumbnail.toString(),
+                                              imageUrl: state.movieModal
+                                                  .movie![i].thumbnail
+                                                  .toString(),
                                               fit: BoxFit.cover,
                                               height: 200,
                                               width: double.infinity,
-                                              placeholder: (context, url) => Image(
-                                                image: const AssetImage(AssetValues.appLogo),
+                                              placeholder: (context, url) =>
+                                                  Image(
+                                                image: const AssetImage(
+                                                    AssetValues.appLogo),
                                                 width: 50,
                                                 height: 50,
-                                                color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                color: (getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true)
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                               ),
-                                              errorWidget: (context, url, error) => Container(
-                                                color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Container(
+                                                color: getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                                 child: const Center(
-                                                  child: Image(image: AssetImage(AssetValues.appLogo)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          AssetValues.appLogo)),
                                                 ),
                                               ),
                                             ),
@@ -1230,35 +1578,60 @@ class _HomePageState extends State<HomePage> {
                                                   begin: Alignment.bottomCenter,
                                                   end: Alignment.topCenter,
                                                   colors: [
-                                                    Colors.black.withValues(alpha: 0.8),
-                                                    Colors.black.withValues(alpha: 0.7),
-                                                    Colors.black.withValues(alpha: 0.6),
-                                                    Colors.black.withValues(alpha: 0.3),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.8),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.7),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.6),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.3),
                                                     Colors.transparent,
                                                   ],
                                                 ),
-                                                borderRadius: const BorderRadius.vertical(
+                                                borderRadius:
+                                                    const BorderRadius.vertical(
                                                   bottom: Radius.circular(26),
                                                 ),
                                               ),
                                               child: Center(
                                                 child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 8.0),
                                                   child: Column(
-                                                    mainAxisSize: MainAxisSize.min,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Text(
-                                                        state.movieModal.movie![i].title ?? '',
-                                                        style: titalstyle5.copyWith(color: Colors.white),
+                                                        state
+                                                                .movieModal
+                                                                .movie![i]
+                                                                .title ??
+                                                            '',
+                                                        style: titalstyle5
+                                                            .copyWith(
+                                                                color: Colors
+                                                                    .white),
                                                         maxLines: 1,
-                                                        overflow: TextOverflow.ellipsis,
-                                                        textAlign: TextAlign.center,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.center,
                                                       ),
                                                       const SizedBox(height: 6),
                                                       RatingBadge(
-                                                        rating: state.movieModal.movie![i].rating == 0
+                                                        rating: state
+                                                                    .movieModal
+                                                                    .movie![i]
+                                                                    .rating ==
+                                                                0
                                                             ? "N/A"
-                                                            : state.movieModal.movie![i].rating.toString(),
+                                                            : state
+                                                                .movieModal
+                                                                .movie![i]
+                                                                .rating
+                                                                .toString(),
                                                       ),
                                                     ],
                                                   ),
@@ -1288,7 +1661,9 @@ class _HomePageState extends State<HomePage> {
   /// Top 10 Movie Api Data ///
   BlocProvider<Top10moviesBloc> top10Movie(BuildContext context, int i) {
     return BlocProvider(
-      create: (_) => Top10moviesBloc(RepositoryProvider.of<Top10MoviesRepository>(context))..add(GetTop10Movies()),
+      create: (_) =>
+          Top10moviesBloc(RepositoryProvider.of<Top10MoviesRepository>(context))
+            ..add(GetTop10Movies()),
       child: BlocListener<Top10moviesBloc, Top10moviesState>(
         listener: (BuildContext context, state) {},
         child: BlocBuilder<Top10moviesBloc, Top10moviesState>(
@@ -1318,9 +1693,14 @@ class _HomePageState extends State<HomePage> {
                                 _interstitialAd?.show();
                                 if (_interstitialAd != null &&
                                     state.movieModal.movie![i].iMDBid == null &&
-                                    state.movieModal.movie![i].tmdbMovieId == null) {
+                                    state.movieModal.movie![i].tmdbMovieId ==
+                                        null) {
                                   _interstitialAd?.show();
-                                  PreviewNetworkImage(id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "");
+                                  PreviewNetworkImage(
+                                      id: state.movieModal.movie![i].id ?? "",
+                                      image: state
+                                              .movieModal.movie![i].thumbnail ??
+                                          "");
                                   Get.to(
                                     HomeScreenData(
                                       title: StringValue.top10.tr,
@@ -1343,7 +1723,8 @@ class _HomePageState extends State<HomePage> {
                           height: SizeConfig.screenHeight / 4.7,
                           child: ListView.builder(
                             shrinkWrap: true,
-                            padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 1),
+                            padding: EdgeInsets.only(
+                                left: SizeConfig.blockSizeHorizontal * 1),
                             scrollDirection: Axis.horizontal,
                             itemCount: state.movieModal.movie!.length,
                             itemBuilder: (BuildContext context, int i) {
@@ -1354,31 +1735,65 @@ class _HomePageState extends State<HomePage> {
                                       height: SizeConfig.screenHeight,
                                       clipBehavior: Clip.antiAlias,
                                       width: SizeConfig.screenWidth / 2.8,
-                                      margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 3),
+                                      margin: EdgeInsets.only(
+                                          left: SizeConfig.blockSizeHorizontal *
+                                              3),
                                       decoration: BoxDecoration(
-                                        color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                                        color: (getStorage.read('isDarkMode') ==
+                                                true)
+                                            ? ColorValues.darkModeSecond
+                                            : Colors.grey.shade200,
                                         borderRadius: BorderRadius.circular(26),
                                       ),
-                                      child: state.movieModal.movie![i].tmdbMovieId == null && state.movieModal.movie![i].iMDBid == null
+                                      child: state.movieModal.movie![i]
+                                                      .tmdbMovieId ==
+                                                  null &&
+                                              state.movieModal.movie![i]
+                                                      .iMDBid ==
+                                                  null
                                           ? PreviewNetworkImage(
-                                              id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "")
+                                              id: state.movieModal.movie![i]
+                                                      .id ??
+                                                  "",
+                                              image: state.movieModal.movie![i]
+                                                      .thumbnail ??
+                                                  "")
                                           : Stack(
                                               alignment: Alignment.bottomCenter,
                                               children: [
                                                 CachedNetworkImage(
-                                                  imageUrl: state.movieModal.movie![i].thumbnail.toString(),
+                                                  imageUrl: state.movieModal
+                                                      .movie![i].thumbnail
+                                                      .toString(),
                                                   fit: BoxFit.cover,
                                                   width: double.infinity,
-                                                  placeholder: (context, url) => Image(
-                                                    image: const AssetImage(AssetValues.appLogo),
+                                                  placeholder: (context, url) =>
+                                                      Image(
+                                                    image: const AssetImage(
+                                                        AssetValues.appLogo),
                                                     width: 50,
                                                     height: 50,
-                                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                    color: (getStorage.read(
+                                                                'isDarkMode') ==
+                                                            true)
+                                                        ? ColorValues
+                                                            .darkModeThird
+                                                        : Colors.grey.shade400,
                                                   ),
-                                                  errorWidget: (context, url, error) => Container(
-                                                    color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                  errorWidget:
+                                                      (context, url, error) =>
+                                                          Container(
+                                                    color: getStorage.read(
+                                                                'isDarkMode') ==
+                                                            true
+                                                        ? ColorValues
+                                                            .darkModeThird
+                                                        : Colors.grey.shade400,
                                                     child: const Center(
-                                                      child: Image(image: AssetImage(AssetValues.appLogo)),
+                                                      child: Image(
+                                                          image: AssetImage(
+                                                              AssetValues
+                                                                  .appLogo)),
                                                     ),
                                                   ),
                                                 ),
@@ -1386,36 +1801,62 @@ class _HomePageState extends State<HomePage> {
                                                   height: 70,
                                                   decoration: BoxDecoration(
                                                     gradient: LinearGradient(
-                                                      begin: Alignment.bottomCenter,
+                                                      begin: Alignment
+                                                          .bottomCenter,
                                                       end: Alignment.topCenter,
                                                       colors: [
-                                                        Colors.black.withValues(alpha: 0.8),
-                                                        Colors.black.withValues(alpha: 0.7),
-                                                        Colors.black.withValues(alpha: 0.6),
-                                                        Colors.black.withValues(alpha: 0.3),
+                                                        Colors.black.withValues(
+                                                            alpha: 0.8),
+                                                        Colors.black.withValues(
+                                                            alpha: 0.7),
+                                                        Colors.black.withValues(
+                                                            alpha: 0.6),
+                                                        Colors.black.withValues(
+                                                            alpha: 0.3),
                                                         Colors.transparent,
                                                       ],
                                                     ),
-                                                    borderRadius: const BorderRadius.vertical(
-                                                      bottom: Radius.circular(26),
+                                                    borderRadius:
+                                                        const BorderRadius
+                                                            .vertical(
+                                                      bottom:
+                                                          Radius.circular(26),
                                                     ),
                                                   ),
                                                   child: Center(
                                                     child: Padding(
-                                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                      padding: const EdgeInsets
+                                                          .symmetric(
+                                                          horizontal: 8.0),
                                                       child: Column(
-                                                        mainAxisSize: MainAxisSize.min,
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
                                                         children: [
                                                           Text(
-                                                            state.movieModal.movie![i].title ?? '',
-                                                            style: titalstyle5.copyWith(color: Colors.white),
+                                                            state
+                                                                    .movieModal
+                                                                    .movie![i]
+                                                                    .title ??
+                                                                '',
+                                                            style: titalstyle5
+                                                                .copyWith(
+                                                                    color: Colors
+                                                                        .white),
                                                             maxLines: 1,
-                                                            overflow: TextOverflow.ellipsis,
-                                                            textAlign: TextAlign.center,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            textAlign: TextAlign
+                                                                .center,
                                                           ),
-                                                          const SizedBox(height: 6),
+                                                          const SizedBox(
+                                                              height: 6),
                                                           RatingBadge(
-                                                            rating: state.movieModal.movie![i].rating.toString(),
+                                                            rating: state
+                                                                .movieModal
+                                                                .movie![i]
+                                                                .rating
+                                                                .toString(),
                                                           ),
                                                         ],
                                                       ),
@@ -1431,13 +1872,15 @@ class _HomePageState extends State<HomePage> {
                                         _interstitialAd?.show();
                                         Get.to(
                                           () => DetailsScreen(
-                                            movieId: state.movieModal.movie![i].id!,
+                                            movieId:
+                                                state.movieModal.movie![i].id!,
                                           ),
                                         );
                                       } else {
                                         Get.to(
                                           () => DetailsScreen(
-                                            movieId: state.movieModal.movie![i].id!,
+                                            movieId:
+                                                state.movieModal.movie![i].id!,
                                           ),
                                         );
                                       }
@@ -1464,7 +1907,9 @@ class _HomePageState extends State<HomePage> {
   /// Top 10 Web Series Api Data ///
   BlocProvider<Top10webSeriesBloc> top10WebSeries(BuildContext context, int i) {
     return BlocProvider(
-      create: (_) => Top10webSeriesBloc(RepositoryProvider.of<Top10WebSeriesRepository>(context))..add(GetTop10WebSeries()),
+      create: (_) => Top10webSeriesBloc(
+          RepositoryProvider.of<Top10WebSeriesRepository>(context))
+        ..add(GetTop10WebSeries()),
       child: BlocListener<Top10webSeriesBloc, Top10webSeriesState>(
         listener: (BuildContext context, state) {},
         child: BlocBuilder<Top10webSeriesBloc, Top10webSeriesState>(
@@ -1494,11 +1939,17 @@ class _HomePageState extends State<HomePage> {
                                 onTap: () {
                                   _interstitialAd?.show();
                                   if (_interstitialAd != null &&
-                                      state.movieModal.movie![i].iMDBid == null &&
-                                      state.movieModal.movie![i].tmdbMovieId == null) {
+                                      state.movieModal.movie![i].iMDBid ==
+                                          null &&
+                                      state.movieModal.movie![i].tmdbMovieId ==
+                                          null) {
                                     _interstitialAd?.show();
                                     // generatePresignedURL(state.movieModal.movie![i].thumbnail.toString());
-                                    PreviewNetworkImage(id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "");
+                                    PreviewNetworkImage(
+                                        id: state.movieModal.movie![i].id ?? "",
+                                        image: state.movieModal.movie![i]
+                                                .thumbnail ??
+                                            "");
                                     Get.to(
                                       HomeScreenData(
                                         title: StringValue.top10WebSeries.tr,
@@ -1522,7 +1973,8 @@ class _HomePageState extends State<HomePage> {
                           height: SizeConfig.screenHeight / 4.7,
                           child: ListView.builder(
                             shrinkWrap: true,
-                            padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 1),
+                            padding: EdgeInsets.only(
+                                left: SizeConfig.blockSizeHorizontal * 1),
                             scrollDirection: Axis.horizontal,
                             itemCount: state.movieModal.movie!.length,
                             itemBuilder: (BuildContext context, int i) {
@@ -1531,32 +1983,60 @@ class _HomePageState extends State<HomePage> {
                                   height: SizeConfig.screenHeight,
                                   clipBehavior: Clip.antiAlias,
                                   width: SizeConfig.screenWidth / 2.8,
-                                  margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 3),
+                                  margin: EdgeInsets.only(
+                                      left: SizeConfig.blockSizeHorizontal * 3),
                                   decoration: BoxDecoration(
-                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                                    color:
+                                        (getStorage.read('isDarkMode') == true)
+                                            ? ColorValues.darkModeSecond
+                                            : Colors.grey.shade200,
                                     borderRadius: BorderRadius.circular(26),
                                   ),
-                                  child: state.movieModal.movie![i].tmdbMovieId == null && state.movieModal.movie![i].iMDBid == null
+                                  child: state.movieModal.movie![i]
+                                                  .tmdbMovieId ==
+                                              null &&
+                                          state.movieModal.movie![i].iMDBid ==
+                                              null
                                       ? PreviewNetworkImage(
-                                          id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "")
+                                          id: state.movieModal.movie![i].id ??
+                                              "",
+                                          image: state.movieModal.movie![i]
+                                                  .thumbnail ??
+                                              "")
                                       : Stack(
                                           alignment: Alignment.bottomCenter,
                                           children: [
                                             CachedNetworkImage(
-                                              imageUrl: state.movieModal.movie![i].thumbnail.toString(),
+                                              imageUrl: state.movieModal
+                                                  .movie![i].thumbnail
+                                                  .toString(),
                                               fit: BoxFit.cover,
                                               height: 200,
                                               width: double.infinity,
-                                              placeholder: (context, url) => Image(
-                                                image: const AssetImage(AssetValues.appLogo),
+                                              placeholder: (context, url) =>
+                                                  Image(
+                                                image: const AssetImage(
+                                                    AssetValues.appLogo),
                                                 width: 50,
                                                 height: 50,
-                                                color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                color: (getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true)
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                               ),
-                                              errorWidget: (context, url, error) => Container(
-                                                color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Container(
+                                                color: getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                                 child: const Center(
-                                                  child: Image(image: AssetImage(AssetValues.appLogo)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          AssetValues.appLogo)),
                                                 ),
                                               ),
                                             ),
@@ -1567,33 +2047,52 @@ class _HomePageState extends State<HomePage> {
                                                   begin: Alignment.bottomCenter,
                                                   end: Alignment.topCenter,
                                                   colors: [
-                                                    Colors.black.withValues(alpha: 0.8),
-                                                    Colors.black.withValues(alpha: 0.7),
-                                                    Colors.black.withValues(alpha: 0.6),
-                                                    Colors.black.withValues(alpha: 0.3),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.8),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.7),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.6),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.3),
                                                     Colors.transparent,
                                                   ],
                                                 ),
-                                                borderRadius: const BorderRadius.vertical(
+                                                borderRadius:
+                                                    const BorderRadius.vertical(
                                                   bottom: Radius.circular(26),
                                                 ),
                                               ),
                                               child: Center(
                                                 child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 8.0),
                                                   child: Column(
-                                                    mainAxisSize: MainAxisSize.min,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Text(
-                                                        state.movieModal.movie![i].title ?? '',
-                                                        style: titalstyle5.copyWith(color: Colors.white),
+                                                        state
+                                                                .movieModal
+                                                                .movie![i]
+                                                                .title ??
+                                                            '',
+                                                        style: titalstyle5
+                                                            .copyWith(
+                                                                color: Colors
+                                                                    .white),
                                                         maxLines: 1,
-                                                        overflow: TextOverflow.ellipsis,
-                                                        textAlign: TextAlign.center,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.center,
                                                       ),
                                                       const SizedBox(height: 6),
                                                       RatingBadge(
-                                                        rating: state.movieModal.movie![i].rating.toString(),
+                                                        rating: state.movieModal
+                                                            .movie![i].rating
+                                                            .toString(),
                                                       ),
                                                     ],
                                                   ),
@@ -1630,7 +2129,9 @@ class _HomePageState extends State<HomePage> {
   /// Comedy Movie Api Data ///
   BlocProvider<ComedyMovieBloc> comedyMovie(BuildContext context, int i) {
     return BlocProvider(
-      create: (_) => ComedyMovieBloc(RepositoryProvider.of<ComedyMovieRepository>(context))..add(GetComedyMovies()),
+      create: (_) =>
+          ComedyMovieBloc(RepositoryProvider.of<ComedyMovieRepository>(context))
+            ..add(GetComedyMovies()),
       child: BlocListener<ComedyMovieBloc, ComedymovieState>(
         listener: (BuildContext context, state) {},
         child: BlocBuilder<ComedyMovieBloc, ComedymovieState>(
@@ -1660,10 +2161,16 @@ class _HomePageState extends State<HomePage> {
                                 onTap: () {
                                   _interstitialAd?.show();
                                   if (_interstitialAd != null &&
-                                      state.movieModal.movie![i].iMDBid == null &&
-                                      state.movieModal.movie![i].tmdbMovieId == null) {
+                                      state.movieModal.movie![i].iMDBid ==
+                                          null &&
+                                      state.movieModal.movie![i].tmdbMovieId ==
+                                          null) {
                                     _interstitialAd?.show();
-                                    PreviewNetworkImage(id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "");
+                                    PreviewNetworkImage(
+                                        id: state.movieModal.movie![i].id ?? "",
+                                        image: state.movieModal.movie![i]
+                                                .thumbnail ??
+                                            "");
                                     Get.to(
                                       HomeScreenData(
                                         title: StringValue.comedyVideo.tr,
@@ -1698,32 +2205,60 @@ class _HomePageState extends State<HomePage> {
                                   height: SizeConfig.screenHeight,
                                   clipBehavior: Clip.antiAlias,
                                   width: SizeConfig.screenWidth / 2.8,
-                                  margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 3),
+                                  margin: EdgeInsets.only(
+                                      left: SizeConfig.blockSizeHorizontal * 3),
                                   decoration: BoxDecoration(
-                                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                                    color:
+                                        (getStorage.read('isDarkMode') == true)
+                                            ? ColorValues.darkModeSecond
+                                            : Colors.grey.shade200,
                                     borderRadius: BorderRadius.circular(26),
                                   ),
-                                  child: state.movieModal.movie![i].tmdbMovieId == null && state.movieModal.movie![i].iMDBid == null
+                                  child: state.movieModal.movie![i]
+                                                  .tmdbMovieId ==
+                                              null &&
+                                          state.movieModal.movie![i].iMDBid ==
+                                              null
                                       ? PreviewNetworkImage(
-                                          id: state.movieModal.movie![i].id ?? "", image: state.movieModal.movie![i].thumbnail ?? "")
+                                          id: state.movieModal.movie![i].id ??
+                                              "",
+                                          image: state.movieModal.movie![i]
+                                                  .thumbnail ??
+                                              "")
                                       : Stack(
                                           alignment: Alignment.bottomCenter,
                                           children: [
                                             CachedNetworkImage(
-                                              imageUrl: state.movieModal.movie![i].thumbnail.toString(),
+                                              imageUrl: state.movieModal
+                                                  .movie![i].thumbnail
+                                                  .toString(),
                                               fit: BoxFit.cover,
                                               height: 200,
                                               width: double.infinity,
-                                              placeholder: (context, url) => Image(
-                                                image: const AssetImage(AssetValues.appLogo),
+                                              placeholder: (context, url) =>
+                                                  Image(
+                                                image: const AssetImage(
+                                                    AssetValues.appLogo),
                                                 width: 50,
                                                 height: 50,
-                                                color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                                color: (getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true)
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                               ),
-                                              errorWidget: (context, url, error) => Container(
-                                                color: getStorage.read('isDarkMode') == true ? ColorValues.darkModeThird : Colors.grey.shade400,
+                                              errorWidget:
+                                                  (context, url, error) =>
+                                                      Container(
+                                                color: getStorage.read(
+                                                            'isDarkMode') ==
+                                                        true
+                                                    ? ColorValues.darkModeThird
+                                                    : Colors.grey.shade400,
                                                 child: const Center(
-                                                  child: Image(image: AssetImage(AssetValues.appLogo)),
+                                                  child: Image(
+                                                      image: AssetImage(
+                                                          AssetValues.appLogo)),
                                                 ),
                                               ),
                                             ),
@@ -1734,33 +2269,52 @@ class _HomePageState extends State<HomePage> {
                                                   begin: Alignment.bottomCenter,
                                                   end: Alignment.topCenter,
                                                   colors: [
-                                                    Colors.black.withValues(alpha: 0.8),
-                                                    Colors.black.withValues(alpha: 0.7),
-                                                    Colors.black.withValues(alpha: 0.6),
-                                                    Colors.black.withValues(alpha: 0.3),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.8),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.7),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.6),
+                                                    Colors.black
+                                                        .withValues(alpha: 0.3),
                                                     Colors.transparent,
                                                   ],
                                                 ),
-                                                borderRadius: const BorderRadius.vertical(
+                                                borderRadius:
+                                                    const BorderRadius.vertical(
                                                   bottom: Radius.circular(24),
                                                 ),
                                               ),
                                               child: Center(
                                                 child: Padding(
-                                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                      horizontal: 8.0),
                                                   child: Column(
-                                                    mainAxisSize: MainAxisSize.min,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
                                                     children: [
                                                       Text(
-                                                        state.movieModal.movie![i].title ?? '',
-                                                        style: titalstyle5.copyWith(color: Colors.white),
+                                                        state
+                                                                .movieModal
+                                                                .movie![i]
+                                                                .title ??
+                                                            '',
+                                                        style: titalstyle5
+                                                            .copyWith(
+                                                                color: Colors
+                                                                    .white),
                                                         maxLines: 1,
-                                                        overflow: TextOverflow.ellipsis,
-                                                        textAlign: TextAlign.center,
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
+                                                        textAlign:
+                                                            TextAlign.center,
                                                       ),
                                                       const SizedBox(height: 6),
                                                       RatingBadge(
-                                                        rating: state.movieModal.movie![i].rating.toString(),
+                                                        rating: state.movieModal
+                                                            .movie![i].rating
+                                                            .toString(),
                                                       ),
                                                     ],
                                                   ),
@@ -1830,8 +2384,12 @@ class _HomePageState extends State<HomePage> {
 
   Shimmer shimmer() {
     return Shimmer.fromColors(
-      highlightColor: (getStorage.read('isDarkMode') == true) ? Colors.white12 : Colors.grey.shade100,
-      baseColor: (getStorage.read('isDarkMode') == true) ? Colors.white24 : Colors.grey.shade300,
+      highlightColor: (getStorage.read('isDarkMode') == true)
+          ? Colors.white12
+          : Colors.grey.shade100,
+      baseColor: (getStorage.read('isDarkMode') == true)
+          ? Colors.white24
+          : Colors.grey.shade300,
       child: SizedBox(
         height: SizeConfig.screenHeight / 3,
         child: ListView.builder(
@@ -1845,7 +2403,8 @@ class _HomePageState extends State<HomePage> {
                   clipBehavior: Clip.antiAlias,
                   height: 30,
                   width: 130,
-                  margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 4),
+                  margin:
+                      EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 4),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -1854,7 +2413,8 @@ class _HomePageState extends State<HomePage> {
                   clipBehavior: Clip.antiAlias,
                   height: 170,
                   width: 130,
-                  margin: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 4),
+                  margin:
+                      EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 4),
                   decoration: BoxDecoration(
                     color: ColorValues.grayColor,
                     borderRadius: BorderRadius.circular(10),
@@ -1885,7 +2445,10 @@ class _HomePageState extends State<HomePage> {
             ),
             Text(
               StringValue.subscribeToPremium.tr,
-              style: GoogleFonts.urbanist(color: ColorValues.redColor, fontWeight: FontWeight.bold, fontSize: 18),
+              style: GoogleFonts.urbanist(
+                  color: ColorValues.redColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
               textAlign: TextAlign.center,
             ),
             SizedBox(
@@ -1896,7 +2459,10 @@ class _HomePageState extends State<HomePage> {
               child: Text(
                 StringValue.subscribePremiumEnjoyTheBenefits.tr,
                 style: GoogleFonts.urbanist(
-                    fontSize: 15, color: getStorage.read("isDarkMode") == true ? ColorValues.whiteColor : ColorValues.blackColor),
+                    fontSize: 15,
+                    color: getStorage.read("isDarkMode") == true
+                        ? ColorValues.whiteColor
+                        : ColorValues.blackColor),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -1931,7 +2497,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      backgroundColor: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : ColorValues.whiteColor,
+      backgroundColor: (getStorage.read('isDarkMode') == true)
+          ? ColorValues.darkModeSecond
+          : ColorValues.whiteColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),

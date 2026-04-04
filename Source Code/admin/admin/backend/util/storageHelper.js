@@ -5,19 +5,28 @@ const { S3, DeleteObjectCommand } = require("@aws-sdk/client-s3");
 const deleteFromAwsS3 = async (fileUrl) => {
   try {
     const s3AwsClient = new S3({
-      region: settingJSON.awsRegion,
+      region: settingJSON.awsRegion || "us-east-1",
       credentials: {
         accessKeyId: settingJSON.awsAccessKey,
         secretAccessKey: settingJSON.awsSecretKey,
       },
     });
 
-    const urlObject = new URL(fileUrl);
+    let key;
     const bucketName = settingJSON.awsBucketName;
 
-    let key = decodeURIComponent(urlObject.pathname.substring(1));
-    if (key.startsWith(bucketName + "/")) {
-      key = key.replace(bucketName + "/", "");
+    // Check if this is a CloudFront URL
+    if (settingJSON.cloudFrontDomain && fileUrl.includes(settingJSON.cloudFrontDomain)) {
+      // CloudFront URL format: https://d2cu45aav2lgy.cloudfront.net/raw/filename.mp4
+      const urlObject = new URL(fileUrl);
+      key = decodeURIComponent(urlObject.pathname.substring(1)); // Remove leading /
+    } else {
+      // Direct S3 URL
+      const urlObject = new URL(fileUrl);
+      key = decodeURIComponent(urlObject.pathname.substring(1));
+      if (key.startsWith(bucketName + "/")) {
+        key = key.replace(bucketName + "/", "");
+      }
     }
 
     const bucketParams = {
@@ -70,7 +79,7 @@ const deleteFromS3 = async (fileUrl) => {
     });
 
     const urlObject = new URL(fileUrl);
-    const key = decodeURIComponent(urlObject.pathname.substring(1)); // ✅ decode the path
+    const key = decodeURIComponent(urlObject.pathname.substring(1));
 
     const bucketParams = {
       Bucket: settingJSON?.doBucketName,
@@ -105,11 +114,14 @@ const deleteFromStorage = async (fileUrl) => {
     if (host === envHost || host === "localhost") {
       deleteLocalFile(relativePath);
     } else if (host.includes("digitaloceanspaces.com")) {
-      await deleteFromS3(fileUrl, "digitalocean");
+      await deleteFromS3(fileUrl);
     } else if (host.includes("amazonaws.com")) {
-      await deleteFromAwsS3(fileUrl, "aws");
+      await deleteFromAwsS3(fileUrl);
+    } else if (settingJSON.cloudFrontDomain && host === settingJSON.cloudFrontDomain) {
+      // CloudFront URL — delete from the underlying AWS S3 bucket
+      await deleteFromAwsS3(fileUrl);
     } else {
-      console.warn("Unknown storage. Skipping deletion.");
+      console.warn("Unknown storage host:", host, ". Skipping deletion.");
     }
   } catch (error) {
     console.error("Error deleting file:", error.message);

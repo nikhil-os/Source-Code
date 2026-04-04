@@ -38,6 +38,7 @@ exports.update = async (req, res) => {
     setting.awsHostname = req.body.awsHostname ? req.body.awsHostname : setting.awsHostname;
     setting.awsBucketName = req.body.awsBucketName ? req.body.awsBucketName : setting.awsBucketName;
     setting.awsRegion = req.body.awsRegion ? req.body.awsRegion : setting.awsRegion;
+    setting.cloudFrontDomain = req.body.cloudFrontDomain ? req.body.cloudFrontDomain : setting.cloudFrontDomain;
 
     await setting.save();
 
@@ -125,26 +126,14 @@ exports.toggleStorageOption = async (req, res) => {
 
     const current = setting.storage;
 
-    const updatedStorage = { ...current };
+    const updatedStorage = { local: false, awsS3: false, digitalOcean: false };
 
     if (type === "local") {
-      updatedStorage.local = !updatedStorage.local;
-      if (updatedStorage.local) {
-        updatedStorage.awsS3 = false;
-        updatedStorage.digitalOcean = false;
-      }
+      updatedStorage.local = true;
     } else if (type === "awsS3") {
-      updatedStorage.awsS3 = !updatedStorage.awsS3;
-      if (updatedStorage.awsS3) {
-        updatedStorage.local = false;
-        updatedStorage.digitalOcean = false;
-      }
+      updatedStorage.awsS3 = true;
     } else if (type === "digitalOcean") {
-      updatedStorage.digitalOcean = !updatedStorage.digitalOcean;
-      if (updatedStorage.digitalOcean) {
-        updatedStorage.local = false;
-        updatedStorage.awsS3 = false;
-      }
+      updatedStorage.digitalOcean = true;
     } else {
       return res.status(200).json({ status: false, message: "Invalid storage type provided." });
     }

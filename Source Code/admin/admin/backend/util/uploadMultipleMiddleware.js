@@ -1,10 +1,12 @@
+const { S3 } = require("@aws-sdk/client-s3");
 const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const fs = require("fs");
 const path = require("path");
 
-const createS3Instance = (hostname, accessKeyId, secretAccessKey) => {
+// DigitalOcean S3 client (legacy aws-sdk v2)
+const createDOS3Instance = (hostname, accessKeyId, secretAccessKey) => {
   return new aws.S3({
     accessKeyId,
     secretAccessKey,
@@ -13,67 +15,94 @@ const createS3Instance = (hostname, accessKeyId, secretAccessKey) => {
   });
 };
 
-const digitalOceanS3 = createS3Instance(settingJSON.doHostname, settingJSON.doAccessKey, settingJSON.doSecretKey);
-const awsS3 = createS3Instance(settingJSON.awsHostname, settingJSON.awsAccessKey, settingJSON.awsSecretKey);
+// AWS S3 client (aws-sdk v3)
+const createAwsS3Client = () => {
+  return new S3({
+    region: settingJSON.awsRegion || "us-east-1",
+    credentials: {
+      accessKeyId: settingJSON.awsAccessKey,
+      secretAccessKey: settingJSON.awsSecretKey,
+    },
+  });
+};
 
 const localStoragePath = path.join(__dirname, "..", "uploads");
 if (!fs.existsSync(localStoragePath)) {
   fs.mkdirSync(localStoragePath, { recursive: true });
 }
 
-const storageOptions = {
-  local: multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, localStoragePath);
-    },
-    filename: (req, file, cb) => {
-      const uniqueName = `${file.originalname}`;
-      cb(null, uniqueName);
-    },
-  }),
-
-  digitalocean: multerS3({
-    s3: digitalOceanS3,
-    bucket: settingJSON.doBucketName,
-    acl: "public-read",
-    key: (req, file, cb) => {
-      const folder = req.body.folderStructure || "uploads";
-      const keyName = `${folder}/${file.originalname}`;
-      cb(null, keyName);
-    },
-  }),
-
-  aws: multerS3({
-    s3: awsS3,
-    bucket: settingJSON.awsBucketName,
-    key: (req, file, cb) => {
-      const folder = req.body.folderStructure || "uploads";
-      const keyName = `${folder}/${file.originalname}`;
-      cb(null, keyName);
-    },
-  }),
+/**
+ * Determine the S3 key based on file type.
+ * Videos → raw/, Images → thumbnails/
+ */
+const getS3Key = (req, file) => {
+  if (req.body.folderStructure) {
+    return `${req.body.folderStructure}/${file.originalname}`;
+  }
+  if (file.mimetype.startsWith("video/") || file.mimetype === "application/octet-stream") {
+    return `raw/${file.originalname}`;
+  }
+  if (file.mimetype.startsWith("image/")) {
+    return `thumbnails/${file.originalname}`;
+  }
+  return `uploads/${file.originalname}`;
 };
 
 const getActiveStorage = async () => {
-  const settings = settingJSON; // Assuming settingJSON holds the storage settings.
+  const settings = settingJSON;
   if (settings.storage.local) return "local";
   if (settings.storage.awsS3) return "aws";
   if (settings.storage.digitalOcean) return "digitalocean";
-  return "local"; // Default to local storage if no active storage is found
-};
-
-const getStorageType = async () => {
-  const activeStorage = await getActiveStorage();
-  return storageOptions[activeStorage];
+  return "local";
 };
 
 const uploadMultipleMiddleware = async (req, res, next) => {
-  const storage = await getStorageType();
-  const upload = multer({
-    storage: storage,
-  }).array("content", 10);
+  try {
+    const activeStorage = await getActiveStorage();
 
-  upload(req, res, next);
+    let storageOption;
+
+    if (activeStorage === "local") {
+      storageOption = multer.diskStorage({
+        destination: (req, file, cb) => {
+          cb(null, localStoragePath);
+        },
+        filename: (req, file, cb) => {
+          cb(null, file.originalname);
+        },
+      });
+    } else if (activeStorage === "digitalocean") {
+      const digitalOceanS3 = createDOS3Instance(
+        settingJSON.doHostname,
+        settingJSON.doAccessKey,
+        settingJSON.doSecretKey
+      );
+      storageOption = multerS3({
+        s3: digitalOceanS3,
+        bucket: settingJSON.doBucketName,
+        acl: "public-read",
+        key: (req, file, cb) => {
+          const folder = req.body.folderStructure || "uploads";
+          cb(null, `${folder}/${file.originalname}`);
+        },
+      });
+    } else if (activeStorage === "aws") {
+      const awsS3Client = createAwsS3Client();
+      storageOption = multerS3({
+        s3: awsS3Client,
+        bucket: settingJSON.awsBucketName,
+        key: (req, file, cb) => {
+          const s3Key = getS3Key(req, file);
+          console.log("Uploading to S3 key:", s3Key);
+          cb(null, s3Key);
+        },
+      });
+    }
+
+    multer({ storage: storageOption }).array("content", 10)(req, res, next);
+  } catch (error) {
+    next(error);
+  }
 };
 
 module.exports = uploadMultipleMiddleware;

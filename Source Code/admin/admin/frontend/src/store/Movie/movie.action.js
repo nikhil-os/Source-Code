@@ -55,7 +55,7 @@ export const getMovieCategory = () => (dispatch) => {
   api
     .get(`episode/series?type=SERIES`)
     .then((res) => {
-      dispatch({ type: GET_MOVIE, payload: res.data.movie });
+      dispatch({ type: GET_MOVIE, payload: { movie: res.data.movie } });
     })
     .catch((error) => {
       console.log(error);

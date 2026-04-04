@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/presentation/utils/app_colors.dart';
 import 'package:webtime_movie_ocean/presentation/utils/app_string.dart';
 import 'package:webtime_movie_ocean/presentation/utils/helper/ads_helper.dart';
@@ -504,7 +504,9 @@ class _LiveTvVideoPlayerScreen extends State<LiveTvVideoPlayerScreen> {
                         top: Get.height / 1.7,
                         right: Get.width / 3.5,
                       ),
-                      child: (showBanner && _bannerAd != null) ? AdWidget(ad: _bannerAd!) : null,
+                      child: (showBanner && _bannerAd != null)
+                          ? AdWidget(ad: _bannerAd!)
+                          : null,
                     ),
               (controller.value.isPlaying)
                   ? const SizedBox()
@@ -540,12 +542,16 @@ class _LiveTvVideoPlayerScreen extends State<LiveTvVideoPlayerScreen> {
                         setState(() {
                           showBanner = true;
                           showIcon = true;
-                          controller.value.isPlaying ? controller.pause() : controller.play();
+                          controller.value.isPlaying
+                              ? controller.pause()
+                              : controller.play();
                         });
                       }
                     },
                     child: Icon(
-                      controller.value.isPlaying ? Icons.pause : Icons.play_arrow_rounded,
+                      controller.value.isPlaying
+                          ? Icons.pause
+                          : Icons.play_arrow_rounded,
                       color: Colors.white,
                       size: SizeConfig.blockSizeHorizontal * 7.5,
                     ),
@@ -553,16 +559,23 @@ class _LiveTvVideoPlayerScreen extends State<LiveTvVideoPlayerScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: SizeConfig.screenHeight / 1.2, left: SizeConfig.screenWidth / 1.1),
+                padding: EdgeInsets.only(
+                    top: SizeConfig.screenHeight / 1.2,
+                    left: SizeConfig.screenWidth / 1.1),
                 child: Text(
                   StringValue.live.tr,
-                  style: GoogleFonts.urbanist(color: ColorValues.redColor, fontSize: 18, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.urbanist(
+                      color: ColorValues.redColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               Visibility(
                 visible: isVisible,
                 child: Padding(
-                  padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 5, top: SizeConfig.blockSizeVertical * 4),
+                  padding: EdgeInsets.only(
+                      left: SizeConfig.blockSizeHorizontal * 5,
+                      top: SizeConfig.blockSizeVertical * 4),
                   child: SizedBox(
                     width: SizeConfig.blockSizeHorizontal * 40,
                     child: SizedBox(
@@ -574,7 +587,8 @@ class _LiveTvVideoPlayerScreen extends State<LiveTvVideoPlayerScreen> {
                         children: [
                           GestureDetector(
                             onTap: _handleBackPress,
-                            child: const Icon(Icons.arrow_back, size: 25, color: Colors.white),
+                            child: const Icon(Icons.arrow_back,
+                                size: 25, color: Colors.white),
                           ),
                           SizedBox(width: Get.width / 25),
                           Expanded(

@@ -11,7 +11,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/googleAd/google_video_ad.dart';
 import 'package:webtime_movie_ocean/googleAd/video_controller.dart';
 import 'package:webtime_movie_ocean/presentation/screens/videoPlayer/video_controller.dart';
@@ -4801,7 +4801,8 @@ class VideoPlayers extends StatefulWidget {
   String link;
   bool type;
 
-  VideoPlayers({super.key, required this.name, required this.link, required this.type});
+  VideoPlayers(
+      {super.key, required this.name, required this.link, required this.type});
 
   @override
   State<VideoPlayers> createState() => _VideoPlayersState();
@@ -4863,14 +4864,18 @@ class _VideoPlayersState extends State<VideoPlayers> {
     videoController.videoPlayerController = (widget.type)
         ? VideoPlayerController.networkUrl(Uri.parse(videolink))
         : VideoPlayerController.file(
-            File("/storage/emulated/0/Android/data/com.mova.android/files/${widget.name}"),
+            File(
+                "/storage/emulated/0/Android/data/com.mova.android/files/${widget.name}"),
           );
 
     videoController.videoPlayerController.initialize().then((_) {
       if (videoController.videoPlayerController.value.isInitialized) {
-        if (widget.type || File(videoController.videoPlayerController.dataSource).existsSync()) {
+        if (widget.type ||
+            File(videoController.videoPlayerController.dataSource)
+                .existsSync()) {
           setState(() {
-            videoDuration = videoController.videoPlayerController.value.duration;
+            videoDuration =
+                videoController.videoPlayerController.value.duration;
             videoController.videoPlayerController.setLooping(false);
             log("Video initialized with duration: ${videoDuration?.inSeconds} seconds");
           });
@@ -4893,7 +4898,8 @@ class _VideoPlayersState extends State<VideoPlayers> {
     });
   }
 
-  bool get _isLandscape => MediaQuery.of(context).orientation == Orientation.landscape;
+  bool get _isLandscape =>
+      MediaQuery.of(context).orientation == Orientation.landscape;
 
   Future<void> _toggleOrientation() async {
     if (_isLandscape) {
@@ -4914,8 +4920,10 @@ class _VideoPlayersState extends State<VideoPlayers> {
       if (videoController.videoPlayerController.value.isInitialized &&
           videoController.videoPlayerController.value.isPlaying &&
           videoDuration != null) {
-        Duration currentPosition = videoController.videoPlayerController.value.position;
-        double progressPercentage = (currentPosition.inSeconds / videoDuration!.inSeconds) * 100;
+        Duration currentPosition =
+            videoController.videoPlayerController.value.position;
+        double progressPercentage =
+            (currentPosition.inSeconds / videoDuration!.inSeconds) * 100;
 
         for (int i = 0; i < adShowPercentages.length; i++) {
           if (!adsShown[i] && progressPercentage >= adShowPercentages[i]) {
@@ -4944,7 +4952,8 @@ class _VideoPlayersState extends State<VideoPlayers> {
 
         double buffered = 0.0;
         if (value.buffered.isNotEmpty && totalMs > 0) {
-          buffered = (value.buffered.last.end.inMilliseconds / totalMs).clamp(0.0, 1.0);
+          buffered = (value.buffered.last.end.inMilliseconds / totalMs)
+              .clamp(0.0, 1.0);
         }
 
         return LayoutBuilder(
@@ -5179,19 +5188,23 @@ class _VideoPlayersState extends State<VideoPlayers> {
                         child: ExcludeSemantics(
                           child: Stack(
                             children: [
-                              const Positioned.fill(child: ColoredBox(color: Colors.black)),
+                              const Positioned.fill(
+                                  child: ColoredBox(color: Colors.black)),
                               // Ad widget is ALWAYS in the tree so it can show immediately.
                               Align(
                                 alignment: Alignment.center,
                                 child: VideoAdServices.createAdWidget(
                                   onAdCompletedCallback: () {
                                     setState(() => isShowingVideoAd = false);
-                                    videoController.videoPlayerController.play();
+                                    videoController.videoPlayerController
+                                        .play();
                                   },
-                                  onAdStartedCallback: () => setState(() => showAdSpinner = false),
+                                  onAdStartedCallback: () =>
+                                      setState(() => showAdSpinner = false),
                                   onAdFailedCallback: () {
                                     setState(() => isShowingVideoAd = false);
-                                    videoController.videoPlayerController.play();
+                                    videoController.videoPlayerController
+                                        .play();
                                   },
                                 ),
                               ),
@@ -5225,77 +5238,125 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                         top: SizeConfig.blockSizeHorizontal * 2,
                                       ),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Column(
                                             children: [
                                               Visibility(
                                                 visible: isVisible,
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                   children: [
                                                     GetBuilder<VideoController>(
                                                       id: "duration",
                                                       builder: (logic) {
                                                         return Text(
                                                           logic.getPosition(),
-                                                          style: const TextStyle(color: ColorValues.whiteColor, fontSize: 12),
+                                                          style: const TextStyle(
+                                                              color: ColorValues
+                                                                  .whiteColor,
+                                                              fontSize: 12),
                                                         );
                                                       },
                                                     ),
                                                     SizedBox(
-                                                      width: SizeConfig.blockSizeHorizontal * 76,
-                                                      child: _buildCustomProgressIndicator(),
+                                                      width: SizeConfig
+                                                              .blockSizeHorizontal *
+                                                          76,
+                                                      child:
+                                                          _buildCustomProgressIndicator(),
                                                     ),
                                                     Text(
                                                       "${videoController.videoPlayerController.value.duration.inHours.bitLength}:${videoController.videoPlayerController.value.duration.inMinutes}:${videoController.videoPlayerController.value.duration.inSeconds.bitLength}",
-                                                      style: const TextStyle(color: ColorValues.whiteColor, fontSize: 12),
+                                                      style: const TextStyle(
+                                                          color: ColorValues
+                                                              .whiteColor,
+                                                          fontSize: 12),
                                                     ),
                                                   ],
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: SizeConfig
+                                                            .blockSizeHorizontal *
+                                                        4),
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
                                                   children: [
                                                     SizedBox(
-                                                      width: SizeConfig.blockSizeHorizontal * 11,
+                                                      width: SizeConfig
+                                                              .blockSizeHorizontal *
+                                                          11,
                                                       child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
                                                         children: [
                                                           (isVisible)
                                                               ? GestureDetector(
-                                                                  onTap: showToast,
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.unLock,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  onTap:
+                                                                      showToast,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .unLock,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 )
                                                               : GestureDetector(
-                                                                  onTap: showToast,
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.boldLock,
-                                                                    color: ColorValues.redColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  onTap:
+                                                                      showToast,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .boldLock,
+                                                                    color: ColorValues
+                                                                        .redColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 ),
                                                           Visibility(
                                                             visible: isVisible,
-                                                            child: GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            child: GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    videoController.setVolume();
+                                                                    videoController
+                                                                        .setVolume();
                                                                   },
-                                                                  child: SvgPicture.asset(
-                                                                    videoController.videoPlayerController.value.volume == 1
-                                                                        ? MovixIcon.volumeUp
-                                                                        : MovixIcon.volumeOff,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    videoController.videoPlayerController.value.volume ==
+                                                                            1
+                                                                        ? MovixIcon
+                                                                            .volumeUp
+                                                                        : MovixIcon
+                                                                            .volumeOff,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 );
                                                               },
@@ -5307,54 +5368,93 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                                     Visibility(
                                                       visible: isVisible,
                                                       child: SizedBox(
-                                                        width: SizeConfig.blockSizeHorizontal * 30,
+                                                        width: SizeConfig
+                                                                .blockSizeHorizontal *
+                                                            30,
                                                         child: Row(
-                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
                                                           children: [
-                                                            GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    videoController.setTenSecondsPrevious();
+                                                                    videoController
+                                                                        .setTenSecondsPrevious();
                                                                   },
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.p10,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .p10,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 );
                                                               },
                                                             ),
-                                                            GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    setState(() {
-                                                                      showBanner = true;
-                                                                      showIcon = true;
+                                                                    setState(
+                                                                        () {
+                                                                      showBanner =
+                                                                          true;
+                                                                      showIcon =
+                                                                          true;
                                                                     });
-                                                                    videoController.setVideo();
+                                                                    videoController
+                                                                        .setVideo();
                                                                   },
                                                                   child: Icon(
-                                                                    videoController.videoPlayerController.value.isPlaying
-                                                                        ? Icons.pause
-                                                                        : Icons.play_arrow_rounded,
-                                                                    color: Colors.white,
-                                                                    size: SizeConfig.blockSizeHorizontal * 7.5,
+                                                                    videoController
+                                                                            .videoPlayerController
+                                                                            .value
+                                                                            .isPlaying
+                                                                        ? Icons
+                                                                            .pause
+                                                                        : Icons
+                                                                            .play_arrow_rounded,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    size: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        7.5,
                                                                   ),
                                                                 );
                                                               },
                                                             ),
-                                                            GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    videoController.setTenSecondsNext();
+                                                                    videoController
+                                                                        .setTenSecondsNext();
                                                                   },
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.n10,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .n10,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 );
                                                               },
@@ -5366,18 +5466,27 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                                     Visibility(
                                                       visible: isVisible,
                                                       child: SizedBox(
-                                                        width: SizeConfig.blockSizeHorizontal * 11,
+                                                        width: SizeConfig
+                                                                .blockSizeHorizontal *
+                                                            11,
                                                         child: Row(
-                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
                                                           children: [
                                                             GestureDetector(
                                                               onTap: () async {
                                                                 _toggleOrientation();
                                                               },
-                                                              child: SvgPicture.asset(
-                                                                MovixIcon.collapse,
-                                                                color: ColorValues.whiteColor,
-                                                                width: SizeConfig.blockSizeHorizontal * 4,
+                                                              child: SvgPicture
+                                                                  .asset(
+                                                                MovixIcon
+                                                                    .collapse,
+                                                                color: ColorValues
+                                                                    .whiteColor,
+                                                                width: SizeConfig
+                                                                        .blockSizeHorizontal *
+                                                                    4,
                                                               ),
                                                             ),
                                                           ],
@@ -5406,7 +5515,9 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                 top: Get.height / 2.4,
                                 right: Get.width / 3.5,
                               ),
-                              child: (showBanner) ? AdWidget(ad: _bannerAd!) : null,
+                              child: (showBanner)
+                                  ? AdWidget(ad: _bannerAd!)
+                                  : null,
                             ),
                     if (!videoController.videoPlayerController.value.isPlaying)
                       isShowingVideoAd
@@ -5440,66 +5551,92 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                 top: SizeConfig.blockSizeHorizontal * 2,
                               ),
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Visibility(
                                     visible: isVisible,
                                     child: Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 2),
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal:
+                                              SizeConfig.blockSizeHorizontal *
+                                                  2),
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           SizedBox(
-                                            width: SizeConfig.blockSizeHorizontal * 40,
+                                            width:
+                                                SizeConfig.blockSizeHorizontal *
+                                                    40,
                                             child: Row(
                                               children: [
                                                 IconButton(
                                                   onPressed: () {
-                                                    SystemChrome.setPreferredOrientations(
+                                                    SystemChrome
+                                                        .setPreferredOrientations(
                                                       [
-                                                        DeviceOrientation.portraitUp,
-                                                        DeviceOrientation.portraitDown,
+                                                        DeviceOrientation
+                                                            .portraitUp,
+                                                        DeviceOrientation
+                                                            .portraitDown,
                                                       ],
                                                     );
-                                                    if (interstitialAd != null) {
+                                                    if (interstitialAd !=
+                                                        null) {
                                                       interstitialAd!.show();
                                                     }
                                                     Get.back();
                                                   },
                                                   icon: SvgPicture.asset(
                                                     MovixIcon.arrowLeft,
-                                                    color: ColorValues.whiteColor,
-                                                    width: SizeConfig.blockSizeHorizontal * 3,
+                                                    color:
+                                                        ColorValues.whiteColor,
+                                                    width: SizeConfig
+                                                            .blockSizeHorizontal *
+                                                        3,
                                                   ),
                                                 ),
                                                 SizedBox(
-                                                  width: SizeConfig.screenWidth / 3.5,
+                                                  width:
+                                                      SizeConfig.screenWidth /
+                                                          3.5,
                                                   child: Text(
                                                     widget.name,
                                                     style: GoogleFonts.urbanist(
                                                       fontSize: 15,
-                                                      fontWeight: FontWeight.bold,
-                                                      color: ColorValues.whiteColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: ColorValues
+                                                          .whiteColor,
                                                     ),
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                   ),
                                                 ),
                                               ],
                                             ),
                                           ),
                                           SizedBox(
-                                            width: SizeConfig.blockSizeHorizontal * 11,
+                                            width:
+                                                SizeConfig.blockSizeHorizontal *
+                                                    11,
                                             child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.end,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
                                               children: [
                                                 GestureDetector(
                                                   onTap: () {
-                                                    playbackSpeedBottomSheet(context, orientation);
+                                                    playbackSpeedBottomSheet(
+                                                        context, orientation);
                                                   },
                                                   child: SvgPicture.asset(
                                                     MovixIcon.speed,
-                                                    color: ColorValues.whiteColor,
-                                                    width: SizeConfig.blockSizeHorizontal * 3.5,
+                                                    color:
+                                                        ColorValues.whiteColor,
+                                                    width: SizeConfig
+                                                            .blockSizeHorizontal *
+                                                        3.5,
                                                   ),
                                                 ),
                                               ],
@@ -5525,18 +5662,22 @@ class _VideoPlayersState extends State<VideoPlayers> {
                         child: ExcludeSemantics(
                           child: Stack(
                             children: [
-                              const Positioned.fill(child: ColoredBox(color: Colors.black)),
+                              const Positioned.fill(
+                                  child: ColoredBox(color: Colors.black)),
                               Align(
                                 alignment: Alignment.center,
                                 child: VideoAdServices.createAdWidget(
                                   onAdCompletedCallback: () {
                                     setState(() => isShowingVideoAd = false);
-                                    videoController.videoPlayerController.play();
+                                    videoController.videoPlayerController
+                                        .play();
                                   },
-                                  onAdStartedCallback: () => setState(() => showAdSpinner = false),
+                                  onAdStartedCallback: () =>
+                                      setState(() => showAdSpinner = false),
                                   onAdFailedCallback: () {
                                     setState(() => isShowingVideoAd = false);
-                                    videoController.videoPlayerController.play();
+                                    videoController.videoPlayerController
+                                        .play();
                                   },
                                 ),
                               ),
@@ -5568,76 +5709,126 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                         top: SizeConfig.blockSizeHorizontal * 2,
                                       ),
                                       child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Column(
                                             children: [
                                               Visibility(
                                                 visible: isVisible,
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                   children: [
                                                     GetBuilder<VideoController>(
-                                                      builder: (GetxController controller) {
+                                                      builder: (GetxController
+                                                          controller) {
                                                         return Text(
-                                                          videoController.getPosition(),
-                                                          style: const TextStyle(color: ColorValues.whiteColor, fontSize: 12),
+                                                          videoController
+                                                              .getPosition(),
+                                                          style: const TextStyle(
+                                                              color: ColorValues
+                                                                  .whiteColor,
+                                                              fontSize: 12),
                                                         );
                                                       },
                                                     ),
                                                     SizedBox(
-                                                      width: SizeConfig.blockSizeHorizontal * 76,
-                                                      child: _buildCustomProgressIndicator(),
+                                                      width: SizeConfig
+                                                              .blockSizeHorizontal *
+                                                          76,
+                                                      child:
+                                                          _buildCustomProgressIndicator(),
                                                     ),
                                                     Text(
                                                       "${videoController.videoPlayerController.value.duration.inHours.bitLength}:${videoController.videoPlayerController.value.duration.inMinutes}:${videoController.videoPlayerController.value.duration.inSeconds.bitLength}",
-                                                      style: const TextStyle(color: ColorValues.whiteColor, fontSize: 12),
+                                                      style: const TextStyle(
+                                                          color: ColorValues
+                                                              .whiteColor,
+                                                          fontSize: 12),
                                                     ),
                                                   ],
                                                 ),
                                               ),
                                               Padding(
-                                                padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 4),
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: SizeConfig
+                                                            .blockSizeHorizontal *
+                                                        4),
                                                 child: Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
                                                   children: [
                                                     SizedBox(
-                                                      width: SizeConfig.blockSizeHorizontal * 11,
+                                                      width: SizeConfig
+                                                              .blockSizeHorizontal *
+                                                          11,
                                                       child: Row(
-                                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
                                                         children: [
                                                           (isVisible)
                                                               ? GestureDetector(
-                                                                  onTap: showToast,
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.unLock,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  onTap:
+                                                                      showToast,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .unLock,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 )
                                                               : GestureDetector(
-                                                                  onTap: showToast,
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.boldLock,
-                                                                    color: ColorValues.redColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  onTap:
+                                                                      showToast,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .boldLock,
+                                                                    color: ColorValues
+                                                                        .redColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 ),
                                                           Visibility(
                                                             visible: isVisible,
-                                                            child: GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            child: GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    videoController.setVolume();
+                                                                    videoController
+                                                                        .setVolume();
                                                                   },
-                                                                  child: SvgPicture.asset(
-                                                                    videoController.videoPlayerController.value.volume == 1
-                                                                        ? MovixIcon.volumeUp
-                                                                        : MovixIcon.volumeOff,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    videoController.videoPlayerController.value.volume ==
+                                                                            1
+                                                                        ? MovixIcon
+                                                                            .volumeUp
+                                                                        : MovixIcon
+                                                                            .volumeOff,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 );
                                                               },
@@ -5649,54 +5840,93 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                                     Visibility(
                                                       visible: isVisible,
                                                       child: SizedBox(
-                                                        width: SizeConfig.blockSizeHorizontal * 30,
+                                                        width: SizeConfig
+                                                                .blockSizeHorizontal *
+                                                            30,
                                                         child: Row(
-                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
                                                           children: [
-                                                            GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    videoController.setTenSecondsPrevious();
+                                                                    videoController
+                                                                        .setTenSecondsPrevious();
                                                                   },
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.p10,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .p10,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 );
                                                               },
                                                             ),
-                                                            GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    setState(() {
-                                                                      showBanner = true;
-                                                                      showIcon = true;
+                                                                    setState(
+                                                                        () {
+                                                                      showBanner =
+                                                                          true;
+                                                                      showIcon =
+                                                                          true;
                                                                     });
-                                                                    videoController.setVideo();
+                                                                    videoController
+                                                                        .setVideo();
                                                                   },
                                                                   child: Icon(
-                                                                    videoController.videoPlayerController.value.isPlaying
-                                                                        ? Icons.pause
-                                                                        : Icons.play_arrow_rounded,
-                                                                    color: Colors.white,
-                                                                    size: SizeConfig.blockSizeHorizontal * 7.5,
+                                                                    videoController
+                                                                            .videoPlayerController
+                                                                            .value
+                                                                            .isPlaying
+                                                                        ? Icons
+                                                                            .pause
+                                                                        : Icons
+                                                                            .play_arrow_rounded,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    size: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        7.5,
                                                                   ),
                                                                 );
                                                               },
                                                             ),
-                                                            GetBuilder<VideoController>(
-                                                              builder: (GetxController controller) {
+                                                            GetBuilder<
+                                                                VideoController>(
+                                                              builder:
+                                                                  (GetxController
+                                                                      controller) {
                                                                 return GestureDetector(
                                                                   onTap: () {
-                                                                    videoController.setTenSecondsNext();
+                                                                    videoController
+                                                                        .setTenSecondsNext();
                                                                   },
-                                                                  child: SvgPicture.asset(
-                                                                    MovixIcon.n10,
-                                                                    color: ColorValues.whiteColor,
-                                                                    width: SizeConfig.blockSizeHorizontal * 4,
+                                                                  child:
+                                                                      SvgPicture
+                                                                          .asset(
+                                                                    MovixIcon
+                                                                        .n10,
+                                                                    color: ColorValues
+                                                                        .whiteColor,
+                                                                    width: SizeConfig
+                                                                            .blockSizeHorizontal *
+                                                                        4,
                                                                   ),
                                                                 );
                                                               },
@@ -5708,18 +5938,27 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                                     Visibility(
                                                       visible: isVisible,
                                                       child: SizedBox(
-                                                        width: SizeConfig.blockSizeHorizontal * 11,
+                                                        width: SizeConfig
+                                                                .blockSizeHorizontal *
+                                                            11,
                                                         child: Row(
-                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
                                                           children: [
                                                             GestureDetector(
                                                               onTap: () async {
                                                                 _toggleOrientation();
                                                               },
-                                                              child: SvgPicture.asset(
-                                                                MovixIcon.collapse,
-                                                                color: ColorValues.whiteColor,
-                                                                width: SizeConfig.blockSizeHorizontal * 4,
+                                                              child: SvgPicture
+                                                                  .asset(
+                                                                MovixIcon
+                                                                    .collapse,
+                                                                color: ColorValues
+                                                                    .whiteColor,
+                                                                width: SizeConfig
+                                                                        .blockSizeHorizontal *
+                                                                    4,
                                                               ),
                                                             ),
                                                           ],
@@ -5751,61 +5990,87 @@ class _VideoPlayersState extends State<VideoPlayers> {
                                     child: Visibility(
                                       visible: isVisible,
                                       child: Padding(
-                                        padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal * 2),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal:
+                                                SizeConfig.blockSizeHorizontal *
+                                                    2),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             SizedBox(
-                                              width: SizeConfig.blockSizeHorizontal * 40,
+                                              width: SizeConfig
+                                                      .blockSizeHorizontal *
+                                                  40,
                                               child: Row(
                                                 children: [
                                                   IconButton(
                                                     onPressed: () {
-                                                      SystemChrome.setPreferredOrientations(
+                                                      SystemChrome
+                                                          .setPreferredOrientations(
                                                         [
-                                                          DeviceOrientation.portraitUp,
-                                                          DeviceOrientation.portraitDown,
+                                                          DeviceOrientation
+                                                              .portraitUp,
+                                                          DeviceOrientation
+                                                              .portraitDown,
                                                         ],
                                                       );
-                                                      if (interstitialAd != null) {
+                                                      if (interstitialAd !=
+                                                          null) {
                                                         interstitialAd!.show();
                                                       }
                                                       Get.back();
                                                     },
                                                     icon: SvgPicture.asset(
                                                       MovixIcon.arrowLeft,
-                                                      color: ColorValues.whiteColor,
-                                                      width: SizeConfig.blockSizeHorizontal * 3,
+                                                      color: ColorValues
+                                                          .whiteColor,
+                                                      width: SizeConfig
+                                                              .blockSizeHorizontal *
+                                                          3,
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    width: SizeConfig.screenWidth / 3.5,
+                                                    width:
+                                                        SizeConfig.screenWidth /
+                                                            3.5,
                                                     child: Text(
                                                       widget.name,
-                                                      style: GoogleFonts.urbanist(
+                                                      style:
+                                                          GoogleFonts.urbanist(
                                                         fontSize: 15,
-                                                        fontWeight: FontWeight.bold,
-                                                        color: ColorValues.whiteColor,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: ColorValues
+                                                            .whiteColor,
                                                       ),
-                                                      overflow: TextOverflow.ellipsis,
+                                                      overflow:
+                                                          TextOverflow.ellipsis,
                                                     ),
                                                   ),
                                                 ],
                                               ),
                                             ),
                                             SizedBox(
-                                              width: SizeConfig.blockSizeHorizontal * 11,
+                                              width: SizeConfig
+                                                      .blockSizeHorizontal *
+                                                  11,
                                               child: Row(
-                                                mainAxisAlignment: MainAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
                                                 children: [
                                                   GestureDetector(
                                                     onTap: () {
-                                                      playbackSpeedBottomSheet(context, orientation);
+                                                      playbackSpeedBottomSheet(
+                                                          context, orientation);
                                                     },
                                                     child: SvgPicture.asset(
                                                       MovixIcon.speed,
-                                                      color: ColorValues.whiteColor,
-                                                      width: SizeConfig.blockSizeHorizontal * 3.5,
+                                                      color: ColorValues
+                                                          .whiteColor,
+                                                      width: SizeConfig
+                                                              .blockSizeHorizontal *
+                                                          3.5,
                                                     ),
                                                   ),
                                                 ],
@@ -5840,10 +6105,12 @@ class _VideoPlayersState extends State<VideoPlayers> {
               height: Get.height,
               width: Get.width,
               color: Colors.blueGrey,
-              child: widget.link.contains('youtube.com') || widget.link.contains('youtu.be')
+              child: widget.link.contains('youtube.com') ||
+                      widget.link.contains('youtu.be')
                   ? YoutubePlayer(
                       controller: YoutubePlayerController(
-                        initialVideoId: YoutubePlayer.convertUrlToId(widget.link) ?? '',
+                        initialVideoId:
+                            YoutubePlayer.convertUrlToId(widget.link) ?? '',
                         flags: const YoutubePlayerFlags(
                           autoPlay: true,
                           mute: false,
@@ -5874,8 +6141,10 @@ class _VideoPlayersState extends State<VideoPlayers> {
                     )
                   : videoController.videoPlayerController.value.isInitialized
                       ? AspectRatio(
-                          aspectRatio: videoController.videoPlayerController.value.aspectRatio,
-                          child: VideoPlayer(videoController.videoPlayerController),
+                          aspectRatio: videoController
+                              .videoPlayerController.value.aspectRatio,
+                          child: VideoPlayer(
+                              videoController.videoPlayerController),
                         )
                       : const SizedBox(),
             ),
@@ -5899,7 +6168,8 @@ class _VideoPlayersState extends State<VideoPlayers> {
                     height: Get.height / 2.7,
                     width: Get.width,
                     child: AspectRatio(
-                      aspectRatio: videoController.videoPlayerController.value.aspectRatio,
+                      aspectRatio: videoController
+                          .videoPlayerController.value.aspectRatio,
                       child: VideoPlayer(videoController.videoPlayerController),
                     ),
                   ),
@@ -5910,7 +6180,8 @@ class _VideoPlayersState extends State<VideoPlayers> {
     );
   }
 
-  Future<dynamic> playbackSpeedBottomSheet(BuildContext context, Orientation orientation) {
+  Future<dynamic> playbackSpeedBottomSheet(
+      BuildContext context, Orientation orientation) {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -5922,12 +6193,17 @@ class _VideoPlayersState extends State<VideoPlayers> {
       ),
       backgroundColor: ColorValues.darkModeMain,
       constraints: BoxConstraints(
-        maxWidth: (orientation == Orientation.landscape) ? SizeConfig.screenWidth / 3 : SizeConfig.screenWidth,
-        maxHeight: (orientation == Orientation.landscape) ? SizeConfig.screenHeight / 1.5 : SizeConfig.screenHeight / 2.5,
+        maxWidth: (orientation == Orientation.landscape)
+            ? SizeConfig.screenWidth / 3
+            : SizeConfig.screenWidth,
+        maxHeight: (orientation == Orientation.landscape)
+            ? SizeConfig.screenHeight / 1.5
+            : SizeConfig.screenHeight / 2.5,
       ),
       builder: (BuildContext context) {
         return StatefulBuilder(
-          builder: (BuildContext context, void Function(void Function()) setState) {
+          builder:
+              (BuildContext context, void Function(void Function()) setState) {
             return NotificationListener<OverscrollIndicatorNotification>(
               onNotification: (OverscrollIndicatorNotification overscroll) {
                 overscroll.disallowIndicator();
@@ -5937,7 +6213,8 @@ class _VideoPlayersState extends State<VideoPlayers> {
                 padding: EdgeInsets.zero,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                     child: GestureDetector(
                       onTap: () {
                         if (selectedIndexes.contains(index)) {
@@ -5950,13 +6227,17 @@ class _VideoPlayersState extends State<VideoPlayers> {
                             selectedIndexes.add(index);
                           }); // select
                         }
-                        videoController.videoPlayerController.setPlaybackSpeed(playbackSpeed[index]);
+                        videoController.videoPlayerController
+                            .setPlaybackSpeed(playbackSpeed[index]);
                         Get.back();
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          (selectedIndexes.contains(index)) ? const Icon(Icons.done, color: ColorValues.redColor) : Container(width: 25),
+                          (selectedIndexes.contains(index))
+                              ? const Icon(Icons.done,
+                                  color: ColorValues.redColor)
+                              : Container(width: 25),
                           const SizedBox(width: 20),
                           Text(
                             playbackSpeed[index].toString(),

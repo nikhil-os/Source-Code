@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/presentation/utils/helper/ads_helper.dart';
 
 import '../utils/app_colors.dart';
@@ -57,7 +57,9 @@ class _NativAdsScreenState extends State<NativAdsScreen> {
             height: 80,
             decoration: BoxDecoration(
               border: Border.all(
-                color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                color: (getStorage.read('isDarkMode') == true)
+                    ? ColorValues.darkModeSecond
+                    : Colors.grey.shade200,
               ),
               borderRadius: BorderRadius.circular(15.0),
             ),

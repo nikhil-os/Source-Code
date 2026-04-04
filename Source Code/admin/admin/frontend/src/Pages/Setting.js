@@ -63,6 +63,7 @@ const Setting = (props) => {
   const [awsHostname, setawsHostname] = useState("");
   const [awsBucketName, setawsBucketName] = useState("");
   const [awsRegion, setawsRegion] = useState("");
+  const [cloudFrontDomain, setCloudFrontDomain] = useState("");
 
   const [error, setError] = useState({
     privateKey: "",
@@ -134,6 +135,7 @@ const Setting = (props) => {
     setawsHostname(setting?.awsHostname);
     setawsBucketName(setting?.awsBucketName);
     setawsRegion(setting?.awsRegion);
+    setCloudFrontDomain(setting?.cloudFrontDomain || "");
     // setSelectedValue(data);
     // }
   }, [setting]);
@@ -191,6 +193,7 @@ const Setting = (props) => {
       awsHostname,
       awsBucketName,
       awsRegion,
+      cloudFrontDomain,
     };
 
     props.updateSetting(mongoId, data);
@@ -987,6 +990,30 @@ const Setting = (props) => {
                                 }
                                 onChange={(e) => setawsRegion(e.target.value)}
                               />
+                            </div>
+                            <div class=" col-12 mb-3 form-group">
+                              <label for="cloudFrontDomain" class="form-label">
+                                CloudFront Domain
+                              </label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="cloudFrontDomain"
+                                value={cloudFrontDomain}
+                                placeholder={"e.g. d2cu45aav2lgy.cloudfront.net"}
+                                onChange={(e) =>
+                                  setCloudFrontDomain(e.target.value)
+                                }
+                              />
+                              <p
+                                className="text-danger mb-0"
+                                style={{
+                                  fontSize: "small",
+                                  wordWrap: "break-word",
+                                }}
+                              >
+                                CloudFront distribution domain for streaming content (e.g. d2cu45aav2lgy.cloudfront.net)
+                              </p>
                             </div>
                           </form>
                         </div>

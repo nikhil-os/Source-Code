@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/presentation/screens/videoPlayer/youtubeVideoController.dart';
 import 'package:webtime_movie_ocean/presentation/utils/app_colors.dart';
 import 'package:webtime_movie_ocean/presentation/utils/helper/ads_helper.dart';
@@ -133,7 +133,8 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
     });
   }
 
-  YoutubeVideoController youtubeVideoController = Get.put(YoutubeVideoController());
+  YoutubeVideoController youtubeVideoController =
+      Get.put(YoutubeVideoController());
 
   @override
   Widget build(BuildContext context) {
@@ -205,7 +206,8 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
                             handleColor: ColorValues.redColor,
                           ),
                           progressIndicatorColor: ColorValues.redColor,
-                          controller: youtubeVideoController.youtubePlayerController,
+                          controller:
+                              youtubeVideoController.youtubePlayerController,
                         ),
                       ),
                     ),

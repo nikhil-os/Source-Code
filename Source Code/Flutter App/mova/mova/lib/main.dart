@@ -13,7 +13,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/addViewToMovie/add_view_to_movie_api_controller.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/createComments_api/createComments_api_controller.dart';
@@ -54,7 +54,6 @@ import 'presentation/screens/bottom_navigation/downlode_screen/download_history.
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
   await GetStorage.init();
 
   final box = GetStorage();

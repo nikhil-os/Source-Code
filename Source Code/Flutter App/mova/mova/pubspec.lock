@@ -728,14 +728,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.3"
-  google_mobile_ads:
-    dependency: "direct main"
-    description:
-      name: google_mobile_ads
-      sha256: a4f59019f2c32769fb6c60ed8aa321e9c21a36297e2c4f23452b3e779a3e7a26
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.0"
   google_sign_in:
     dependency: "direct main"
     description:
@@ -896,14 +888,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.20+2"
-  interactive_media_ads:
-    dependency: "direct main"
-    description:
-      name: interactive_media_ads
-      sha256: "75b3af00bd398f09cebdc19121ca4925c3707c76851f230b7597d86caea9226a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.5+1"
   internet_connection_checker:
     dependency: "direct main"
     description:

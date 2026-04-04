@@ -45,6 +45,7 @@ const settingSchema = new mongoose.Schema(
     awsHostname: { type: String, default: "" },
     awsBucketName: { type: String, default: "" },
     awsRegion: { type: String, default: "" },
+    cloudFrontDomain: { type: String, default: "" },
 
     durationOfShorts: { type: Number, default: 0 },
 

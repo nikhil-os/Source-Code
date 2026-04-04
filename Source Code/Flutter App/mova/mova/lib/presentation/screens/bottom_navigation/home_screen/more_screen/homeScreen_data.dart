@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:webtime_movie_ocean/googleAd/google_mobile_ads_stub.dart';
 import 'package:webtime_movie_ocean/custom/custom_rating_view.dart';
 import 'package:webtime_movie_ocean/presentation/screens/bottom_navigation/home_screen/more_screen/Details/details_screen.dart';
 import 'package:webtime_movie_ocean/presentation/utils/app_colors.dart';
@@ -59,12 +59,16 @@ class _HomeScreenDataState extends State<HomeScreenData> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: (getStorage.read('isDarkMode') == true) ? ColorValues.scaffoldBg : ColorValues.whiteColor,
+      backgroundColor: (getStorage.read('isDarkMode') == true)
+          ? ColorValues.scaffoldBg
+          : ColorValues.whiteColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(100),
         child: Container(
           decoration: BoxDecoration(
-            color: (getStorage.read('isDarkMode') == true) ? ColorValues.appBarColor : ColorValues.darkModeThird.withValues(alpha: 0.05),
+            color: (getStorage.read('isDarkMode') == true)
+                ? ColorValues.appBarColor
+                : ColorValues.darkModeThird.withValues(alpha: 0.05),
           ),
           padding: EdgeInsets.only(
             top: MediaQuery.of(context).padding.top + 5,
@@ -90,13 +94,17 @@ class _HomeScreenDataState extends State<HomeScreenData> {
                   height: 46,
                   width: 46,
                   decoration: BoxDecoration(
-                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.smallContainerBg : Colors.grey.withValues(alpha: .1),
+                    color: (getStorage.read('isDarkMode') == true)
+                        ? ColorValues.smallContainerBg
+                        : Colors.grey.withValues(alpha: .1),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   padding: const EdgeInsets.all(11),
                   child: Icon(
                     Icons.arrow_back_ios_new_outlined,
-                    color: (getStorage.read('isDarkMode') == true) ? ColorValues.whiteColor : ColorValues.blackColor,
+                    color: (getStorage.read('isDarkMode') == true)
+                        ? ColorValues.whiteColor
+                        : ColorValues.blackColor,
                   ),
                 ),
               ),
@@ -136,13 +144,18 @@ class _HomeScreenDataState extends State<HomeScreenData> {
             child: Container(
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
-                color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : Colors.grey.shade200,
+                color: (getStorage.read('isDarkMode') == true)
+                    ? ColorValues.darkModeSecond
+                    : Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(26),
               ),
               width: SizeConfig.screenWidth / 2.5,
               height: SizeConfig.screenHeight / 4.5,
-              child: widget.responce[i].tmdbMovieId == null && widget.responce[i].iMDBid == null
-                  ? PreviewNetworkImage(id: widget.responce[i].id ?? "", image: widget.responce[i].thumbnail ?? "")
+              child: widget.responce[i].tmdbMovieId == null &&
+                      widget.responce[i].iMDBid == null
+                  ? PreviewNetworkImage(
+                      id: widget.responce[i].id ?? "",
+                      image: widget.responce[i].thumbnail ?? "")
                   : Stack(
                       alignment: Alignment.bottomCenter,
                       children: [
@@ -154,7 +167,9 @@ class _HomeScreenDataState extends State<HomeScreenData> {
                           placeholder: (context, url) => Image(
                             width: double.infinity,
                             height: double.infinity,
-                            color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                            color: (getStorage.read('isDarkMode') == true)
+                                ? ColorValues.darkModeThird
+                                : Colors.grey.shade400,
                             image: const AssetImage(
                               AssetValues.appLogo,
                             ),
@@ -162,7 +177,9 @@ class _HomeScreenDataState extends State<HomeScreenData> {
                           errorWidget: (context, string, dynamic) => Image(
                             width: double.infinity,
                             height: double.infinity,
-                            color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeThird : Colors.grey.shade400,
+                            color: (getStorage.read('isDarkMode') == true)
+                                ? ColorValues.darkModeThird
+                                : Colors.grey.shade400,
                             image: const AssetImage(
                               AssetValues.appLogo,
                             ),
@@ -186,13 +203,17 @@ class _HomeScreenDataState extends State<HomeScreenData> {
                           height: 80,
                           decoration: const BoxDecoration(
                               gradient: LinearGradient(
-                            colors: [Colors.transparent, ColorValues.darkModeMain],
+                            colors: [
+                              Colors.transparent,
+                              ColorValues.darkModeMain
+                            ],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                           )),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 10),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
