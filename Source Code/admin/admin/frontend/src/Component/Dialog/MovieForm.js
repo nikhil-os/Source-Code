@@ -720,16 +720,70 @@ const MovieDialog = (props) => {
     setTrailerVideoPreview(URL.createObjectURL(file));
   };
 
-  const uploadUsingXHR = (formData) => {
-    return new Promise((resolve, reject) => {
+  const uploadUsingXHR = async (formData, file) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        // Attempt Pre-signed URL first
+        const folderStructure = formData.get("folderStructure");
+        const presignRes = await fetch(`${baseURL}file/presign-upload`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "key": secretKey
+          },
+          body: JSON.stringify({
+            fileName: file.name,
+            fileType: file.type,
+            folderStructure: folderStructure
+          })
+        });
+
+        const presignData = await presignRes.json();
+
+        if (presignData.status && presignData.presignedUrl) {
+          // Upload directly to S3
+          const xhr = new XMLHttpRequest();
+          xhr.open("PUT", presignData.presignedUrl, true);
+          xhr.setRequestHeader("Content-Type", file.type);
+          
+          xhr.upload.onprogress = (event) => {
+            const progress = (event.loaded / event.total) * 100;
+            setUploadProgress(progress);
+            setLoading(true);
+          };
+
+          xhr.onload = () => {
+            if (xhr.status === 200 || xhr.status === 201) {
+              setLoading(false);
+              resolve(presignData.cloudFrontUrl); // Return final S3/CloudFront URL
+            } else {
+              reject("Direct S3 upload failed with status " + xhr.status);
+            }
+          };
+          xhr.onerror = () => reject("Direct S3 upload network error");
+          xhr.send(file);
+          return; // Skip fallback
+        }
+      } catch (err) {
+        console.warn("Presigned upload attempt failed, falling back to server upload", err);
+      }
+
+      // Fallback: Upload via backend (may 504 timeout on Vercel for large files)
       const xhr = new XMLHttpRequest();
       xhr.open("POST", `${baseURL}file/upload-file`, true);
       xhr.setRequestHeader("key", secretKey);
+
+      xhr.upload.onprogress = (event) => {
+        const progress = (event.loaded / event.total) * 100;
+        setUploadProgress(progress);
+        setLoading(true);
+      };
 
       xhr.onload = () => {
         if (xhr.status === 200) {
           const response = JSON.parse(xhr.responseText);
           if (response.status) {
+            setLoading(false);
             resolve(response.url);
           } else {
             reject("Upload failed");
@@ -850,7 +904,7 @@ const MovieDialog = (props) => {
           formData.append("content", selectedVideoFile);
 
           try {
-            uploadedVideoURL = await uploadUsingXHR(formData);
+            uploadedVideoURL = await uploadUsingXHR(formData, selectedVideoFile);
           } catch (err) {
             console.error(err);
             Toast("error", "Video upload failed!");
@@ -867,7 +921,7 @@ const MovieDialog = (props) => {
           formData.append("content", selectedTrailerVideoFile);
 
           try {
-            uploadedTrailerVideoURL = await uploadUsingXHR(formData);
+            uploadedTrailerVideoURL = await uploadUsingXHR(formData, selectedTrailerVideoFile);
           } catch (err) {
             console.error(err);
             Toast("error", "Trailer Video upload failed!");
