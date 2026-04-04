@@ -120,6 +120,10 @@ const Setting = (props) => {
       setAwsS3Storage(setting?.storage?.awsS3);
       setDigitalOceanStorage(setting?.storage?.digitalOcean);
       setLocalStorage(setting?.storage?.local);
+
+      if (setting?.storage?.awsS3) setSelectedStorage("awsS3");
+      else if (setting?.storage?.digitalOcean) setSelectedStorage("digitalOcean");
+      else setSelectedStorage("local");
     }
 
     setdoEndpoint(setting?.doEndpoint);

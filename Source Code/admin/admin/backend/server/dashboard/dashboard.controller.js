@@ -88,6 +88,11 @@ exports.movieAnalytic = async (req, res) => {
     if (req.query.type === "Movie") {
       const movie = await Movie.aggregate([
         {
+          $match: {
+            date: { $exists: true, $ne: "", $type: "string" }
+          }
+        },
+        {
           $addFields: {
             analyticDate: {
               $toDate: {
@@ -122,6 +127,11 @@ exports.movieAnalytic = async (req, res) => {
 
     if (req.query.type === "WebSeries") {
       const movie = await Movie.aggregate([
+        {
+          $match: {
+            date: { $exists: true, $ne: "", $type: "string" }
+          }
+        },
         {
           $addFields: {
             analyticDate: {
@@ -187,6 +197,11 @@ exports.userAnalytic = async (req, res) => {
     if (req.query.type === "User") {
       const user = await User.aggregate([
         {
+          $match: {
+            date: { $exists: true, $ne: "", $type: "string" }
+          }
+        },
+        {
           $addFields: {
             analyticDate: {
               $toDate: {
@@ -227,6 +242,7 @@ exports.userAnalytic = async (req, res) => {
               {
                 $match: {
                   $expr: { $eq: ["$premiumPlanId", "$$planId"] },
+                  date: { $exists: true, $ne: "", $type: "string" }
                 },
               },
               {
