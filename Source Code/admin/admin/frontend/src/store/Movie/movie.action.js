@@ -31,7 +31,7 @@ import { type } from 'jquery';
 export const getMovie = (start, limit, search) => (dispatch) => {
   api
     .get(
-      `${baseURL}movie/all?type=MOVIE&start=${start}&limit=${limit}&search=${search}`
+      `movie/all?type=MOVIE&start=${start}&limit=${limit}&search=${search}`
     )
     .then((result) => {
       if (result.status) {
