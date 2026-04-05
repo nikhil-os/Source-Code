@@ -24,6 +24,7 @@ import 'package:webtime_movie_ocean/presentation/widget/nativads.dart';
 import 'package:webtime_movie_ocean/presentation/widget/size_configuration.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:webtime_movie_ocean/presentation/utils/helper/razorpay_checkout_helper.dart';
 
 class PaymentMethod extends StatefulWidget {
   final String planId;
@@ -41,9 +42,9 @@ class PaymentMethod extends StatefulWidget {
 }
 
 class _PaymentMethodState extends State<PaymentMethod> implements IAPCallback {
-  String? payment;
+  String? payment = "Razorpay";
   Map<String, dynamic>? paymentIntent;
-  late Razorpay razorpay;
+  late RazorpayCheckoutHelper _razorpayHelper;
   CreatePremiumController createPremiumPlan =
       Get.put(CreatePremiumController());
   CardEditController cardEditController = CardEditController();
@@ -55,11 +56,10 @@ class _PaymentMethodState extends State<PaymentMethod> implements IAPCallback {
     super.initState();
     cardEditController.addListener(update);
 
-    ///  Razor Pay all Event ///
-    razorpay = Razorpay();
-    razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, _handlePaymentSuccess);
-    razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, _handlePaymentError);
-    razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, _handleExternalWallet);
+    _razorpayHelper = RazorpayCheckoutHelper(
+      onSuccess: _handlePaymentSuccess,
+      onError: _handlePaymentError,
+    );
   }
 
   void update() => setState(() {});
@@ -68,8 +68,8 @@ class _PaymentMethodState extends State<PaymentMethod> implements IAPCallback {
   void dispose() {
     cardEditController.removeListener(update);
     cardEditController.dispose();
+    _razorpayHelper.dispose();
     super.dispose();
-    razorpay.clear();
   }
 
   @override
@@ -154,35 +154,13 @@ class _PaymentMethodState extends State<PaymentMethod> implements IAPCallback {
         timeInSecForIosWeb: 4);
   }
 
-  /// Razor Pay Wallet  function ///
-  void _handleExternalWallet(ExternalWalletResponse response) {
-    Fluttertoast.showToast(
-      msg: "${StringValue.externalWallet.tr} : ${response.walletName}",
-      timeInSecForIosWeb: 4,
-    );
-  }
-
   /// Razor Pay ///
   void openCheckout() {
-    var options = {
-      "key": razorPaySecretKey,
-      "amount": num.parse(widget.planPrice) * 100,
-      "name": "WebTime Movie Ocean",
-      "description": "Payment For any product",
-      "prefill": {
-        "contact": "",
-        "email": "",
-      },
-      "external": {
-        "wallets": ["gpay"]
-      }
-    };
-
-    try {
-      razorpay.open(options);
-    } catch (e) {
-      log(e.toString());
-    }
+    _razorpayHelper.openCheckout(
+      amount: widget.planPrice,
+      description: "Payment for product: ${widget.planId}",
+      email: userEmail,
+    );
   }
 
   Map<String, PurchaseDetails>? purchases;

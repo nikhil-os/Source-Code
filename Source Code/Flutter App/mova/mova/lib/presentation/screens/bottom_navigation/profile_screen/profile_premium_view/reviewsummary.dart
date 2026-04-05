@@ -5,19 +5,73 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webtime_movie_ocean/presentation/utils/app_string.dart';
 
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:webtime_movie_ocean/buinesslogic/apiservice/premiumPlancreateHistory_api/createPremium_contoller.dart';
+import 'package:webtime_movie_ocean/presentation/screens/bottom_navigation/tabs_screen.dart';
+import 'package:webtime_movie_ocean/presentation/utils/helper/razorpay_checkout_helper.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../../../utils/app_colors.dart';
 import '../../../../utils/app_images.dart';
 import '../../../../utils/app_var.dart';
 import '../../../../widget/appbarlayout.dart';
 
 class reviewsummary extends StatefulWidget {
-  const reviewsummary({super.key});
+  final String planId;
+  final String planPrice;
+  final String planName;
+
+  const reviewsummary({
+    super.key,
+    required this.planId,
+    required this.planPrice,
+    required this.planName,
+  });
 
   @override
   State<reviewsummary> createState() => _reviewsummaryState();
 }
 
 class _reviewsummaryState extends State<reviewsummary> {
+  late RazorpayCheckoutHelper _razorpayHelper;
+  final CreatePremiumController createPremiumPlan = Get.put(CreatePremiumController());
+
+  @override
+  void initState() {
+    super.initState();
+    _razorpayHelper = RazorpayCheckoutHelper(
+      onSuccess: _handlePaymentSuccess,
+      onError: _handlePaymentError,
+    );
+  }
+
+  @override
+  void dispose() {
+    _razorpayHelper.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handlePaymentSuccess(PaymentSuccessResponse response) async {
+    Fluttertoast.showToast(msg: "Payment Successful", timeInSecForIosWeb: 4);
+    
+    // Call backend API
+    await createPremiumPlan.createPremiumData(userId, "Razorpay", widget.planId);
+    
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    await pref.setBool("isPremiumPlan", true);
+    isPremiumPlan = true;
+    
+    selectedIndex = 0;
+    Get.offAll(() => const TabsScreen());
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    Fluttertoast.showToast(
+      msg: "${StringValue.error.tr}: ${response.code} - ${response.message}",
+      timeInSecForIosWeb: 4,
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +116,7 @@ class _reviewsummaryState extends State<reviewsummary> {
                         ),
                         RichText(
                           text: TextSpan(
-                            text: StringValue.dollar.tr,
+                            text: "\$${widget.planPrice}",
                             style: GoogleFonts.urbanist(
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
@@ -189,7 +243,7 @@ class _reviewsummaryState extends State<reviewsummary> {
                             ),
                             const Spacer(),
                             Text(
-                              StringValue.dollar.tr,
+                              "\$${widget.planPrice}",
                               style: GoogleFonts.urbanist(fontSize: 12, fontWeight: FontWeight.w500),
                             )
                           ],
@@ -208,7 +262,7 @@ class _reviewsummaryState extends State<reviewsummary> {
                             ),
                             const Spacer(),
                             Text(
-                              StringValue.dollar2.tr,
+                              "\$0.00",
                               style: GoogleFonts.urbanist(fontSize: 12, fontWeight: FontWeight.w500),
                             )
                           ],
@@ -231,7 +285,7 @@ class _reviewsummaryState extends State<reviewsummary> {
                             ),
                             const Spacer(),
                             Text(
-                              StringValue.dollar3.tr,
+                              "\$${widget.planPrice}",
                               style: GoogleFonts.urbanist(fontSize: 12, fontWeight: FontWeight.w500),
                             )
                           ],
@@ -274,78 +328,11 @@ class _reviewsummaryState extends State<reviewsummary> {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.dialog(
-                        barrierColor: ColorValues.blackColor.withValues(alpha: 0.8),
-                        Dialog(
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          surfaceTintColor: Colors.transparent,
-                          elevation: 0,
-                          child: Container(
-                            margin: const EdgeInsets.only(
-                              left: 5,
-                              right: 5,
-                            ),
-                            height: Get.height / 2.4,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50),
-                              color: (getStorage.read('isDarkMode') == true) ? ColorValues.darkModeSecond : ColorValues.whiteColor,
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: Get.height / 5.5,
-                                  width: Get.width / 1.6,
-                                  decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(ProfileAssetValues.profileSubscribeIcon),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text(
-                                  StringValue.congratulations.tr,
-                                  style: GoogleFonts.urbanist(color: ColorValues.redColor, fontWeight: FontWeight.bold, fontSize: 18),
-                                  textAlign: TextAlign.center,
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text(
-                                  StringValue.successfullySubscribed.tr,
-                                  style: GoogleFonts.urbanist(
-                                      fontSize: 14, color: getStorage.read("isDarkMode") == true ? ColorValues.whiteColor : ColorValues.blackColor),
-                                  textAlign: TextAlign.center,
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    Get.to(
-                                      () => const reviewsummary(),
-                                    );
-                                  },
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    height: Get.height / 14.5,
-                                    width: Get.width,
-                                    decoration: BoxDecoration(
-                                      color: ColorValues.redColor,
-                                      borderRadius: BorderRadius.circular(100),
-                                    ),
-                                    child: Text(
-                                      StringValue.ok.tr,
-                                      style: GoogleFonts.urbanist(fontSize: 14, fontWeight: FontWeight.bold, color: ColorValues.whiteColor),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ));
+                    _razorpayHelper.openCheckout(
+                      amount: widget.planPrice,
+                      description: "Payment for ${widget.planName}",
+                      email: userEmail,
+                    );
                   },
                   child: Container(
                     alignment: Alignment.center,

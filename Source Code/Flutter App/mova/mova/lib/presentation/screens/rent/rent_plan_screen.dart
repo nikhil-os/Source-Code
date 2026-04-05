@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:webtime_movie_ocean/buinesslogic/apiservice/complet_movie_data/complete_movie_data_modal.dart';
 import 'package:webtime_movie_ocean/presentation/utils/app_colors.dart';
+import 'package:webtime_movie_ocean/presentation/utils/app_var.dart';
+import 'package:webtime_movie_ocean/presentation/utils/helper/razorpay_checkout_helper.dart';
 
 class RentPlanScreen extends StatefulWidget {
   final String movieId;
@@ -25,6 +29,37 @@ class RentPlanScreen extends StatefulWidget {
 
 class _RentPlanScreenState extends State<RentPlanScreen> {
   int? selectedIndex;
+  late RazorpayCheckoutHelper _razorpayHelper;
+  Map<String, dynamic>? _pendingRentalOption;
+
+  @override
+  void initState() {
+    super.initState();
+    _razorpayHelper = RazorpayCheckoutHelper(
+      onSuccess: _handlePaymentSuccess,
+      onError: _handlePaymentError,
+    );
+  }
+
+  @override
+  void dispose() {
+    _razorpayHelper.dispose();
+    super.dispose();
+  }
+
+  void _handlePaymentSuccess(PaymentSuccessResponse response) {
+    if (_pendingRentalOption != null) {
+      _finalizeRental(_pendingRentalOption!);
+    }
+  }
+
+  void _handlePaymentError(PaymentFailureResponse response) {
+    Fluttertoast.showToast(
+      msg: "Payment Failed: ${response.message}",
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+    );
+  }
 
   // Default options if admin hasn't set any
   static const List<Map<String, dynamic>> defaultOptions = [
@@ -205,6 +240,16 @@ class _RentPlanScreenState extends State<RentPlanScreen> {
   }
 
   Future<void> _processPayment(Map<String, dynamic> opt) async {
+    _pendingRentalOption = opt;
+    
+    _razorpayHelper.openCheckout(
+      amount: opt['price'].toString(),
+      description: "Rental for ${widget.title} - ${opt['durationLabel']}",
+      email: userEmail,
+    );
+  }
+
+  Future<void> _finalizeRental(Map<String, dynamic> opt) async {
     // Store rental locally
     final prefs = await SharedPreferences.getInstance();
     final durationHours = opt['duration'] as num;
