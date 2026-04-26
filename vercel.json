@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "create-react-app",
-  "installCommand": "APP_DIR=\"\"; if [ -d \"Source Code/admin/admin/frontend/frontend\" ]; then APP_DIR=\"Source Code/admin/admin/frontend/frontend\"; elif [ -d \"admin/admin/frontend/frontend\" ]; then APP_DIR=\"admin/admin/frontend/frontend\"; else echo \"Frontend app path not found\"; exit 1; fi; npm --prefix \"$APP_DIR\" install",
-  "buildCommand": "APP_DIR=\"\"; if [ -d \"Source Code/admin/admin/frontend/frontend\" ]; then APP_DIR=\"Source Code/admin/admin/frontend/frontend\"; elif [ -d \"admin/admin/frontend/frontend\" ]; then APP_DIR=\"admin/admin/frontend/frontend\"; else echo \"Frontend app path not found\"; exit 1; fi; npm --prefix \"$APP_DIR\" run build; rm -rf build; cp -R \"$APP_DIR/build\" build",
-  "outputDirectory": "build",
+  "installCommand": "npm --prefix \"Source Code/admin/admin/frontend/frontend\" install",
+  "buildCommand": "npm --prefix \"Source Code/admin/admin/frontend/frontend\" run build",
+  "outputDirectory": "Source Code/admin/admin/frontend/frontend/build",
   "rewrites": [
     {
       "source": "/api/:path*",
