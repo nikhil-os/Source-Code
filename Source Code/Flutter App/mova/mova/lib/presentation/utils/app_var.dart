@@ -20,7 +20,7 @@ String? fcmToken;
 bool showAdminPannelLiveChannels = false;
 String? identity;
 String SECRET_KEY = "";
-String razorPaySecretKey = "rzp_test_SZmPkNQZwi8r3X";
+String razorPaySecretKey = "rzp_live_SaCzLZZvmENyuJ";
 String stripePublishableKey = "";
 String flutterWaveId = "";
 bool isFlutterWave = false;

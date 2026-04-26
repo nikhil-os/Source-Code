@@ -125,8 +125,8 @@ android {
         applicationId "com.webtimemovieocean.app"
         minSdkVersion 24
         targetSdkVersion 35
-        versionCode 10
-        versionName "1.0.10"
+        versionCode 14
+        versionName "1.0.14"
         multiDexEnabled = true
     }
 
