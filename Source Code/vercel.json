@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "create-react-app",
-  "installCommand": "cd \"Source Code/admin/admin/frontend/frontend\" && npm install",
-  "buildCommand": "cd \"Source Code/admin/admin/frontend/frontend\" && npm run build",
-  "outputDirectory": "Source Code/admin/admin/frontend/frontend/build",
+  "installCommand": "cd \"admin/admin/frontend/frontend\" && npm install",
+  "buildCommand": "cd \"admin/admin/frontend/frontend\" && npm run build",
+  "outputDirectory": "admin/admin/frontend/frontend/build",
   "rewrites": [
     {
       "source": "/api/:path*",
